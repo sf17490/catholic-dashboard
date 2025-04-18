@@ -1,0 +1,62 @@
+@import "node_modules/govuk-frontend/dist/govuk";
+
+:root {
+  --background: #ffffff; /*White as snow*/
+  --foreground: #171717;
+
+
+  // Govuk brand colours
+  --colour-red: #{govuk-colour('red')};
+  --colour-yellow: #{govuk-colour('yellow')};
+  --colour-green: #{govuk-colour('green')};
+  --colour-blue: #{govuk-colour('blue')};
+  --colour-dark-blue: #{govuk-colour('dark-blue')};
+  --colour-light-blue: #{govuk-colour('light-blue')};
+  --colour-purple: #{govuk-colour('purple')};
+
+  --colour-black: #{govuk-colour('black')};
+  --colour-dark-grey: #{govuk-colour('dark-grey')};
+  --colour-mid-grey: #{govuk-colour('mid-grey')};
+  --colour-light-grey: #{govuk-colour('light-grey')};
+  --colour-white: #{govuk-colour('white')};
+
+  --colour-light-purple: #{govuk-colour('light-purple')};
+  --colour-bright-purple: #{govuk-colour('bright-purple')};
+  --colour-pink: #{govuk-colour('pink')};
+  --colour-light-pink: #{govuk-colour('light-pink')};
+  --colour-orange: #{govuk-colour('orange')};
+  --colour-brown: #{govuk-colour('brown')};
+  --colour-light-green: #{govuk-colour('light-green')};
+  --colour-turquoise: #{govuk-colour('turquoise')};
+
+  // Govuk greys
+  --colour-grey-1: #6b7376;
+  --colour-grey-2: #bfc1c3;
+  --colour-grey-3: #f3f2f1;
+  --colour-grey-4: #f8f8f8;
+
+  --colour-offwhite: #c1d7eb
+}
+
+html, body{
+  margin: 0;
+  height: 100%
+}
+
+h1{
+  color: var(--colour-white);
+  font-size:2.5em
+}
+
+h2{
+  color: var(--colour-offwhite);
+  font-size:2.5em;
+}
+
+p, i, h3{
+  font-family: "Arial"
+}
+
+
+
+
