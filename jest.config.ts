@@ -14,7 +14,8 @@ const config: Config = {
   // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper:{
     "^mapbox-gl$": "<rootDir>/__mocks__/mapbox-gl.js",
-    '^@/(.*)$': '<rootDir>/$1'
+    '^@/(.*)$': '<rootDir>/$1',
+    '^react-leaflet$': '<rootDir>/__mocks__/react-leaflet.js',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts', 'jest-canvas-mock'],
 

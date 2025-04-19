@@ -67,4 +67,17 @@ describe("Dashboard home page", () => {
     const body = screen.getByRole("body");
     expect(body).toHaveClass("marginalisedBody");
   });
+
+  it("includes a correctly rendered map section", ()=>{
+    render(<Home />)
+    
+    const mapDiv = screen.getByTestId("mapDiv")
+    expect(mapDiv).toHaveClass("marginalisedBody")
+  })
+
+  it("includes a footer", () => {
+    render(<Home />)
+    const footer = screen.getByTestId("footing")
+    expect(footer).toBeInTheDocument()
+  })
 });

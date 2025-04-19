@@ -9,6 +9,10 @@ const DynamicMassAttendance = dynamic(() => import("@/pages/components/MassAtten
 }
 )
 
+const DynamicDiocesesMap = dynamic(()=> import("@/pages/components/DiocesesMap"), {
+  ssr:false
+})
+
 export default function Home() {
   console.log("Ora pro nobis, Carlo")
   return (
@@ -22,6 +26,9 @@ export default function Home() {
       </div>
       <div role={"body"} className={styles.marginalisedBody}>
         <DynamicMassAttendance />
+      </div>
+      <div data-testid={"mapDiv"} className={styles.marginalisedBody}>
+        < DynamicDiocesesMap />
       </div>
       < DashboardFooter />
     </div>
