@@ -75,6 +75,17 @@ describe("Dashboard home page", () => {
     expect(mapDiv).toHaveClass("marginalisedBody")
   })
 
+  it("renders all section headers correctly", ()=> {
+    render(<Home />)
+
+    const sectionHeaders = screen.getAllByRole("sectionHeader")
+
+    sectionHeaders.forEach(header => {
+      expect(header).toHaveClass("govuk-heading-l govuk-!-margin-bottom-4")
+    })
+  
+  })
+
   it("includes a footer", () => {
     render(<Home />)
     const footer = screen.getByTestId("footing")
