@@ -2,6 +2,10 @@ import styles from "../styles/Home.module.scss";
 import dynamic from "next/dynamic";
 import DashboardFooter from "./components/DashboardFooter";
 
+const DynamicHoverMap = dynamic(() => import("@/pages/components/MiniMap"), {
+  ssr: false,
+});
+
 const DynamicDiocesesMap = dynamic(
   () => import("@/pages/components/DiocesesMap"),
   {
@@ -46,7 +50,12 @@ export default function Home() {
       </div>
       <div role={"body"} className={styles.marginalisedBody}>
         <div data-testid={"massAttendanceSection"}>
-          <h2 role={"sectionHeader"} className={"govuk-heading-l govuk-!-margin-bottom-4"}>Mass Attendance</h2>
+          <h2
+            role={"sectionHeader"}
+            className={"govuk-heading-l govuk-!-margin-bottom-4"}
+          >
+            Mass Attendance
+          </h2>
           <DynamicMakeAChart
             heading="Average Sunday Mass Attendance"
             contextParagraph="Average number of people attending Sunday Mass in the Diocese of Nottingham from September 2013. All data is sourced from the Catholic Directory entry for that year. Read more about the sources we use here."
@@ -55,12 +64,20 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.marginalisedBody}>
-        <h2 role={"sectionHeader"} className={"govuk-heading-l govuk-!-margin-bottom-4"}>Baptisms</h2>
+        <h2
+          role={"sectionHeader"}
+          className={"govuk-heading-l govuk-!-margin-bottom-4"}
+        >
+          Baptisms
+        </h2>
         <DynamicMakeAChart
           heading="Another section"
           contextParagraph="Some context will go here"
           lineGraphData={myLineGraphProps}
         />
+      </div>
+      <div className={styles.marginalisedBody}>
+        <DynamicHoverMap />
       </div>
       <div data-testid={"mapDiv"} className={styles.marginalisedBody}>
         <DynamicDiocesesMap />
