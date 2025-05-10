@@ -1,7 +1,6 @@
 import styles from "../styles/Home.module.scss";
 import dynamic from "next/dynamic";
 import DashboardFooter from "./components/DashboardFooter";
-import HoverMap from "./components/HoverMap";
 
 
 const DynamicHoverMap = dynamic(

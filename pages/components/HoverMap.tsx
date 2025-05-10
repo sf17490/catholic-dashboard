@@ -3,6 +3,8 @@ import { MapContainer, TileLayer, Polygon } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState } from "react";
+import styles from "../../styles/HoverMap.module.scss"
+
 
 const center: [number, number] = [53.04548200263121, -1.1891462992946762]; //Midlands
 
@@ -22,14 +24,15 @@ export default function HoverMap() {
       <h2 data-testid={"hoverMapHeader"}>CHANGEME Map</h2>
       {displayListOfDioceses(
         handleDioceseNameMouseover,
-        handleDioceseNameMouseout
+        handleDioceseNameMouseout,
+        hoveredDiocese
       )}
       <MapContainer
         center={center}
         zoom={5.5}
         style={{ width: "95vw", height: "400px" }}
       >
-        {displayDiocesesLayer( hoveredDiocese)}
+        {displayDiocesesLayer(hoveredDiocese)}
       </MapContainer>
     </div>
   );
@@ -37,59 +40,65 @@ export default function HoverMap() {
 
 export function displayListOfDioceses(
   handleDioceseNameMouseover: (name: string) => void,
-  handleDioceseNameMouseout: () => void
+  handleDioceseNameMouseout: () => void,
+  hoveredDiocese: string | null
 ) {
   return (
     <ul data-testid={"listOfDioceses"}>
-        {
-            diocesesData.features.map((diocese)=> {
-                const name = diocese.properties.name
-                return (<li
-                    onMouseOver={() => handleDioceseNameMouseover(name)}
-                    onMouseOut={() => handleDioceseNameMouseout()}
-                    data-testid={`list-${name}`}
-                  >
-                    {name}
-                  </li>)
-            })
-        }
+      {diocesesData.features.map((diocese) => {
+        const name = diocese.properties.name;
+        return (
+          <li
+            key={diocese.properties.id}
+            onMouseOver={() => handleDioceseNameMouseover(name)}
+            onMouseOut={() => handleDioceseNameMouseout()}
+            data-testid={`list-${name}`}
+            className={hoveredDiocese == name ? styles.embold : styles.arial}
+          >
+            {name}
+          </li>
+        );
+      })}
     </ul>
   );
 }
 
-export function displayDiocesesLayer(
-  hoveredDiocese: string | null
-) {
+export function displayDiocesesLayer(hoveredDiocese: string | null) {
   return (
     <div>
       {diocesesData.features.map((diocese) => {
         const coordinates = diocese.geometry.coordinates[0];
         const name = diocese.properties.name;
-        const fillColour = setFillColour(hoveredDiocese, name)
+        const fillColour = setFillColour(hoveredDiocese, name);
+
         return makePolygon(name, coordinates, fillColour);
       })}
     </div>
   );
 }
 
-function setFillColour(hoveredDiocese: string | null, dioceseName: string){
-    let fillColour: string
-    switch(hoveredDiocese){
-        case dioceseName: fillColour = "#D45962"
-        break;
-        case null: fillColour = "#FD8D3C"
-        break;
-        default: fillColour = "#b5aea8"
-    }
-    return fillColour
+function setFillColour(hoveredDiocese: string | null, dioceseName: string) {
+  let fillColour: string;
+  switch (hoveredDiocese) {
+    case dioceseName:
+      fillColour = "#D45962";
+      break;
+    case null:
+      fillColour = "#FD8D3C";
+      break;
+    default:
+      fillColour = "#b5aea8";
+  }
+  return fillColour;
 }
 
-function makePolygon(
+export function makePolygon(
   name: string,
   coordinates: LatLngExpression[],
   fillColour: string
 ) {
   return (
+    <div data-testid={`polygon-${name}`}>
     <Polygon
       key={name}
       pathOptions={{
@@ -127,5 +136,6 @@ function makePolygon(
       //     },
       //   }}
     />
+    </div>
   );
 }

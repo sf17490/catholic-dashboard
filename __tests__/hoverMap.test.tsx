@@ -1,18 +1,16 @@
 jest.mock("react-leaflet", () => ({
-    MapContainer: jest.fn(() => null),
-    TileLayer: jest.fn(() => null),
-    Polygon: jest.fn(() => null),
-  }));
+  MapContainer: jest.fn(() => null),
+  Polygon: jest.fn(() => null),
+}));
 
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
-import { displayBaseMap, displayDiocesesLayer } from "@/pages/components/DiocesesMap";
-import { TileLayer, Polygon, MapContainer } from "react-leaflet";
-
-
+import { displayDiocesesLayer } from "@/pages/components/DiocesesMap";
+import { Polygon } from "react-leaflet";
 
 import HoverMap from "@/pages/components/HoverMap";
+
 import { diocesesData } from "@/data/dioceseMapData";
 
 describe("Map section", () => {
@@ -39,35 +37,53 @@ describe("Map section", () => {
 
     expect(listOfDioceses).toBeInTheDocument();
 
-    diocesesData.features.map((diocese)=> {
-        const dioceseNameTestId = screen.getByTestId(`list-${diocese.properties.name}`)
-        expect(dioceseNameTestId).toBeInTheDocument()
-    })
+    diocesesData.features.map((diocese) => {
+      const dioceseNameTestId = screen.getByTestId(
+        `list-${diocese.properties.name}`
+      );
+      expect(dioceseNameTestId).toBeInTheDocument();
+    });
   });
 
   it("should render a pretty name for dioceses with spaces in their name", () => {
-    render(<HoverMap />)
+    render(<HoverMap />);
 
-    const prettyNames:string[] = ["Arundel & Brighton", "Hexham & Newcastle"]
+    const prettyNames: string[] = ["Arundel & Brighton", "Hexham & Newcastle"];
 
-    prettyNames.forEach(name => {
-        const dioceseNameTestId = screen.getByTestId(`list-${name}`)
-        expect(dioceseNameTestId).toBeInTheDocument()
-        expect(dioceseNameTestId).toHaveTextContent(name)
-    })
+    prettyNames.forEach((name) => {
+      const dioceseNameTestId = screen.getByTestId(`list-${name}`);
+      expect(dioceseNameTestId).toBeInTheDocument();
+      expect(dioceseNameTestId).toHaveTextContent(name);
+    });
+  });
 
+  diocesesData.features.map((diocese) => {
+    it(`should highlight the diocese name ${diocese.properties.name} only when I hover over it`, () => {
+      render(<HoverMap />);
 
-  })
+      const dioceseDisplayName = screen.getByText(diocese.properties.name);
+      expect(dioceseDisplayName).toHaveClass("arial");
+      fireEvent.mouseOver(dioceseDisplayName);
+      expect(dioceseDisplayName).toHaveClass("embold");
+      fireEvent.mouseOut(dioceseDisplayName);
+      expect(dioceseDisplayName).toHaveClass("arial");
+    });
+  });
 
+  //TODO: Implement this test.
+  // Also, please make the dioceses list appear alphabetically.
+  //May require snapshot testing (hopefully not though)
+  test.todo(
+    "should highlight the correct diocese polygon when I hover over the diocese name"
+  );
 
-  function diocesesLayerWrapper(){
-    return displayDiocesesLayer()
+  function diocesesLayerWrapper() {
+    return displayDiocesesLayer();
   }
 
-  it("should create polygons for all 21 dioceses", async () =>{
-    render(diocesesLayerWrapper())
+  it("should create polygons for all 21 dioceses", async () => {
+    render(diocesesLayerWrapper());
 
-    expect(Polygon).toHaveBeenCalledTimes(21)
-
-  })
+    expect(Polygon).toHaveBeenCalledTimes(21);
+  });
 });
