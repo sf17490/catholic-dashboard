@@ -138,6 +138,7 @@ describe("Map section", () => {
   );
   test.todo(
     "should set a specific zoom for the map container and disable adjustments"
+    //Including dragging, scrollwheelzoom, doubleclick zoom, and zooom buttons
   );
 
   function diocesesLayerWrapper() {
