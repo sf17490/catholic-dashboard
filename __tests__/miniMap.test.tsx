@@ -45,7 +45,7 @@ describe("Map section", () => {
   it("should render a list of all 21 dioceses by name", () => {
     render(<MiniMap />);
 
-    const listOfDioceses = screen.getByTestId("listOfDioceses");
+    const listOfDioceses = screen.getByTestId("listedDioceses");
 
     expect(listOfDioceses).toBeInTheDocument();
 
@@ -67,7 +67,15 @@ describe("Map section", () => {
     const diocesesSortedAlphabetically = diocesesData.features
       .sort((a, b) => a.properties.name.localeCompare(b.properties.name))
       .map((diocese) => diocese.properties.name);
+
     expect(listItems).toEqual(diocesesSortedAlphabetically);
+  });
+
+  it("should give the diocese list enough width to stop bouncing the polygons", () => {
+    render(<MiniMap />);
+
+    const diocesesList = screen.getByTestId("listedDioceses");
+    expect(diocesesList).toHaveStyle("width:195");
   });
 
   it("should render a pretty name for dioceses with spaces in their name", () => {

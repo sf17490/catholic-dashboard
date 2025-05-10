@@ -36,9 +36,13 @@ export default function MiniMap() {
           <MapContainer
             center={center}
             zoom={5.5}
-            style={{ width: "95vw", height: "400px" }}
+            style={{ width: "70%", height: "400px" }}
           >
-            {displayDiocesesLayer(hoveredDiocese, handleDioceseMouseover, handleDioceseNameMouseout)}
+            {displayDiocesesLayer(
+              hoveredDiocese,
+              handleDioceseMouseover,
+              handleDioceseNameMouseout
+            )}
           </MapContainer>
         </div>
       </div>
@@ -51,27 +55,36 @@ export function displayListOfDioceses(
   handleDioceseNameMouseout: () => void,
   hoveredDiocese: string | null
 ) {
+  const diocesesListedAlphabetically = diocesesData.features.sort((a, b) =>
+    a.properties.name.localeCompare(b.properties.name)
+  );
   return (
-    <ul data-testid={"listOfDioceses"}>
-      {diocesesData.features.sort((a,b) => a.properties.name.localeCompare(b.properties.name)).map((diocese) => {
-        const name = diocese.properties.name;
-        return (
-          <li
-            key={diocese.properties.id}
-            onMouseOver={() => handleDioceseMouseover(name)}
-            onMouseOut={() => handleDioceseNameMouseout()}
-            data-testid={`list-${name}`}
-            className={hoveredDiocese == name ? styles.embold : styles.arial}
-          >
-            {name}
-          </li>
-        );
-      })}
-    </ul>
+    <div className={styles.horizontalLayout}>
+      <ul data-testid={"listedDioceses"} style={{ minWidth: 195 }}>
+        {diocesesListedAlphabetically.map((diocese) => {
+          const name = diocese.properties.name;
+          return (
+            <li
+              key={diocese.properties.id}
+              onMouseOver={() => handleDioceseMouseover(name)}
+              onMouseOut={() => handleDioceseNameMouseout()}
+              data-testid={`list-${name}`}
+              className={hoveredDiocese == name ? styles.embold : styles.arial}
+            >
+              {name}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 
-export function displayDiocesesLayer(hoveredDiocese: string | null, handleDioceseMouseover: (name: string) => void, handleDioceseMouseout: (name:string) => void) {
+export function displayDiocesesLayer(
+  hoveredDiocese: string | null,
+  handleDioceseMouseover: (name: string) => void,
+  handleDioceseMouseout: (name: string) => void
+) {
   return (
     <div>
       {diocesesData.features.map((diocese) => {
@@ -79,7 +92,13 @@ export function displayDiocesesLayer(hoveredDiocese: string | null, handleDioces
         const name = diocese.properties.name;
         const fillColour = setFillColour(hoveredDiocese, name);
 
-        return makePolygon(name, coordinates, fillColour, handleDioceseMouseover, handleDioceseMouseout);
+        return makePolygon(
+          name,
+          coordinates,
+          fillColour,
+          handleDioceseMouseover,
+          handleDioceseMouseout
+        );
       })}
     </div>
   );
@@ -120,15 +139,14 @@ export function makePolygon(
           color: "white",
         }}
         positions={coordinates}
-          eventHandlers={{
-            mouseover: () => {
-              handleDioceseMouseover(name)
-              
-            },
-            mouseout: () => {
-              handleDioceseMouseout(name)
-            },
-          }}
+        eventHandlers={{
+          mouseover: () => {
+            handleDioceseMouseover(name);
+          },
+          mouseout: () => {
+            handleDioceseMouseout(name);
+          },
+        }}
       />
     </div>
   );
