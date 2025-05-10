@@ -26,7 +26,7 @@ export default function MiniMap() {
       >
         Dioceses
       </h2>
-      <div role="miniMapContainer" className={styles.miniMapContainer}>
+      <div role="miniMapDiv" className={styles.miniMapDiv}>
         <div role={"miniMapSection"} className={styles.horizontalLayout}>
           {displayListOfDioceses(
             handleDioceseMouseover,
@@ -37,6 +37,7 @@ export default function MiniMap() {
             center={center}
             zoom={5.5}
             style={{ width: "70%", height: "400px" }}
+            className={styles.miniMapContainer}
           >
             {displayDiocesesLayer(
               hoveredDiocese,
@@ -59,7 +60,7 @@ export function displayListOfDioceses(
     a.properties.name.localeCompare(b.properties.name)
   );
   return (
-    <div className={styles.horizontalLayout}>
+    <div>
       <ul data-testid={"listedDioceses"} style={{ minWidth: 195 }}>
         {diocesesListedAlphabetically.map((diocese) => {
           const name = diocese.properties.name;

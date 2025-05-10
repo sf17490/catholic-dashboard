@@ -29,8 +29,8 @@ describe("Map section", () => {
   });
   it("should have the correct background colour", () => {
     render(<MiniMap />);
-    const mapSection = screen.getByRole("miniMapContainer");
-    expect(mapSection).toHaveClass("miniMapContainer");
+    const mapSection = screen.getByRole("miniMapDiv");
+    expect(mapSection).toHaveClass("miniMapDiv");
   });
   it("should render a heading", () => {
     render(<MiniMap />);
@@ -107,6 +107,10 @@ describe("Map section", () => {
   //May require snapshot testing (hopefully not though)
   test.todo(
     "should highlight the correct diocese polygon only when I hover over the diocese name"
+  );
+  test.todo(
+    "should give the map container the same background colour as the section it's in"
+    //Maybe mock the mapcontainer?
   );
 
   function diocesesLayerWrapper() {

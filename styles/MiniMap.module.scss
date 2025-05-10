@@ -15,7 +15,11 @@
   align-items: center;
 }
 
-.miniMapContainer {
+.miniMapDiv {
   background-color: var(--colour-grey-3);
   padding-right: 1em;
+}
+
+.miniMapContainer {
+  background-color: var(--colour-grey-3);
 }
