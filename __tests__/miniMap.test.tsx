@@ -29,8 +29,8 @@ describe("Map section", () => {
   });
   it("should have the correct background colour", () => {
     render(<MiniMap />);
-    const mapSection = screen.getByRole("miniMapContainer");
-    expect(mapSection).toHaveClass("miniMapContainer");
+    const mapSection = screen.getByRole("miniMapDiv");
+    expect(mapSection).toHaveClass("miniMapDiv");
   });
   it("should render a heading", () => {
     render(<MiniMap />);
@@ -103,10 +103,42 @@ describe("Map section", () => {
     });
   });
 
+  it("should make the other diocese names shadows when another diocese name is hovered over", () => {
+    render(<MiniMap />);
+
+    const southwarkDisplayName = screen.getByText("Southwark");
+    const westminsterDisplayName = screen.getByText("Westminster");
+
+    expect(southwarkDisplayName).toHaveClass("arial");
+    expect(westminsterDisplayName).toHaveClass("arial");
+
+    fireEvent.mouseOver(southwarkDisplayName);
+
+    expect(southwarkDisplayName).toHaveClass("embold");
+    expect(westminsterDisplayName).toHaveClass("shadow");
+
+    fireEvent.mouseOver(westminsterDisplayName);
+
+    expect(southwarkDisplayName).toHaveClass("shadow");
+    expect(westminsterDisplayName).toHaveClass("embold");
+
+    fireEvent.mouseOut(westminsterDisplayName);
+    expect(southwarkDisplayName).toHaveClass("arial");
+    expect(westminsterDisplayName).toHaveClass("arial");
+  });
+
   //TODO: Implement this test.
   //May require snapshot testing (hopefully not though)
   test.todo(
     "should highlight the correct diocese polygon only when I hover over the diocese name"
+  );
+  test.todo(
+    "should give the map container the same background colour as the section it's in"
+    //Maybe mock the mapcontainer?
+  );
+  test.todo(
+    "should set a specific zoom for the map container and disable adjustments"
+    //Including dragging, scrollwheelzoom, doubleclick zoom, and zooom buttons
   );
 
   function diocesesLayerWrapper() {

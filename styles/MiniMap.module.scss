@@ -8,6 +8,12 @@
   font-family: "Arial";
 }
 
+.shadow {
+  font-family: "Arial";
+  font-weight: 100;
+  color: #c1d7eb;
+}
+
 .horizontalLayout {
   display: flex;
   flex-direction: row;
@@ -15,7 +21,11 @@
   align-items: center;
 }
 
-.miniMapContainer {
+.miniMapDiv {
   background-color: var(--colour-grey-3);
   padding-right: 1em;
+}
+
+.miniMapContainer {
+  background-color: var(--colour-grey-3);
 }
