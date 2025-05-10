@@ -112,6 +112,9 @@ describe("Map section", () => {
     "should give the map container the same background colour as the section it's in"
     //Maybe mock the mapcontainer?
   );
+  test.todo(
+    "should set a specific zoom for the map container and disable adjustments"
+  )
 
   function diocesesLayerWrapper() {
     return displayDiocesesLayer();

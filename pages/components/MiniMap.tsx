@@ -36,7 +36,8 @@ export default function MiniMap() {
           <MapContainer
             center={center}
             zoom={5.5}
-            style={{ width: "70%", height: "400px" }}
+            style={{ width: "70%", height: "460px" }}
+            zoomControl={false}
             className={styles.miniMapContainer}
           >
             {displayDiocesesLayer(
