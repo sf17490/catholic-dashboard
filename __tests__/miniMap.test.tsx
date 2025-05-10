@@ -103,6 +103,30 @@ describe("Map section", () => {
     });
   });
 
+  it("should make the other diocese names shadows when another diocese name is hovered over", () => {
+    render(<MiniMap />);
+
+    const southwarkDisplayName = screen.getByText("Southwark");
+    const westminsterDisplayName = screen.getByText("Westminster");
+
+    expect(southwarkDisplayName).toHaveClass("arial");
+    expect(westminsterDisplayName).toHaveClass("arial");
+
+    fireEvent.mouseOver(southwarkDisplayName);
+
+    expect(southwarkDisplayName).toHaveClass("embold");
+    expect(westminsterDisplayName).toHaveClass("shadow");
+
+    fireEvent.mouseOver(westminsterDisplayName);
+
+    expect(southwarkDisplayName).toHaveClass("shadow");
+    expect(westminsterDisplayName).toHaveClass("embold");
+
+    fireEvent.mouseOut(westminsterDisplayName);
+    expect(southwarkDisplayName).toHaveClass("arial");
+    expect(westminsterDisplayName).toHaveClass("arial");
+  });
+
   //TODO: Implement this test.
   //May require snapshot testing (hopefully not though)
   test.todo(
@@ -114,7 +138,7 @@ describe("Map section", () => {
   );
   test.todo(
     "should set a specific zoom for the map container and disable adjustments"
-  )
+  );
 
   function diocesesLayerWrapper() {
     return displayDiocesesLayer();

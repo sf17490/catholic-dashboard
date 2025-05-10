@@ -65,13 +65,14 @@ export function displayListOfDioceses(
       <ul data-testid={"listedDioceses"} style={{ minWidth: 195 }}>
         {diocesesListedAlphabetically.map((diocese) => {
           const name = diocese.properties.name;
+          const textStyling = setTextClass(hoveredDiocese, name);
           return (
             <li
               key={diocese.properties.id}
               onMouseOver={() => handleDioceseMouseover(name)}
               onMouseOut={() => handleDioceseNameMouseout()}
               data-testid={`list-${name}`}
-              className={hoveredDiocese == name ? styles.embold : styles.arial}
+              className={textStyling}
             >
               {name}
             </li>
@@ -80,6 +81,21 @@ export function displayListOfDioceses(
       </ul>
     </div>
   );
+}
+
+function setTextClass(hoveredDiocese: string | null, dioceseName: string) {
+  let className: string;
+  switch (hoveredDiocese) {
+    case dioceseName:
+      className = styles.embold;
+      break;
+    case null:
+      className = styles.arial;
+      break;
+    default:
+      className = styles.shadow;
+  }
+  return className;
 }
 
 export function displayDiocesesLayer(
