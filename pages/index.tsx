@@ -1,6 +1,12 @@
 import styles from "../styles/Home.module.scss";
 import dynamic from "next/dynamic";
 import DashboardFooter from "./components/DashboardFooter";
+import HoverMap from "./components/HoverMap";
+
+
+const DynamicHoverMap = dynamic(
+  () => import("@/pages/components/HoverMap"), { ssr: false}
+)
 
 const DynamicDiocesesMap = dynamic(
   () => import("@/pages/components/DiocesesMap"),
@@ -61,6 +67,9 @@ export default function Home() {
           contextParagraph="Some context will go here"
           lineGraphData={myLineGraphProps}
         />
+      </div>
+      <div  className={styles.marginalisedBody}>
+        <DynamicHoverMap />
       </div>
       <div data-testid={"mapDiv"} className={styles.marginalisedBody}>
         <DynamicDiocesesMap />

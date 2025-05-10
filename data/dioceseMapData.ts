@@ -414,7 +414,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 4, name: "Arundel_and_Brighton" },
+      properties: { id: 4, name: "Arundel & Brighton" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1888,7 +1888,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 19, name: "Hexham_and_Newcastle" },
+      properties: { id: 19, name: "Hexham & Newcastle" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
