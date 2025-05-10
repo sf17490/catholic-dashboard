@@ -82,7 +82,7 @@ describe("Map section", () => {
   // Also, please make the dioceses list appear alphabetically.
   //May require snapshot testing (hopefully not though)
   test.todo(
-    "should highlight the correct diocese polygon when I hover over the diocese name"
+    "should highlight the correct diocese polygon only when I hover over the diocese name"
   );
 
   function diocesesLayerWrapper() {

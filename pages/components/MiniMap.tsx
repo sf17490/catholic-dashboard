@@ -10,7 +10,7 @@ const center: [number, number] = [53.04548200263121, -1.1891462992946762]; //Mid
 export default function MiniMap() {
   const [hoveredDiocese, setIsHoveredDiocese] = useState<string | null>(null);
 
-  const handleDioceseNameMouseover = (name: string) => {
+  const handleDioceseMouseover = (name: string) => {
     setIsHoveredDiocese(name);
   };
 
@@ -29,7 +29,7 @@ export default function MiniMap() {
       <div role="miniMapContainer" className={styles.miniMapContainer}>
         <div role={"miniMapSection"} className={styles.horizontalLayout}>
           {displayListOfDioceses(
-            handleDioceseNameMouseover,
+            handleDioceseMouseover,
             handleDioceseNameMouseout,
             hoveredDiocese
           )}
@@ -38,7 +38,7 @@ export default function MiniMap() {
             zoom={5.5}
             style={{ width: "95vw", height: "400px" }}
           >
-            {displayDiocesesLayer(hoveredDiocese)}
+            {displayDiocesesLayer(hoveredDiocese, handleDioceseMouseover, handleDioceseNameMouseout)}
           </MapContainer>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default function MiniMap() {
 }
 
 export function displayListOfDioceses(
-  handleDioceseNameMouseover: (name: string) => void,
+  handleDioceseMouseover: (name: string) => void,
   handleDioceseNameMouseout: () => void,
   hoveredDiocese: string | null
 ) {
@@ -58,7 +58,7 @@ export function displayListOfDioceses(
         return (
           <li
             key={diocese.properties.id}
-            onMouseOver={() => handleDioceseNameMouseover(name)}
+            onMouseOver={() => handleDioceseMouseover(name)}
             onMouseOut={() => handleDioceseNameMouseout()}
             data-testid={`list-${name}`}
             className={hoveredDiocese == name ? styles.embold : styles.arial}
@@ -71,7 +71,7 @@ export function displayListOfDioceses(
   );
 }
 
-export function displayDiocesesLayer(hoveredDiocese: string | null) {
+export function displayDiocesesLayer(hoveredDiocese: string | null, handleDioceseMouseover: (name: string) => void, handleDioceseMouseout: (name:string) => void) {
   return (
     <div>
       {diocesesData.features.map((diocese) => {
@@ -79,7 +79,7 @@ export function displayDiocesesLayer(hoveredDiocese: string | null) {
         const name = diocese.properties.name;
         const fillColour = setFillColour(hoveredDiocese, name);
 
-        return makePolygon(name, coordinates, fillColour);
+        return makePolygon(name, coordinates, fillColour, handleDioceseMouseover, handleDioceseMouseout);
       })}
     </div>
   );
@@ -103,7 +103,9 @@ function setFillColour(hoveredDiocese: string | null, dioceseName: string) {
 export function makePolygon(
   name: string,
   coordinates: LatLngExpression[],
-  fillColour: string
+  fillColour: string,
+  handleDioceseMouseover: (name: string) => void,
+  handleDioceseMouseout: (name: string) => void
 ) {
   return (
     <div data-testid={`polygon-${name}`}>
@@ -118,31 +120,15 @@ export function makePolygon(
           color: "white",
         }}
         positions={coordinates}
-        //   eventHandlers={{
-        //     mouseover: (e) => {
-        //       const layer = e.target;
-        //       if(isSouthwarkHovered){
-        //         layer.setStyle({
-        //             fillOpacity: 0.7,
-        //             weight: 5,
-        //             dashArray: "",
-        //             color: "#667",
-        //             fillColor: "#D45962",
-        //           });
-        //       }
-
-        //     },
-        //     mouseout: (e) => {
-        //       const layer = e.target;
-        //       layer.setStyle({
-        //         fillOpacity: 0.7,
-        //         weight: 2,
-        //         dashArray: "3",
-        //         color: "white",
-        //         fillColor: "#FD8D3C",
-        //       });
-        //     },
-        //   }}
+          eventHandlers={{
+            mouseover: () => {
+              handleDioceseMouseover(name)
+              
+            },
+            mouseout: () => {
+              handleDioceseMouseout(name)
+            },
+          }}
       />
     </div>
   );
