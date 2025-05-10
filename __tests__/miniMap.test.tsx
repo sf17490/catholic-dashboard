@@ -9,29 +9,29 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { displayDiocesesLayer } from "@/pages/components/DiocesesMap";
 import { Polygon } from "react-leaflet";
 
-import HoverMap from "@/pages/components/HoverMap";
+import MiniMap from "@/pages/components/MiniMap";
 
 import { diocesesData } from "@/data/dioceseMapData";
 
 describe("Map section", () => {
   it("should render a map section", () => {
-    render(<HoverMap />);
+    render(<MiniMap />);
 
     const mapSection = screen.getByRole("mapSection");
 
     expect(mapSection).toBeInTheDocument();
   });
   it("should render a heading", () => {
-    render(<HoverMap />);
+    render(<MiniMap />);
 
-    const heading = screen.getByTestId("hoverMapHeader");
+    const heading = screen.getByTestId("miniMapHeader");
 
     expect(heading).toBeInTheDocument();
     expect(heading).toHaveTextContent("CHANGEME Map");
   });
 
   it("should render a list of all 21 dioceses by name", () => {
-    render(<HoverMap />);
+    render(<MiniMap />);
 
     const listOfDioceses = screen.getByTestId("listOfDioceses");
 
@@ -46,7 +46,7 @@ describe("Map section", () => {
   });
 
   it("should render a pretty name for dioceses with spaces in their name", () => {
-    render(<HoverMap />);
+    render(<MiniMap />);
 
     const prettyNames: string[] = ["Arundel & Brighton", "Hexham & Newcastle"];
 
@@ -59,7 +59,7 @@ describe("Map section", () => {
 
   diocesesData.features.map((diocese) => {
     it(`should highlight the diocese name ${diocese.properties.name} only when I hover over it`, () => {
-      render(<HoverMap />);
+      render(<MiniMap />);
 
       const dioceseDisplayName = screen.getByText(diocese.properties.name);
       expect(dioceseDisplayName).toHaveClass("arial");

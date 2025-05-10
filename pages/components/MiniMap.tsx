@@ -3,12 +3,11 @@ import { MapContainer, TileLayer, Polygon } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState } from "react";
-import styles from "../../styles/HoverMap.module.scss"
-
+import styles from "../../styles/HoverMap.module.scss";
 
 const center: [number, number] = [53.04548200263121, -1.1891462992946762]; //Midlands
 
-export default function HoverMap() {
+export default function MiniMap() {
   const [hoveredDiocese, setIsHoveredDiocese] = useState<string | null>(null);
 
   const handleDioceseNameMouseover = (name: string) => {
@@ -21,7 +20,7 @@ export default function HoverMap() {
 
   return (
     <div role={"mapSection"}>
-      <h2 data-testid={"hoverMapHeader"}>CHANGEME Map</h2>
+      <h2 data-testid={"miniMapHeader"}>CHANGEME Map</h2>
       {displayListOfDioceses(
         handleDioceseNameMouseover,
         handleDioceseNameMouseout,
@@ -99,43 +98,43 @@ export function makePolygon(
 ) {
   return (
     <div data-testid={`polygon-${name}`}>
-    <Polygon
-      key={name}
-      pathOptions={{
-        fillColor: fillColour,
-        fillOpacity: 0.7,
-        weight: 2,
-        opacity: 1,
-        dashArray: [3],
-        color: "white",
-      }}
-      positions={coordinates}
-      //   eventHandlers={{
-      //     mouseover: (e) => {
-      //       const layer = e.target;
-      //       if(isSouthwarkHovered){
-      //         layer.setStyle({
-      //             fillOpacity: 0.7,
-      //             weight: 5,
-      //             dashArray: "",
-      //             color: "#667",
-      //             fillColor: "#D45962",
-      //           });
-      //       }
+      <Polygon
+        key={name}
+        pathOptions={{
+          fillColor: fillColour,
+          fillOpacity: 0.7,
+          weight: 2,
+          opacity: 1,
+          dashArray: [3],
+          color: "white",
+        }}
+        positions={coordinates}
+        //   eventHandlers={{
+        //     mouseover: (e) => {
+        //       const layer = e.target;
+        //       if(isSouthwarkHovered){
+        //         layer.setStyle({
+        //             fillOpacity: 0.7,
+        //             weight: 5,
+        //             dashArray: "",
+        //             color: "#667",
+        //             fillColor: "#D45962",
+        //           });
+        //       }
 
-      //     },
-      //     mouseout: (e) => {
-      //       const layer = e.target;
-      //       layer.setStyle({
-      //         fillOpacity: 0.7,
-      //         weight: 2,
-      //         dashArray: "3",
-      //         color: "white",
-      //         fillColor: "#FD8D3C",
-      //       });
-      //     },
-      //   }}
-    />
+        //     },
+        //     mouseout: (e) => {
+        //       const layer = e.target;
+        //       layer.setStyle({
+        //         fillOpacity: 0.7,
+        //         weight: 2,
+        //         dashArray: "3",
+        //         color: "white",
+        //         fillColor: "#FD8D3C",
+        //       });
+        //     },
+        //   }}
+      />
     </div>
   );
 }
