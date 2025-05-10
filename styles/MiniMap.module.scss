@@ -1,9 +1,20 @@
-.embold{
-    font-family: "Arial";
-    font-weight: bold;
-  }
-
-.arial{
-    font-family: "Arial"
+.embold {
+  font-family: "Arial";
+  font-weight: bold;
 }
-  
+
+.arial {
+  font-family: "Arial";
+}
+
+.horizontalLayout {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+}
+
+.miniMapContainer {
+  background-color: var(--colour-grey-3);
+   padding-right:1em
+}

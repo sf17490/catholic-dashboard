@@ -20,19 +20,28 @@ export default function MiniMap() {
 
   return (
     <div role={"mapSection"}>
-      <h2 data-testid={"miniMapHeader"}>CHANGEME Map</h2>
-      {displayListOfDioceses(
-        handleDioceseNameMouseover,
-        handleDioceseNameMouseout,
-        hoveredDiocese
-      )}
-      <MapContainer
-        center={center}
-        zoom={5.5}
-        style={{ width: "95vw", height: "400px" }}
+      <h2
+        data-testid={"miniMapHeader"}
+        className={"govuk-heading-l govuk-!-margin-bottom-4"}
       >
-        {displayDiocesesLayer(hoveredDiocese)}
-      </MapContainer>
+        Dioceses
+      </h2>
+      <div role="miniMapContainer" className={styles.miniMapContainer}>
+        <div role={"miniMapSection"} className={styles.horizontalLayout}>
+          {displayListOfDioceses(
+            handleDioceseNameMouseover,
+            handleDioceseNameMouseout,
+            hoveredDiocese
+          )}
+          <MapContainer
+            center={center}
+            zoom={5.5}
+            style={{ width: "95vw", height: "400px" }}
+          >
+            {displayDiocesesLayer(hoveredDiocese)}
+          </MapContainer>
+        </div>
+      </div>
     </div>
   );
 }

@@ -21,13 +21,21 @@ describe("Map section", () => {
 
     expect(mapSection).toBeInTheDocument();
   });
+  it("should have the correct background colour", ()=>{
+    render(<MiniMap />)
+    const mapSection = screen.getByRole("miniMapContainer");
+    expect(mapSection).toHaveClass("miniMapContainer")
+
+    
+  })
   it("should render a heading", () => {
     render(<MiniMap />);
 
     const heading = screen.getByTestId("miniMapHeader");
 
     expect(heading).toBeInTheDocument();
-    expect(heading).toHaveTextContent("CHANGEME Map");
+    expect(heading).toHaveTextContent("Dioceses");
+    expect(heading).toHaveClass("govuk-heading-l govuk-!-margin-bottom-4")
   });
 
   it("should render a list of all 21 dioceses by name", () => {
