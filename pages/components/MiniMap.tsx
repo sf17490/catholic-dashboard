@@ -53,7 +53,7 @@ export function displayListOfDioceses(
 ) {
   return (
     <ul data-testid={"listOfDioceses"}>
-      {diocesesData.features.map((diocese) => {
+      {diocesesData.features.sort((a,b) => a.properties.name.localeCompare(b.properties.name)).map((diocese) => {
         const name = diocese.properties.name;
         return (
           <li

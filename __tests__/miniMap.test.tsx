@@ -4,7 +4,13 @@ jest.mock("react-leaflet", () => ({
 }));
 
 import "@testing-library/jest-dom";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import {
+  render,
+  screen,
+  fireEvent,
+  waitFor,
+  getByText,
+} from "@testing-library/react";
 
 import { displayDiocesesLayer } from "@/pages/components/DiocesesMap";
 import { Polygon } from "react-leaflet";
@@ -21,13 +27,11 @@ describe("Map section", () => {
 
     expect(mapSection).toBeInTheDocument();
   });
-  it("should have the correct background colour", ()=>{
-    render(<MiniMap />)
+  it("should have the correct background colour", () => {
+    render(<MiniMap />);
     const mapSection = screen.getByRole("miniMapContainer");
-    expect(mapSection).toHaveClass("miniMapContainer")
-
-    
-  })
+    expect(mapSection).toHaveClass("miniMapContainer");
+  });
   it("should render a heading", () => {
     render(<MiniMap />);
 
@@ -35,7 +39,7 @@ describe("Map section", () => {
 
     expect(heading).toBeInTheDocument();
     expect(heading).toHaveTextContent("Dioceses");
-    expect(heading).toHaveClass("govuk-heading-l govuk-!-margin-bottom-4")
+    expect(heading).toHaveClass("govuk-heading-l govuk-!-margin-bottom-4");
   });
 
   it("should render a list of all 21 dioceses by name", () => {
@@ -51,6 +55,19 @@ describe("Map section", () => {
       );
       expect(dioceseNameTestId).toBeInTheDocument();
     });
+  });
+
+  it("should list the dioceses alphabetically", () => {
+    render(<MiniMap />);
+
+    const listItems = screen
+      .getAllByRole("listitem")
+      .map((item) => item.textContent);
+
+    const diocesesSortedAlphabetically = diocesesData.features
+      .sort((a, b) => a.properties.name.localeCompare(b.properties.name))
+      .map((diocese) => diocese.properties.name);
+    expect(listItems).toEqual(diocesesSortedAlphabetically);
   });
 
   it("should render a pretty name for dioceses with spaces in their name", () => {
