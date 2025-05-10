@@ -1,7 +1,7 @@
 import Plot from "react-plotly.js";
 import { Datum } from "plotly.js";
 
-type LineGraphProps = {
+export type LineGraphProps = {
     yAxisLabel: string
     yAxisValues: Datum[]
     xAxisLabel: string,
