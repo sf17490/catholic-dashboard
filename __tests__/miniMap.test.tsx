@@ -18,6 +18,7 @@ import { Polygon } from "react-leaflet";
 import MiniMap from "@/pages/components/MiniMap";
 
 import { diocesesData } from "@/data/dioceseMapData";
+import { validDioceseNames } from "@/data/enums";
 
 describe("Map section", () => {
   it("should render a map section", () => {
@@ -106,25 +107,28 @@ describe("Map section", () => {
   it("should make the other diocese names shadows when another diocese name is hovered over", () => {
     render(<MiniMap />);
 
-    const southwarkDisplayName = screen.getByText("Southwark");
-    const westminsterDisplayName = screen.getByText("Westminster");
+    const arundelAndBrighton = validDioceseNames[0]
+    const someOtherDiocese =  validDioceseNames[Math.floor(Math.random()*21)+1]
 
-    expect(southwarkDisplayName).toHaveClass("arial");
-    expect(westminsterDisplayName).toHaveClass("arial");
+    const brighton = screen.getByText(arundelAndBrighton);
+    const otherDiocese = screen.getByText(someOtherDiocese);
 
-    fireEvent.mouseOver(southwarkDisplayName);
+    expect(brighton).toHaveClass("arial");
+    expect(otherDiocese).toHaveClass("arial");
 
-    expect(southwarkDisplayName).toHaveClass("embold");
-    expect(westminsterDisplayName).toHaveClass("shadow");
+    fireEvent.mouseOver(brighton);
 
-    fireEvent.mouseOver(westminsterDisplayName);
+    expect(brighton).toHaveClass("embold");
+    expect(otherDiocese).toHaveClass("shadow");
 
-    expect(southwarkDisplayName).toHaveClass("shadow");
-    expect(westminsterDisplayName).toHaveClass("embold");
+    fireEvent.mouseOver(otherDiocese);
 
-    fireEvent.mouseOut(westminsterDisplayName);
-    expect(southwarkDisplayName).toHaveClass("arial");
-    expect(westminsterDisplayName).toHaveClass("arial");
+    expect(brighton).toHaveClass("shadow");
+    expect(otherDiocese).toHaveClass("embold");
+
+    fireEvent.mouseOut(otherDiocese);
+    expect(brighton).toHaveClass("arial");
+    expect(otherDiocese).toHaveClass("arial");
   });
 
   //TODO: Implement this test.
