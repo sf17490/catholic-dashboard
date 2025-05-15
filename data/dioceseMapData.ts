@@ -1,4 +1,5 @@
 import { LatLngExpression } from "leaflet";
+import { DioceseName } from "./enums";
 
 interface DioceseDataCollection {
   type: string;
@@ -10,7 +11,7 @@ interface Diocese {
   type: string;
   properties: {
     id: number;
-    name: string;
+    name: DioceseName;
   };
   geometry: DioceseGeometry
 }

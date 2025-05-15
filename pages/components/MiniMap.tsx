@@ -68,7 +68,7 @@ export function displayListOfDioceses(
       <ul data-testid={"listedDioceses"} style={{ minWidth: 195 }}>
         {diocesesListedAlphabetically.map((diocese) => {
           const name = diocese.properties.name;
-          const textStyling = setTextClass(hoveredDiocese, name);
+          const textStyling = setTextStyle(hoveredDiocese, name);
           return (
             <li
               key={diocese.properties.id}
@@ -86,7 +86,7 @@ export function displayListOfDioceses(
   );
 }
 
-function setTextClass(hoveredDiocese: string | null, dioceseName: string) {
+function setTextStyle(hoveredDiocese: string | null, dioceseName: string) {
   let className: string;
   switch (hoveredDiocese) {
     case dioceseName:

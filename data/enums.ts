@@ -1,0 +1,25 @@
+//export type DioceseName = 'Arundel & Brighton' | 'Birmingham' | 'Brentwood' | 'Cardiff-Menevia' | 'Clifton' | 'East Anglia' | 'Hallam' | 'Hexham & Newcastle' | 'Lancaster' | 'Leeds' | 'Liverpool' | 'Middlesbrough' | 'Northampton' | 'Nottingham' | 'Plymouth' | 'Portsmouth' | 'Salford' | 'Shrewsbury' | 'Southwark' | 'Westminster' | 'Wrexham'
+export const validDioceseNames = [
+  "Arundel & Brighton",
+  "Birmingham",
+  "Brentwood",
+  "Cardiff-Menevia",
+  "Clifton",
+  "East Anglia",
+  "Hallam",
+  "Hexham & Newcastle",
+  "Lancaster",
+  "Leeds",
+  "Liverpool",
+  "Middlesbrough",
+  "Northampton",
+  "Nottingham",
+  "Plymouth",
+  "Portsmouth",
+  "Salford",
+  "Shrewsbury",
+  "Southwark",
+  "Westminster",
+  "Wrexham",
+] as const;
+export type DioceseName = (typeof validDioceseNames)[number];
