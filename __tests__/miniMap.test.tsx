@@ -18,6 +18,7 @@ import { Polygon } from "react-leaflet";
 import MiniMap from "@/pages/components/MiniMap";
 
 import { diocesesData } from "@/data/dioceseMapData";
+import { validDioceseNames } from "@/data/enums";
 
 describe("Map section", () => {
   it("should render a map section", () => {
@@ -29,8 +30,8 @@ describe("Map section", () => {
   });
   it("should have the correct background colour", () => {
     render(<MiniMap />);
-    const mapSection = screen.getByRole("miniMapContainer");
-    expect(mapSection).toHaveClass("miniMapContainer");
+    const mapSection = screen.getByRole("miniMapDiv");
+    expect(mapSection).toHaveClass("miniMapDiv");
   });
   it("should render a heading", () => {
     render(<MiniMap />);
@@ -103,10 +104,45 @@ describe("Map section", () => {
     });
   });
 
+  it("should make the other diocese names shadows when another diocese name is hovered over", () => {
+    render(<MiniMap />);
+
+    const arundelAndBrighton = validDioceseNames[0]
+    const someOtherDiocese =  validDioceseNames[Math.floor(Math.random()*21)+1]
+
+    const brighton = screen.getByText(arundelAndBrighton);
+    const otherDiocese = screen.getByText(someOtherDiocese);
+
+    expect(brighton).toHaveClass("arial");
+    expect(otherDiocese).toHaveClass("arial");
+
+    fireEvent.mouseOver(brighton);
+
+    expect(brighton).toHaveClass("embold");
+    expect(otherDiocese).toHaveClass("shadow");
+
+    fireEvent.mouseOver(otherDiocese);
+
+    expect(brighton).toHaveClass("shadow");
+    expect(otherDiocese).toHaveClass("embold");
+
+    fireEvent.mouseOut(otherDiocese);
+    expect(brighton).toHaveClass("arial");
+    expect(otherDiocese).toHaveClass("arial");
+  });
+
   //TODO: Implement this test.
   //May require snapshot testing (hopefully not though)
   test.todo(
     "should highlight the correct diocese polygon only when I hover over the diocese name"
+  );
+  test.todo(
+    "should give the map container the same background colour as the section it's in"
+    //Maybe mock the mapcontainer?
+  );
+  test.todo(
+    "should set a specific zoom for the map container and disable adjustments"
+    //Including dragging, scrollwheelzoom, doubleclick zoom, and zooom buttons
   );
 
   function diocesesLayerWrapper() {

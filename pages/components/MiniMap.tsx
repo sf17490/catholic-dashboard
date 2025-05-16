@@ -26,7 +26,7 @@ export default function MiniMap() {
       >
         Dioceses
       </h2>
-      <div role="miniMapContainer" className={styles.miniMapContainer}>
+      <div role="miniMapDiv" className={styles.miniMapDiv}>
         <div role={"miniMapSection"} className={styles.horizontalLayout}>
           {displayListOfDioceses(
             handleDioceseMouseover,
@@ -36,7 +36,12 @@ export default function MiniMap() {
           <MapContainer
             center={center}
             zoom={5.5}
-            style={{ width: "70%", height: "400px" }}
+            style={{ width: "70%", height: "460px" }}
+            zoomControl={false}
+            scrollWheelZoom={false}
+            doubleClickZoom={false}
+            dragging={false}
+            className={styles.miniMapContainer}
           >
             {displayDiocesesLayer(
               hoveredDiocese,
@@ -59,17 +64,18 @@ export function displayListOfDioceses(
     a.properties.name.localeCompare(b.properties.name)
   );
   return (
-    <div className={styles.horizontalLayout}>
+    <div>
       <ul data-testid={"listedDioceses"} style={{ minWidth: 195 }}>
         {diocesesListedAlphabetically.map((diocese) => {
           const name = diocese.properties.name;
+          const textStyling = setTextStyle(hoveredDiocese, name);
           return (
             <li
               key={diocese.properties.id}
               onMouseOver={() => handleDioceseMouseover(name)}
               onMouseOut={() => handleDioceseNameMouseout()}
               data-testid={`list-${name}`}
-              className={hoveredDiocese == name ? styles.embold : styles.arial}
+              className={textStyling}
             >
               {name}
             </li>
@@ -78,6 +84,21 @@ export function displayListOfDioceses(
       </ul>
     </div>
   );
+}
+
+function setTextStyle(hoveredDiocese: string | null, dioceseName: string) {
+  let className: string;
+  switch (hoveredDiocese) {
+    case dioceseName:
+      className = styles.embold;
+      break;
+    case null:
+      className = styles.arial;
+      break;
+    default:
+      className = styles.shadow;
+  }
+  return className;
 }
 
 export function displayDiocesesLayer(
