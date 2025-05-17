@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Polygon } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState } from "react";
-import styles from "../../styles/MiniMap.module.scss";
+import styles from "../../../styles/MiniMap.module.scss";
 
 const center: [number, number] = [53.04548200263121, -1.1891462992946762]; //Midlands
 
@@ -64,8 +64,8 @@ export function displayListOfDioceses(
     a.properties.name.localeCompare(b.properties.name)
   );
   return (
-    <div>
-      <ul data-testid={"listedDioceses"} style={{ minWidth: 195 }}>
+    <div data-testid={"needsMinWidth"} style={{minWidth:255}}>
+      <ul data-testid={"listedDioceses"} className={styles.dioceseList}>
         {diocesesListedAlphabetically.map((diocese) => {
           const name = diocese.properties.name;
           const textStyling = setTextStyle(hoveredDiocese, name);

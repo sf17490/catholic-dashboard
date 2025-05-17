@@ -17,7 +17,7 @@ export default function MakeAChart({
   return (
     <div className={styles.chartContainer}>
       <div className={styles.chartContents}>
-        <h3 role={"contextHeader"}>{heading}</h3>
+        <h3 role={"contextHeader"} className={"govuk-heading-m mb-1"}>{heading}</h3>
         <i role={"contextParagraph"}>{contextParagraph}</i>
         <div role={"graph"}>
           <PlotALineGraph

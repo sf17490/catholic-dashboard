@@ -22,6 +22,7 @@ describe("Home page footer", () => {
 
         const UKHSAlink = screen.getByTestId("UKHSAlink")
         expect(UKHSAlink).toBeInTheDocument() 
+        expect(UKHSAlink).toHaveClass("govuk-footer__link")
         //TODO: Make a more interesting test where the user clicks on the link and checks that we don't get a 404
       });
 });

@@ -23,7 +23,7 @@ const dummyLineGraphProps = {
   xAxisLabel: "Year",
   xAxisValues: [
     2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
-  ],
+  ]
 };
 
 const dummyChartProps: ChartProps = {
@@ -47,6 +47,7 @@ describe("Make a chart", () => {
 
     expect(heading).toBeInTheDocument();
     expect(heading).toHaveTextContent("My Cool Heading");
+    expect(heading).toHaveClass("govuk-heading-m mb-1")
   });
   it("has the correct context paragraph", () => {
     render(dummyChart);
@@ -95,7 +96,7 @@ describe("Make a chart", () => {
         2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
       ],
       getter: (props) => props.xAxisValues,
-    },
+    }
   ];
 
   graphVariables.forEach((variable) =>
