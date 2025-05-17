@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Polygon } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState } from "react";
-import styles from "../../styles/MiniMap.module.scss";
+import styles from "../../../styles/MiniMap.module.scss";
 
 const center: [number, number] = [53.04548200263121, -1.1891462992946762]; //Midlands
 

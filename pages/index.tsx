@@ -3,12 +3,15 @@ import dynamic from "next/dynamic";
 import DashboardFooter from "./components/DashboardFooter";
 import SkeletonChart from "./components/SkeletonChart";
 
-const DynamicHoverMap = dynamic(() => import("@/pages/components/MiniMap"), {
-  ssr: false,
-});
+const DynamicHoverMap = dynamic(
+  () => import("@/pages/components/maps/MiniMap"),
+  {
+    ssr: false,
+  }
+);
 
 const DynamicDiocesesMap = dynamic(
-  () => import("@/pages/components/DiocesesMap"),
+  () => import("@/pages/components/maps/DiocesesMap"),
   {
     ssr: false,
   }

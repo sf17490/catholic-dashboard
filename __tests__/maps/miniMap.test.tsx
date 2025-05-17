@@ -12,10 +12,10 @@ import {
   getByText,
 } from "@testing-library/react";
 
-import { displayDiocesesLayer } from "@/pages/components/DiocesesMap";
+import { displayDiocesesLayer } from "@/pages/components/maps/DiocesesMap";
 import { Polygon } from "react-leaflet";
 
-import MiniMap from "@/pages/components/MiniMap";
+import MiniMap from "@/pages/components/maps/MiniMap";
 
 import { diocesesData } from "@/data/dioceseMapData";
 import { validDioceseNames } from "@/data/enums";
@@ -77,7 +77,7 @@ describe("Map section", () => {
 
     const diocesesList = screen.getByTestId("listedDioceses");
     expect(diocesesList).toHaveClass("dioceseList");
-    expect(screen.getByTestId("needsMinWidth")).toHaveStyle("min-width:255px")
+    expect(screen.getByTestId("needsMinWidth")).toHaveStyle("min-width:255px");
   });
 
   it("should render a pretty name for dioceses with spaces in their name", () => {
@@ -108,8 +108,9 @@ describe("Map section", () => {
   it("should make the other diocese names shadows when another diocese name is hovered over", () => {
     render(<MiniMap />);
 
-    const arundelAndBrighton = validDioceseNames[0]
-    const someOtherDiocese =  validDioceseNames[Math.floor(Math.random()*21)+1]
+    const arundelAndBrighton = validDioceseNames[0];
+    const someOtherDiocese =
+      validDioceseNames[Math.floor(Math.random() * 21) + 1];
 
     const brighton = screen.getByText(arundelAndBrighton);
     const otherDiocese = screen.getByText(someOtherDiocese);
@@ -131,7 +132,6 @@ describe("Map section", () => {
     expect(brighton).toHaveClass("arial");
     expect(otherDiocese).toHaveClass("arial");
   });
-
 
   //TODO: Implement this test.
   //May require snapshot testing (hopefully not though)
