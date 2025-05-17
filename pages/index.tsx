@@ -39,6 +39,7 @@ export default function Home() {
   console.log("Ora pro nobis, Carlo");
   return (
     <div>
+      <title>UK Catholic Dashboard</title>
       <div
         data-testid={"headerDiv"}
         className={"bg-[var(--colour-blue)] p-2.5"}

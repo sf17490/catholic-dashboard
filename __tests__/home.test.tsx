@@ -17,6 +17,12 @@ describe("Dashboard home page", () => {
     logSpy.mockRestore();
   });
 
+  it("correctly titles the tab", () => {
+    render(<Home />) 
+
+    expect(document.title).toBe("UK Catholic Dashboard")
+  })
+
   it("renders a heading", async () => {
     render(<Home />);
 
