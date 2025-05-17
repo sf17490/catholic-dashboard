@@ -1,4 +1,5 @@
 @import "node_modules/govuk-frontend/dist/govuk";
+@import "tailwindcss";
 
 :root {
   --background: #ffffff; /*White as snow*/
@@ -36,6 +37,9 @@
   --colour-grey-4: #f8f8f8;
 
   --colour-offwhite: #c1d7eb
+
+  //  --colour-chart-background: #f7f7f7;
+  // --colour-chart-background-hover: #edf5ff;
 }
 
 html, body{

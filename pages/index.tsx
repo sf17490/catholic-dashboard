@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.scss";
 import dynamic from "next/dynamic";
 import DashboardFooter from "./components/DashboardFooter";
+import SkeletonChart from "./components/SkeletonChart";
 
 const DynamicHoverMap = dynamic(() => import("@/pages/components/MiniMap"), {
   ssr: false,
@@ -56,6 +57,9 @@ export default function Home() {
           >
             Mass Attendance
           </h2>
+          <div >
+            <SkeletonChart />
+          </div>
           <DynamicMakeAChart
             heading="Average Sunday Mass Attendance"
             contextParagraph="Average number of people attending Sunday Mass in the Diocese of Nottingham from September 2013. All data is sourced from the Catholic Directory entry for that year. Read more about the sources we use here."
@@ -63,6 +67,7 @@ export default function Home() {
           />
         </div>
       </div>
+
       <div className={styles.marginalisedBody}>
         <h2
           role={"sectionHeader"}
@@ -76,12 +81,14 @@ export default function Home() {
           lineGraphData={myLineGraphProps}
         />
       </div>
+
       <div className={styles.marginalisedBody}>
         <DynamicHoverMap />
       </div>
-      <div data-testid={"mapDiv"} className={styles.marginalisedBody}>
+
+      {/* <div data-testid={"mapDiv"} className={styles.marginalisedBody}>
         <DynamicDiocesesMap />
-      </div>
+      </div> */}
       <DashboardFooter />
     </div>
   );

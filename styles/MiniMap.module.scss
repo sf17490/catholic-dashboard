@@ -21,6 +21,13 @@
   align-items: center;
 }
 
+.dioceseList {
+  min-width: 50%;
+  list-style-type: disc;
+  list-style-position: inside
+}
+
+
 .miniMapDiv {
   background-color: var(--colour-grey-3);
   padding-right: 1em;

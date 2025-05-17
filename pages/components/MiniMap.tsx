@@ -64,8 +64,8 @@ export function displayListOfDioceses(
     a.properties.name.localeCompare(b.properties.name)
   );
   return (
-    <div>
-      <ul data-testid={"listedDioceses"} style={{ minWidth: 195 }}>
+    <div data-testId={"needsMinWidth"}style={{minWidth:220}}>
+      <ul data-testid={"listedDioceses"} className={styles.dioceseList}>
         {diocesesListedAlphabetically.map((diocese) => {
           const name = diocese.properties.name;
           const textStyling = setTextStyle(hoveredDiocese, name);

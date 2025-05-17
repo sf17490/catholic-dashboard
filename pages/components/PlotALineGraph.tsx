@@ -41,7 +41,7 @@ export default function PlotALineGraph({yAxisLabel, yAxisValues, xAxisLabel, xAx
           },
         },
       }}
-      style={{ width: "95%", height: "100%", padding: "1.5em", margin: 0 }}
+      style={{ width: "90%", height: "100%", minHeight:175, padding: "1.5em", margin: 0 }} //Move this style to a real class please. And test for minHeight. Or save for when we do snapshot testing
       useResizeHandler={true}
     />
   );

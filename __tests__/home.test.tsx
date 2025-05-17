@@ -86,6 +86,12 @@ describe("Dashboard home page", () => {
   
   })
 
+  it("includes a skeleton graph", () => {
+    render(<Home />)
+    const skeleton = screen.getByTestId("skeleton")
+    expect(skeleton).toBeInTheDocument()
+  })
+
   it("includes a footer", () => {
     render(<Home />)
     const footer = screen.getByTestId("footing")

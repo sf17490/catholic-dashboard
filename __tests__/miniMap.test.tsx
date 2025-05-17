@@ -77,6 +77,7 @@ describe("Map section", () => {
 
     const diocesesList = screen.getByTestId("listedDioceses");
     expect(diocesesList).toHaveStyle("width:195");
+    expect(screen.getByTestId("needsMinWidth")).toHaveStyle("width:220")
   });
 
   it("should render a pretty name for dioceses with spaces in their name", () => {
@@ -130,6 +131,7 @@ describe("Map section", () => {
     expect(brighton).toHaveClass("arial");
     expect(otherDiocese).toHaveClass("arial");
   });
+
 
   //TODO: Implement this test.
   //May require snapshot testing (hopefully not though)

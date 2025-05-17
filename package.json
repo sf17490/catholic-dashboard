@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.7",
     "govuk-frontend": "^5.9.0",
     "leaflet": "^1.9.4",
     "next": "15.3.1",
@@ -18,7 +19,8 @@
     "react-dom": "^19.0.0",
     "react-leaflet": "^5.0.0",
     "react-plotly.js": "^2.6.0",
-    "sass": "^1.86.3"
+    "sass": "^1.86.3",
+    "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
