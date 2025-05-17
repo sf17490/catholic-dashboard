@@ -4,6 +4,7 @@ import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState } from "react";
 import styles from "../../../styles/MiniMap.module.scss";
+import { CleanedDioceseName, DioceseName } from "@/data/enums";
 
 const center: [number, number] = [53.04548200263121, -1.1891462992946762]; //Midlands
 
@@ -111,10 +112,12 @@ export function displayDiocesesLayer(
       {diocesesData.features.map((diocese) => {
         const coordinates = diocese.geometry.coordinates[0];
         const name = diocese.properties.name;
+        const cleanedName = diocese.properties.cleanedName
         const fillColour = setFillColour(hoveredDiocese, name);
 
         return makePolygon(
           name,
+          cleanedName,
           coordinates,
           fillColour,
           handleDioceseMouseover,
@@ -141,7 +144,8 @@ function setFillColour(hoveredDiocese: string | null, dioceseName: string) {
 }
 
 export function makePolygon(
-  name: string,
+  name: DioceseName,
+  cleanedName: CleanedDioceseName,
   coordinates: LatLngExpression[],
   fillColour: string,
   handleDioceseMouseover: (name: string) => void,
@@ -158,6 +162,7 @@ export function makePolygon(
           opacity: 1,
           dashArray: [3],
           color: "white",
+          className: `leaflet-polygon-${cleanedName}`
         }}
         positions={coordinates}
         eventHandlers={{
