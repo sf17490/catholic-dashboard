@@ -11,6 +11,7 @@ export default function DashboardFooter() {
               <a
                 href={"https://ukhsa-dashboard.data.gov.uk/"}
                 data-testid={"UKHSAlink"}
+                className="govuk-footer__link"
               >
                 UKHSA Dashboard.
               </a>

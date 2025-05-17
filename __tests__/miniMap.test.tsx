@@ -76,8 +76,8 @@ describe("Map section", () => {
     render(<MiniMap />);
 
     const diocesesList = screen.getByTestId("listedDioceses");
-    expect(diocesesList).toHaveStyle("width:195");
-    expect(screen.getByTestId("needsMinWidth")).toHaveStyle("width:220")
+    expect(diocesesList).toHaveClass("dioceseList");
+    expect(screen.getByTestId("needsMinWidth")).toHaveStyle("min-width:255px")
   });
 
   it("should render a pretty name for dioceses with spaces in their name", () => {

@@ -36,10 +36,10 @@
   --colour-grey-3: #f3f2f1;
   --colour-grey-4: #f8f8f8;
 
-  --colour-offwhite: #c1d7eb
+  --colour-offwhite: #c1d7eb;
 
-  //  --colour-chart-background: #f7f7f7;
-  // --colour-chart-background-hover: #edf5ff;
+   --colour-chart-background: #f7f7f7;
+  --colour-chart-background-hover: #edf5ff;
 }
 
 html, body{
@@ -49,15 +49,17 @@ html, body{
 
 h1{
   color: var(--colour-white);
-  font-size:2.5em
+  font-size:2.5em;
+  font-weight: 900;
 }
 
 h2{
   color: var(--colour-offwhite);
   font-size:2.5em;
+  font-weight: 900;
 }
 
-p, i, h3{
+p, i, h1, h2, h3{
   font-family: "Arial"
 }
 

@@ -20,7 +20,7 @@ describe("Dashboard home page", () => {
   it("renders a heading", async () => {
     render(<Home />);
 
-    const heading = await screen.findByRole("heading", { level: 1 });
+    const heading = await screen.findByRole("mainTitle");
 
     expect(heading).toBeInTheDocument();
     expect(heading).toHaveTextContent("UK Catholic Data Dashboard");
@@ -31,7 +31,7 @@ describe("Dashboard home page", () => {
 
     const background = screen.getByTestId("headerDiv");
 
-    expect(background).toHaveClass("fullWidthHeader");
+    expect(background).toHaveClass("bg-[var(--colour-blue)] p-2.5");
   });
 
   it("renders a subheading", async () => {

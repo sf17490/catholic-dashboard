@@ -64,7 +64,7 @@ export function displayListOfDioceses(
     a.properties.name.localeCompare(b.properties.name)
   );
   return (
-    <div data-testId={"needsMinWidth"}style={{minWidth:220}}>
+    <div data-testid={"needsMinWidth"} style={{minWidth:255}}>
       <ul data-testid={"listedDioceses"} className={styles.dioceseList}>
         {diocesesListedAlphabetically.map((diocese) => {
           const name = diocese.properties.name;
