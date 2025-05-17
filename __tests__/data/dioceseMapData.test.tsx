@@ -7,10 +7,6 @@ describe("Dioceses Data Collection", () => {
     return diocese.properties.name;
   });
 
-  const cleanDioceseNames = diocesesData.features.map((diocese) => {
-    return diocese.properties.cleanedName;
-  });
-
   validDioceseNames.forEach((validName) => {
     it(`includes data for the Diocese of ${validName}`, () => {
       expect(dioceseNames.includes(validName)).toBe(true);
