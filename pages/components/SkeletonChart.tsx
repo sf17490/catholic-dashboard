@@ -26,7 +26,7 @@ export default function SkeletonChart({rootTestId, heading, subheader}: Skeleton
         </div>
         <img
           data-testid={"skeletonGraph"}
-          src="/images/SkeletonPlaceholder.png"
+          src="/images/minimalist_National_Mass_Attendance.png"
           className={styles.chartContainer}
         />
       </Link>
