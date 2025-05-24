@@ -1,4 +1,3 @@
-import { diocesesData } from "@/data/dioceseMapData";
 import { test, expect } from "@playwright/test";
 
 test("has the correct title", async ({ page }) => {
@@ -14,6 +13,6 @@ test("takes me to the about page when I click on about", async ({ page }) => {
 
   await aboutLink.click();
 
-  const blah = page.getByText("About the Catholic Data Dashboard");
-  expect(blah).toBeInViewport;
+  const aboutHeading = page.getByText("About the Catholic Data Dashboard");
+  expect(aboutHeading).toBeInViewport;
 });
