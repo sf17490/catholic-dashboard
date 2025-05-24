@@ -68,15 +68,25 @@ describe("Dashboard home page", () => {
     expect(betaNotice).toBeInTheDocument()
   })
 
-  it('includes a "Mass Attendance" component', async () => {
+  it('includes a "Mass Attendance" Skeleton', async () => {
     render(<Home />);
 
-    const massAttendanceSection = await screen.findByTestId(
-      "massAttendanceSection"
+    const massAttendanceSkeleton = await screen.findByTestId(
+      "massAttendanceSkeleton"
     );
 
-    expect(massAttendanceSection).toBeInTheDocument();
+    expect(massAttendanceSkeleton).toBeInTheDocument();
   });
+
+  it('includes a "conversions" skeleton', async () => {
+    render(<Home />)
+
+    const conversionsSkeleton = await screen.findByTestId(
+      "conversionsSkeleton"
+    )
+
+    expect(conversionsSkeleton).toBeInTheDocument();
+  })
 
   it("gives the body the correct class", () => {
     render(<Home />);
@@ -102,9 +112,9 @@ describe("Dashboard home page", () => {
   
   })
 
-  it("includes a skeleton graph", () => {
+  it("includes a Mass Attendance skeleton graph", () => {
     render(<Home />)
-    const skeleton = screen.getByTestId("skeleton")
+    const skeleton = screen.getByTestId("massAttendanceSkeleton")
     expect(skeleton).toBeInTheDocument()
   })
 

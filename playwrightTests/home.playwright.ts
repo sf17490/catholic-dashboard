@@ -16,3 +16,15 @@ test("takes me to the about page when I click on about", async ({ page }) => {
   const aboutHeading = page.getByText("About the Catholic Data Dashboard");
   expect(aboutHeading).toBeInViewport;
 });
+
+test("takes me to the Mass Attendance page when I click on the Mass Attendance skeleton", async ({
+  page,
+}) => {
+  await page.goto("http://localhost:3000/");
+
+  const massAttendanceLink = page.getByTestId("massAttendanceLink");
+
+  await massAttendanceLink.click();
+
+  await expect(page).toHaveURL("http://localhost:3000/MassAttendance");
+});
