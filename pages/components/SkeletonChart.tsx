@@ -7,7 +7,11 @@ export type SkeletonProps = {
   subheader: string;
 };
 
-export default function SkeletonChart({rootTestId, heading, subheader}: SkeletonProps) {
+export default function SkeletonChart({
+  rootTestId,
+  heading,
+  subheader,
+}: SkeletonProps) {
   return (
     <div data-testid={`${rootTestId}Skeleton`} className="w-full">
       <Link
