@@ -1,9 +1,14 @@
+import Link from "next/link";
 import styles from "../../styles/Skeleton.module.scss";
 
 export default function SkeletonChart() {
   return (
     <div data-testid={"skeleton"} className="w-full max-w-5/10">
-      <a className="govuk-!-padding-4 ukhsa-chart-card relative flex flex-col bg-[var(--colour-chart-background)] no-underline transition-colors duration-200 ukhsa-focus hover:bg-[var(--colour-chart-background-hover)] focus:bg-[var(--colour-chart-background-hover)]">
+      <Link
+        data-testid="massAttendanceLink"
+        href="/MassAttendance"
+        className="govuk-!-padding-4 ukhsa-chart-card relative flex flex-col bg-[var(--colour-chart-background)] no-underline transition-colors duration-200 ukhsa-focus hover:bg-[var(--colour-chart-background-hover)] focus:bg-[var(--colour-chart-background-hover)]"
+      >
         <div data-testid={"context"}>
           <h2
             role={"skeletonHeader"}
@@ -18,7 +23,7 @@ export default function SkeletonChart() {
           src="/images/SkeletonPlaceholder.png"
           className={styles.chartContainer}
         />
-      </a>
+      </Link>
     </div>
   );
 }

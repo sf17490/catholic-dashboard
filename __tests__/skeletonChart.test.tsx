@@ -23,4 +23,11 @@ describe("Make a chart", () => {
 
     expect(skeletonSection).toBeInTheDocument()
   })
+
+  it("provides a link to Mass Attendance section", ()=>{
+    render(<SkeletonChart />)
+
+    expect(screen.getByTestId("massAttendanceLink")).toBeInTheDocument
+
+  })
 });
