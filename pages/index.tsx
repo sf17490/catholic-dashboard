@@ -2,7 +2,6 @@ import styles from "../styles/Home.module.scss";
 import dynamic from "next/dynamic";
 import DashboardFooter from "./components/DashboardFooter";
 import SkeletonChart from "./components/SkeletonChart";
-import Link from "next/link";
 import HomePageHeader from "./components/HomePageHeader";
 
 const DynamicHoverMap = dynamic(
@@ -18,24 +17,6 @@ const DynamicDiocesesMap = dynamic(
     ssr: false,
   }
 );
-
-const DynamicMakeAChart = dynamic(
-  () => import("@/pages/components/MakeAChart"),
-  {
-    ssr: false,
-  }
-);
-
-const myLineGraphProps = {
-  yAxisLabel: "Number attending Mass",
-  yAxisValues: [
-    31943, 29429, 29848, 28989, 30233, 30460, 28866, 10030, 17475, 23226, 26032,
-  ],
-  xAxisLabel: "Year",
-  xAxisValues: [
-    2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
-  ],
-};
 
 export default function Home() {
   console.log("Ora pro nobis, Carlo");
