@@ -10,4 +10,9 @@ describe("About page", () => {
         expect(screen.getByRole("heading")).toBeInTheDocument
     })
 
+    it("includes a footer", ()=>{
+        render(<About />)
+        expect(screen.getByTestId("footing")).toBeInTheDocument
+    })
+
 });

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import DashboardFooter from "./components/DashboardFooter";
 
 function About() {
   return (
@@ -22,6 +23,7 @@ function About() {
       </header>
       <h1>Hello. </h1>
       <p>About the Catholic Data Dashboard</p>
+      <DashboardFooter />
     </div>
   );
 }
