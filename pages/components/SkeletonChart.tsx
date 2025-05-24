@@ -9,7 +9,7 @@ export type SkeletonProps = {
 
 export default function SkeletonChart({rootTestId, heading, subheader}: SkeletonProps) {
   return (
-    <div data-testid={`${rootTestId}Skeleton`} className="w-full max-w-5/10">
+    <div data-testid={`${rootTestId}Skeleton`} className="w-full">
       <Link
         data-testid={`${rootTestId}Link`}
         href="/massAttendance"

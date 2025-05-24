@@ -31,19 +31,21 @@ export default function Home() {
           >
             Headlines
           </h2>
-          <div>
-            <SkeletonChart
-              rootTestId="massAttendance"
-              heading="Mass Attendance"
-              subheader="Sunday Mass attendance by year"
-            />
-          </div>
-          <div>
-            <SkeletonChart
-              rootTestId="conversions"
-              heading="Conversions"
-              subheader="Adult Receptions into the Church by year"
-            />
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <SkeletonChart
+                rootTestId="massAttendance"
+                heading="Mass Attendance"
+                subheader="Sunday Mass attendance by year"
+              />
+            </div>
+            <div>
+              <SkeletonChart
+                rootTestId="conversions"
+                heading="Conversions"
+                subheader="Adult Receptions into the Church by year"
+              />
+            </div>
           </div>
         </div>
       </div>
