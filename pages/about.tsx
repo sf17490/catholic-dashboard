@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import DashboardFooter from "./components/DashboardFooter";
 import NavBar from "./components/NavBar";

@@ -3,7 +3,6 @@ import { render, screen, waitFor } from "@testing-library/react";
 
 import Home from "@/pages";
 jest.mock('next/router', () => require('__mocks__/next/router.ts'));
-import userEvent from '@testing-library/user-event';
 
 
 describe("Dashboard home page", () => {
