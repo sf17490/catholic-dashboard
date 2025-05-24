@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
-import MassAttendance from "@/pages/MassAttendance";
+import MassAttendance from "@/pages/massAttendance";
 
 describe("Mass Attendance page", () => {
   it("includes a header", () => {

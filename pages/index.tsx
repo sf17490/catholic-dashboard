@@ -51,7 +51,7 @@ export default function Home() {
             Showing Catholic data across England & Wales
           </h2>
           <Link
-          data-testid="aboutLink"
+            data-testid="aboutLink"
             href="about"
             className={
               "govuk-footer__link pt-2.5 text-[var(--colour-offwhite)]"
@@ -81,7 +81,10 @@ export default function Home() {
             Headlines
           </h2>
           <div>
-            <SkeletonChart />
+            <SkeletonChart rootTestId="massAttendance" heading="Mass Attendance" subheader="Sunday Mass attendance by year"/>
+          </div>
+          <div>
+            <SkeletonChart rootTestId="conversions" heading="Conversions" subheader="Adult Receptions into the Church by year"/>
           </div>
         </div>
       </div>

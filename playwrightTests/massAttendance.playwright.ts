@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test("has the correct title", async ({ page }) => {
-  await page.goto("http://localhost:3000/MassAttendance");
+  await page.goto("http://localhost:3000/massAttendance");
 
   await expect(page).toHaveTitle(/UK Catholic Dashboard/);
 });
@@ -9,7 +9,7 @@ test("has the correct title", async ({ page }) => {
 test("displays a placeholder image whilst the lineGraph is being plotted", async ({
   page,
 }) => {
-  await page.goto("http://localhost:3000/MassAttendance");
+  await page.goto("http://localhost:3000/massAttendance");
 
   const placeHolderImage = page.getByTestId("placeholderChartImage");
   expect(placeHolderImage).toBeVisible();
