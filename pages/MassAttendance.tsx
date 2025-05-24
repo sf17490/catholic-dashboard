@@ -5,13 +5,9 @@ import MakeAChart from "@/pages/components/MakeAChart";
 
 const myLineGraphProps = {
   yAxisLabel: "Number attending Mass",
-  yAxisValues: [
-    31943, 29429, 29848, 28989, 30233, 30460, 28866, 10030, 17475, 23226, 26032,
-  ],
+  yAxisValues: [1005522, 885169, 712909, 390236, 503008],
   xAxisLabel: "Year",
-  xAxisValues: [
-    2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
-  ],
+  xAxisValues: [1999, 2008, 2018, 2021, 2022],
 };
 
 function MassAttendance() {
@@ -22,11 +18,18 @@ function MassAttendance() {
         <h1 data-testid="massAttendancePageTitle" className="govuk-heading-xl">
           Mass Attendance
         </h1>
-        <p>Mass Attendance. </p>
+        <b>Note on Accuracy of Data</b>
+        <p>
+          The accuracy with which attendance is counted may vary. A person may
+          accidentally be counted twice and figures may overstate or understate
+          where an estimate is required, such as at very large services or if
+          mechanical means of counting fail. Additionally, approaches to
+          counting may vary across churches in a diocese or nation. (Copied from Catholicism in Numbers)
+        </p>
         <div data-testid="massAttendanceChart">
           <MakeAChart
-            heading="Average Sunday Mass Attendance"
-            contextParagraph="Average number of people attending Sunday Mass in the Diocese of Nottingham from September 2013. All data is sourced from the Catholic Directory entry for that year. Read more about the sources we use here."
+            heading="Typical Sunday Mass Attendance"
+            contextParagraph="Typical number of people attending Sunday Mass in England & Wales"
             lineGraphData={myLineGraphProps}
           />
         </div>
