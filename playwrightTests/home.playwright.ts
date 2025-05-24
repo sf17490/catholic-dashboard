@@ -1,4 +1,3 @@
-import { diocesesData } from "@/data/dioceseMapData";
 import { test, expect } from "@playwright/test";
 
 test("has the correct title", async ({ page }) => {
