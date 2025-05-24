@@ -20,7 +20,7 @@ import MiniMap from "@/pages/components/maps/MiniMap";
 import { diocesesData } from "@/data/dioceseMapData";
 import { validDioceseNames } from "@/data/enums";
 
-describe("Map section", () => {
+describe("Mini Map", () => {
   it("should render a map section", () => {
     render(<MiniMap />);
 
@@ -110,7 +110,7 @@ describe("Map section", () => {
 
     const arundelAndBrighton = validDioceseNames[0];
     const someOtherDiocese =
-      validDioceseNames[Math.floor(Math.random() * 21) + 1];
+      validDioceseNames[Math.floor(Math.random() * 20) + 1];
 
     const brighton = screen.getByText(arundelAndBrighton);
     const otherDiocese = screen.getByText(someOtherDiocese);
