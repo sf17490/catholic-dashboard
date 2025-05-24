@@ -2,6 +2,9 @@ import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 
 import Home from "@/pages";
+jest.mock('next/router', () => require('__mocks__/next/router.ts'));
+import userEvent from '@testing-library/user-event';
+
 
 describe("Dashboard home page", () => {
   it("invokes St. Carlo Acutis", async () => {
@@ -50,6 +53,14 @@ describe("Dashboard home page", () => {
       "Showing Catholic data across England & Wales"
     );
   });
+
+  it('has a link to the "What is the Data Dashboard?" page', ()=>{
+    render(<Home />)
+
+    const aboutLink = screen.getByText("What is the Data Dashboard?")
+    expect(aboutLink).toBeInTheDocument
+    expect(aboutLink).toHaveClass("govuk-footer__link pt-2.5 text-[var(--colour-offwhite)]")
+  })
 
   it("includes a 'Beta' notice", async () => {
     render(<Home />)

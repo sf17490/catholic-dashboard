@@ -2,6 +2,7 @@ import styles from "../styles/Home.module.scss";
 import dynamic from "next/dynamic";
 import DashboardFooter from "./components/DashboardFooter";
 import SkeletonChart from "./components/SkeletonChart";
+import Link from "next/link";
 
 const DynamicHoverMap = dynamic(
   () => import("@/pages/components/maps/MiniMap"),
@@ -49,6 +50,16 @@ export default function Home() {
           <h2 role={"subheading"}>
             Showing Catholic data across England & Wales
           </h2>
+          <Link
+          data-testid="aboutLink"
+            href="about"
+            className={
+              "govuk-footer__link pt-2.5 text-[var(--colour-offwhite)]"
+            }
+          >
+            What is the Data Dashboard?
+          </Link>
+
           <p
             role={"betaNotice"}
             className={"pt-2.5 text-[var(--colour-offwhite)]"}
@@ -104,4 +115,4 @@ export default function Home() {
       <DashboardFooter />
     </div>
   );
-} 
+}
