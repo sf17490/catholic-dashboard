@@ -1,14 +1,7 @@
 import React from "react";
 import DashboardFooter from "./components/DashboardFooter";
-import dynamic from "next/dynamic";
 import NavBar from "./components/NavBar";
-
-const DynamicMakeAChart = dynamic(
-  () => import("@/pages/components/MakeAChart"),
-  {
-    ssr: false,
-  }
-);
+import MakeAChart from "@/pages/components/MakeAChart";
 
 const myLineGraphProps = {
   yAxisLabel: "Number attending Mass",
@@ -31,7 +24,7 @@ function MassAttendance() {
         </h1>
         <p>Mass Attendance. </p>
         <div data-testid="massAttendanceChart">
-          <DynamicMakeAChart
+          <MakeAChart
             heading="Average Sunday Mass Attendance"
             contextParagraph="Average number of people attending Sunday Mass in the Diocese of Nottingham from September 2013. All data is sourced from the Catholic Directory entry for that year. Read more about the sources we use here."
             lineGraphData={myLineGraphProps}

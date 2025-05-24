@@ -11,6 +11,7 @@ export type LineGraphProps = {
 //TODO: Snapshot test this. Atm the only real "test" is looking at the rendered webpage myself
 export default function PlotALineGraph({yAxisLabel, yAxisValues, xAxisLabel, xAxisValues}: LineGraphProps) {
   return (
+    <div data-testid="plottedLineGraph">
     <Plot
       data={[
         {
@@ -47,5 +48,6 @@ export default function PlotALineGraph({yAxisLabel, yAxisValues, xAxisLabel, xAx
         displayModeBar: false //TODO: Consider switching this on
       }}
     />
+    </div>
   );
 }
