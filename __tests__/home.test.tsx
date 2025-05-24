@@ -2,28 +2,26 @@ import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 
 import Home from "@/pages";
-jest.mock('next/router', () => require('__mocks__/next/router.ts'));
-
+jest.mock("next/router", () => require("__mocks__/next/router.ts"));
 
 describe("Dashboard home page", () => {
   it("invokes St. Carlo Acutis", async () => {
-
     const logSpy = jest.spyOn(console, "log").mockImplementation(() => {});
 
     render(<Home />);
 
     await waitFor(() => {
       expect(logSpy).toHaveBeenCalledWith("Ora pro nobis, Carlo");
-    })
+    });
 
     logSpy.mockRestore();
   });
 
   it("correctly titles the tab", () => {
-    render(<Home />) 
+    render(<Home />);
 
-    expect(document.title).toBe("UK Catholic Dashboard")
-  })
+    expect(document.title).toBe("UK Catholic Dashboard");
+  });
 
   it("renders a heading", async () => {
     render(<Home />);
@@ -53,40 +51,34 @@ describe("Dashboard home page", () => {
     );
   });
 
-  it('has a link to the "What is the Data Dashboard?" page', ()=>{
-    render(<Home />)
-
-    const aboutLink = screen.getByText("What is the Data Dashboard?")
-    expect(aboutLink).toBeInTheDocument
-    expect(aboutLink).toHaveClass("govuk-footer__link pt-2.5 text-[var(--colour-offwhite)]")
-  })
-
-  it("includes a 'Beta' notice", async () => {
-    render(<Home />)
-
-    const betaNotice = screen.getByRole("betaNotice")
-    expect(betaNotice).toBeInTheDocument()
-  })
-
-  it('includes a "Mass Attendance" Skeleton', async () => {
+  it('has a link to the "What is the Data Dashboard?" page', () => {
     render(<Home />);
 
-    const massAttendanceSkeleton = await screen.findByTestId(
-      "massAttendanceSkeleton"
+    const aboutLink = screen.getByText("What is the Data Dashboard?");
+    expect(aboutLink).toBeInTheDocument;
+    expect(aboutLink).toHaveClass(
+      "govuk-footer__link pt-2.5 text-[var(--colour-offwhite)]"
     );
-
-    expect(massAttendanceSkeleton).toBeInTheDocument();
   });
 
-  it('includes a "conversions" skeleton', async () => {
-    render(<Home />)
+  it("includes a 'Beta' notice", async () => {
+    render(<Home />);
 
-    const conversionsSkeleton = await screen.findByTestId(
-      "conversionsSkeleton"
-    )
+    const betaNotice = screen.getByRole("betaNotice");
+    expect(betaNotice).toBeInTheDocument();
+  });
 
-    expect(conversionsSkeleton).toBeInTheDocument();
-  })
+  const expectedSkeletons = ["massAttendance", "conversions"];
+
+  expectedSkeletons.forEach((skeletonId) => {
+    it(`includes a "${skeletonId}" Skeleton`, async () => {
+      render(<Home />);
+
+      const skeleton = await screen.findByTestId(`${skeletonId}Skeleton`);
+
+      expect(skeleton).toBeInTheDocument();
+    });
+  });
 
   it("gives the body the correct class", () => {
     render(<Home />);
@@ -94,33 +86,26 @@ describe("Dashboard home page", () => {
     expect(body).toHaveClass("marginalisedBody");
   });
 
-  it("includes a correctly rendered map section", ()=>{
-    render(<Home />)
-    
-    const mapDiv = screen.getByTestId("mapDiv")
-    expect(mapDiv).toHaveClass("marginalisedBody")
-  })
+  it("includes a correctly rendered map section", () => {
+    render(<Home />);
 
-  it("renders all section headers correctly", ()=> {
-    render(<Home />)
+    const mapDiv = screen.getByTestId("mapDiv");
+    expect(mapDiv).toHaveClass("marginalisedBody");
+  });
 
-    const sectionHeaders = screen.getAllByRole("sectionHeader")
+  it("renders all section headers correctly", () => {
+    render(<Home />);
 
-    sectionHeaders.forEach(header => {
-      expect(header).toHaveClass("govuk-heading-l govuk-!-margin-bottom-4")
-    })
-  
-  })
+    const sectionHeaders = screen.getAllByRole("sectionHeader");
 
-  it("includes a Mass Attendance skeleton graph", () => {
-    render(<Home />)
-    const skeleton = screen.getByTestId("massAttendanceSkeleton")
-    expect(skeleton).toBeInTheDocument()
-  })
+    sectionHeaders.forEach((header) => {
+      expect(header).toHaveClass("govuk-heading-l govuk-!-margin-bottom-4");
+    });
+  });
 
   it("includes a footer", () => {
-    render(<Home />)
-    const footer = screen.getByTestId("footing")
-    expect(footer).toBeInTheDocument()
-  })
+    render(<Home />);
+    const footer = screen.getByTestId("footing");
+    expect(footer).toBeInTheDocument();
+  });
 });
