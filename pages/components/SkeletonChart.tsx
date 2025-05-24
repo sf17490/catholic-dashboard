@@ -12,7 +12,7 @@ export default function SkeletonChart({rootTestId, heading, subheader}: Skeleton
     <div data-testid={`${rootTestId}Skeleton`} className="w-full max-w-5/10">
       <Link
         data-testid={`${rootTestId}Link`}
-        href="/MassAttendance"
+        href="/massAttendance"
         className="govuk-!-padding-4 ukhsa-chart-card relative flex flex-col bg-[var(--colour-chart-background)] no-underline transition-colors duration-200 ukhsa-focus hover:bg-[var(--colour-chart-background-hover)] focus:bg-[var(--colour-chart-background-hover)]"
       >
         <div data-testid={"context"}>

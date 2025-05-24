@@ -1,28 +1,28 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
-import MassAttendance from "@/pages/MassAttendance";
+import massAttendance from "@/pages/massAttendance";
 
 describe("Mass Attendance page", () => {
   it("includes a header", () => {
-    render(<MassAttendance />);
+    render(<massAttendance />);
     expect(screen.getByTestId("headerSection")).toBeInTheDocument;
   });
 
   it("includes a footer", () => {
-    render(<MassAttendance />);
+    render(<massAttendance />);
     expect(screen.getByTestId("footing")).toBeInTheDocument;
   });
 
   it("has the correct title", () => {
-    render(<MassAttendance />);
+    render(<massAttendance />);
     expect(screen.getByTestId("massAttendancePageTitle")).toHaveTextContent(
       "Mass Attendance"
     );
   });
 
   it('includes a "Mass Attendance" component', async () => {
-    render(<MassAttendance />);
+    render(<massAttendance />);
 
     const massAttendanceSection = await screen.findByTestId(
       "massAttendanceChart"

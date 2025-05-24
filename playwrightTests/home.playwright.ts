@@ -17,14 +17,20 @@ test("takes me to the about page when I click on about", async ({ page }) => {
   expect(aboutHeading).toBeInViewport;
 });
 
-test("takes me to the Mass Attendance page when I click on the Mass Attendance skeleton", async ({
-  page,
-}) => {
-  await page.goto("http://localhost:3000/");
+const dataPages = ["massAttendance"];
 
-  const massAttendanceLink = page.getByTestId("massAttendanceLink");
+dataPages.forEach((dataPage) => {
+  test(`takes me to the ${dataPage} page when I click on the ${dataPage} skeleton`, async ({
+    page,
+  }) => {
+    await page.goto("http://localhost:3000/");
 
-  await massAttendanceLink.click();
+    const pageLink = page.getByTestId(`${dataPage}Link`);
 
-  await expect(page).toHaveURL("http://localhost:3000/MassAttendance");
+    await pageLink.click();
+
+    await expect(page).toHaveURL(`http://localhost:3000/${dataPage}`);
+    const aboutHeading = page.getByText("About the Catholic Data Dashboard");
+    expect(aboutHeading).toBeInViewport;
+  });
 });
