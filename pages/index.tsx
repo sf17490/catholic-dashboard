@@ -83,26 +83,7 @@ export default function Home() {
           <div>
             <SkeletonChart />
           </div>
-          <DynamicMakeAChart
-            heading="Average Sunday Mass Attendance"
-            contextParagraph="Average number of people attending Sunday Mass in the Diocese of Nottingham from September 2013. All data is sourced from the Catholic Directory entry for that year. Read more about the sources we use here."
-            lineGraphData={myLineGraphProps}
-          />
         </div>
-      </div>
-
-      <div className={styles.marginalisedBody}>
-        <h2
-          role={"sectionHeader"}
-          className={"govuk-heading-l govuk-!-margin-bottom-4"}
-        >
-          Baptisms
-        </h2>
-        <DynamicMakeAChart
-          heading="Another section"
-          contextParagraph="Some context will go here"
-          lineGraphData={myLineGraphProps}
-        />
       </div>
 
       <div className={styles.marginalisedBody}>

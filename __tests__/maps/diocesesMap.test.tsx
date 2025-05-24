@@ -11,7 +11,7 @@ import {
   displayBaseMap,
   displayDiocesesLayer,
 } from "@/pages/components/maps/DiocesesMap";
-import { TileLayer, Polygon, MapContainer } from "react-leaflet";
+import { TileLayer, Polygon } from "react-leaflet";
 
 import DiocesesMap from "@/pages/components/maps/DiocesesMap";
 

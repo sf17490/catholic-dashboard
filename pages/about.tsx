@@ -1,26 +1,11 @@
-import Link from "next/link";
 import React from "react";
 import DashboardFooter from "./components/DashboardFooter";
+import NavBar from "./components/NavBar";
 
 function About() {
   return (
     <div>
-      <title>UK Catholic Dashboard</title>
-      <header className="govuk-header border-none" data-testid="headerSection">
-        <div className="relative">
-          <div className="govuk-width-container relative flow-root">
-            <div className="govuk-header__content govuk-!-padding-top-2 inline w-auto">
-              <Link
-                data-testid="homePageLink"
-                href="/"
-                className="govuk-header__link govuk-header__service-name"
-              >
-                Catholic Data Dashboard
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <NavBar />
       <div className="m-10">
         <h1 data-testid="aboutPageTitle" className="govuk-heading-xl">
           About

@@ -7,9 +7,7 @@ import "@testing-library/jest-dom";
 import {
   render,
   screen,
-  fireEvent,
-  waitFor,
-  getByText,
+  fireEvent
 } from "@testing-library/react";
 
 import { displayDiocesesLayer } from "@/pages/components/maps/DiocesesMap";
