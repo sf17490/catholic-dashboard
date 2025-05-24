@@ -6,6 +6,7 @@ test("has the correct title", async ({ page }) => {
   await expect(page).toHaveTitle(/UK Catholic Dashboard/);
 });
 
+
 test("takes me to the home page when I click on the heading", async ({ page }) => {
   await page.goto("http://localhost:3000/about");
 
@@ -13,6 +14,7 @@ test("takes me to the home page when I click on the heading", async ({ page }) =
 
   await aboutLink.click();
 
+  await expect(page).toHaveURL("http://localhost:3000/")
   const homePageSubheading = page.getByText("Showing Catholic data across England & Wales");
   expect(homePageSubheading).toBeInViewport;
 });
