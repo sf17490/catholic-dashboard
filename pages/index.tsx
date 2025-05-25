@@ -44,7 +44,7 @@ export default function Home() {
               <SkeletonChart
                 rootTestId="conversions"
                 heading="Conversions"
-                subheader="Adult Receptions into the Church by year"
+                subheader="Receptions into the Church by year"
                 href="conversions"
               />
             </div>

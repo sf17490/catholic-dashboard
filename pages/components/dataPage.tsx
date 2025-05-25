@@ -2,7 +2,7 @@ import React from "react";
 import DashboardFooter from "./DashboardFooter";
 import NavBar from "./NavBar";
 import MakeAChart from "@/pages/components/MakeAChart";
-import { getData, SimpleDb } from "@/data/nationalStats";
+import { getNationalData } from "@/data/nationalStats";
 import { DbKey } from "@/data/enums";
 
 export type DataPageProps = {
@@ -11,9 +11,8 @@ export type DataPageProps = {
   dataKey: DbKey
 };
 
-const test = "nationalConversions"
-
 function DataPage({heading, accuracyComment, dataKey}:DataPageProps) {
+  const nationalData = getNationalData(dataKey)
   return (
     <div>
       <NavBar />
@@ -24,10 +23,10 @@ function DataPage({heading, accuracyComment, dataKey}:DataPageProps) {
         <b>Note on Accuracy of Data</b>
         <p>{accuracyComment}</p>
         <div data-testid="massAttendanceChart">
-          <MakeAChart
-            heading="Typical Sunday Mass Attendance"
-            contextParagraph="Typical number of people attending Sunday Mass in England & Wales"
-            lineGraphData={getData(dataKey)}
+           <MakeAChart
+            heading={nationalData.chartData.heading}
+            contextParagraph={nationalData.chartData.contextParagraph}
+            lineGraphData={nationalData.chartData.lineGraphData}
           />
         </div>
       </div>
