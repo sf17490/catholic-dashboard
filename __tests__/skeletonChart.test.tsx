@@ -6,9 +6,10 @@ const dummySkeletonProps = {
   rootTestId: "someTestId",
   heading: "someHeading",
   subheader: "someSubheader",
+  href: "someHref"
 };
 
-describe("Make a chart", () => {
+describe("Skeleton Chart", () => {
   it("correctly renders a heading", () => {
     render(<SkeletonChart {...dummySkeletonProps} />);
     const heading = screen.getByRole("skeletonHeader");
