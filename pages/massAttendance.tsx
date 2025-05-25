@@ -16,7 +16,7 @@ function MassAttendance() {
     <DataPage
       heading="Mass Attendance"
       accuracyComment={massAttendanceAccuracyComment}
-      //TODO: Pass in graph data here
+      dataKey="nationalMassAttendance"
     />
   );
 }
