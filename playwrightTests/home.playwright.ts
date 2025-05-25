@@ -17,7 +17,7 @@ test("takes me to the about page when I click on about", async ({ page }) => {
   expect(aboutHeading).toBeInViewport;
 });
 
-const dataPages = ["massAttendance"];
+const dataPages = ["massAttendance", "conversions"];
 
 dataPages.forEach((dataPage) => {
   test(`takes me to the ${dataPage} page when I click on the ${dataPage} skeleton`, async ({

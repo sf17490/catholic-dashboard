@@ -37,13 +37,15 @@ export default function Home() {
                 rootTestId="massAttendance"
                 heading="Mass Attendance"
                 subheader="Sunday Mass attendance by year"
+                href="massAttendance"
               />
             </div>
             <div>
               <SkeletonChart
                 rootTestId="conversions"
                 heading="Conversions"
-                subheader="Adult Receptions into the Church by year"
+                subheader="Receptions into the Church by year"
+                href="conversions"
               />
             </div>
           </div>

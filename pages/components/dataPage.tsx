@@ -2,22 +2,17 @@ import React from "react";
 import DashboardFooter from "./DashboardFooter";
 import NavBar from "./NavBar";
 import MakeAChart from "@/pages/components/MakeAChart";
-
-const myLineGraphProps = {
-  yAxisLabel: "Number attending Mass",
-  yAxisValues: [1005522, 885169, 712909, 390236, 503008],
-  xAxisLabel: "Year",
-  xAxisValues: [1999, 2008, 2018, 2021, 2022],
-};
+import { getNationalData } from "@/data/nationalStats";
+import { DbKey } from "@/data/enums";
 
 export type DataPageProps = {
   heading: string;
   accuracyComment: string
-//   contextParagraph: string;
-//   lineGraphData: LineGraphProps;
+  dataKey: DbKey
 };
 
-function DataPage({heading, accuracyComment}:DataPageProps) {
+function DataPage({heading, accuracyComment, dataKey}:DataPageProps) {
+  const nationalData = getNationalData(dataKey)
   return (
     <div>
       <NavBar />
@@ -28,10 +23,10 @@ function DataPage({heading, accuracyComment}:DataPageProps) {
         <b>Note on Accuracy of Data</b>
         <p>{accuracyComment}</p>
         <div data-testid="massAttendanceChart">
-          <MakeAChart
-            heading="Typical Sunday Mass Attendance"
-            contextParagraph="Typical number of people attending Sunday Mass in England & Wales"
-            lineGraphData={myLineGraphProps}
+           <MakeAChart
+            heading={nationalData.chartData.heading}
+            contextParagraph={nationalData.chartData.contextParagraph}
+            lineGraphData={nationalData.chartData.lineGraphData}
           />
         </div>
       </div>
