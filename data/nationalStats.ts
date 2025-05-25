@@ -19,7 +19,8 @@ const nationalConversions: LineGraphProps = {
 const nationalConversionsData: NationalData = {
   chartData: {
     heading: "Conversions to Catholicism in England & Wales",
-    contextParagraph: "Receptions into the Catholic Church in England & Wales (Is this adults only?)",
+    contextParagraph:
+      "Receptions into the Catholic Church in England & Wales (Is this adults only?)",
     lineGraphData: nationalConversions,
   },
 };
@@ -34,27 +35,17 @@ const nationalMassAttendance: LineGraphProps = {
 const nationalMassAttendanceData: NationalData = {
   chartData: {
     heading: "Typical Sunday Mass Attendance",
-    contextParagraph: "Typical number of people attending Sunday Mass in England & Wales",
+    contextParagraph:
+      "Typical number of people attending Sunday Mass in England & Wales",
     lineGraphData: nationalMassAttendance,
   },
 };
 
-
-
-export const SimpleDb2 = {
-  nationalConversions: nationalConversionsData,
-  nationalMassAttendance: nationalMassAttendanceData
-}
-
-export function getNationalData(keyName: DbKey){
-  return SimpleDb2[keyName]
-}
-
 export const SimpleDb = {
-  nationalMassAttendance: nationalMassAttendance,
-  nationalConversions: nationalConversions,
+  nationalConversions: nationalConversionsData,
+  nationalMassAttendance: nationalMassAttendanceData,
 };
 
-export function getData(keyName: DbKey) {
+export function getNationalData(keyName: DbKey) {
   return SimpleDb[keyName];
 }
