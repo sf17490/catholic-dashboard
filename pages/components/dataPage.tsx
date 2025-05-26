@@ -4,12 +4,16 @@ import NavBar from "./NavBar";
 import MakeAChart from "@/pages/components/MakeAChart";
 import { getNationalData } from "@/data/nationalStats";
 import { DbKey } from "@/data/enums";
+import PlotMultipleLinesGraph from "./PlotMultipleLinesGraph";
+import { getDioceseData } from "@/data/dioceseStats";
 
 export type DataPageProps = {
   heading: string;
   accuracyComment: string
   dataKey: DbKey
 };
+
+const oneDioceseData = getDioceseData("Birmingham")
 
 function DataPage({heading, accuracyComment, dataKey}:DataPageProps) {
   const nationalData = getNationalData(dataKey)
@@ -29,6 +33,7 @@ function DataPage({heading, accuracyComment, dataKey}:DataPageProps) {
             lineGraphData={nationalData.chartData.lineGraphData}
           />
         </div>
+        
       </div>
 
       <DashboardFooter />
