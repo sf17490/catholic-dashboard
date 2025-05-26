@@ -30,4 +30,12 @@ describe("Mass Attendance page", () => {
 
     await expect(massAttendanceSection).toBeInTheDocument();
   });
+
+  it("inlcudes a section breaking down the statistics by Diocese", ()=>{
+    render(<MassAttendance />);
+
+    const diocesesSection = screen.getByTestId("massAttendanceByDioceseSection")
+
+    expect(diocesesSection).toBeInTheDocument();
+  })
 });

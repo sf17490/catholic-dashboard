@@ -20,7 +20,7 @@ const DynamicPlotMultipleLinesGraph = dynamic(
 
 export default function MakeAComplexChart() {
   return (
-    <div>
+    <div data-testid="MAByDioceseChart">
       <p>This is the complex chart. </p>
       <div data-testid="complexChartContainer">
         <DynamicPlotMultipleLinesGraph
