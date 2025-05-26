@@ -64,10 +64,10 @@ export default function MakeAChart({
           />
         </div>
       </div>
-      <div>
+      {/* <div>
         <p>Test graph:</p>
-        <DynamicPlotMultipleLinesGraph yAxisLabel="Number attending Mass" xAxisLabel="Year" data={SimpleDioceseDb.dioceseMassAttendances}  />
-      </div>
+        <DynamicPlotMultipleLinesGraph yAxisLabel="Number attending Mass" xAxisLabel="Year" data={SimpleDioceseDb.diocesesData}  />
+      </div> */}
     </div>
   );
 }

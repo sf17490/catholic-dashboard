@@ -1,9 +1,6 @@
 import Plot from "react-plotly.js";
 import { Data, Datum } from "plotly.js";
-import {
-  MultiLineGraphProps,
-  SimpleDioceseDb,
-} from "@/data/dioceseStats";
+import { MultiLineGraphProps } from "@/data/dioceseStats";
 import { CleanedDioceseName } from "@/data/enums";
 
 export type LineGraphProps = {
@@ -12,10 +9,6 @@ export type LineGraphProps = {
   xAxisLabel: string;
   xAxisValues: Datum[];
 };
-
-const allDioceseData = convertToPlotLineData(
-  SimpleDioceseDb.dioceseMassAttendances
-);
 
 function convertToPlotLineData(
   dbData: Record<CleanedDioceseName, MultiLineGraphProps>
@@ -33,8 +26,7 @@ function convertToPlotLineData(
   });
 }
 
-//TODO: Give this better name, its too similar to multli line graph props
-export type MutliLineChartProps = {
+export type MutliDioceseChartProps = {
   yAxisLabel: string;
   xAxisLabel: string;
   data: Record<CleanedDioceseName, MultiLineGraphProps>;
@@ -45,8 +37,9 @@ export default function PlotMultipleLinesGraph({
   yAxisLabel,
   xAxisLabel,
   data,
-}: MutliLineChartProps) {
-  const plotLineData:Data[] = convertToPlotLineData(data);
+}: MutliDioceseChartProps) {
+  const plotLineData: Data[] = convertToPlotLineData(data);
+  console.log(plotLineData);
 
   return (
     <div data-testid="plottedLineGraph">

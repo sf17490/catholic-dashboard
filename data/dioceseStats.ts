@@ -1,17 +1,15 @@
 import { Datum } from "plotly.js";
-import { CleanedDioceseName, DbKey, DioceseName } from "./enums";
-import { LineGraphProps } from "@/pages/components/PlotALineGraph";
+import { CleanedDioceseName, DioceseName } from "./enums";
 
-interface DioceseData {
-  chartData: {
-    heading: string;
-    contextParagraph: string;
-    lineGraphData: LineGraphProps;
-  };
-}
-//CHANGEME to use full list
-const briefDioceseList = ["Arundel_and_Brighton", "Birmingham"] as const;
-type briefCleanedDioceseName = (typeof briefDioceseList)[number];
+//Brief list is for testing only
+const briefDioceseList = [
+  "Arundel_and_Brighton",
+  "Birmingham",
+  "Brentwood",
+  "Westminster",
+  "Wrexham",
+] as const;
+export type BriefCleanedDioceseName = (typeof briefDioceseList)[number];
 
 type DetailedLineGraphProps = {
   yAxisLabel: string;
@@ -32,11 +30,7 @@ export type MultiLineGraphProps = {
   //massAttendanceRelative1999: ChartData
 };
 
-//stop exporting this?
- const dioceseMassAttendances: Record<
-  CleanedDioceseName,
-  MultiLineGraphProps
-> = {
+const diocesesData: Record<CleanedDioceseName, MultiLineGraphProps> = {
   Arundel_and_Brighton: {
     name: "Arundel & Brighton",
     massAttendance: {
@@ -47,7 +41,7 @@ export type MultiLineGraphProps = {
         xAxisValues: [1999, 2008, 2018, 2021, 2022],
         markerColour: "blue",
       },
-    }
+    },
   },
   Birmingham: {
     name: "Birmingham",
@@ -76,33 +70,38 @@ export type MultiLineGraphProps = {
   Westminster: {
     name: "Westminster",
     massAttendance: {
-         lineGraphData: {
+      lineGraphData: {
         yAxisLabel: "Number attending Mass",
-        yAxisValues: [154042, 151668, 127340, 74308,90202],
+        yAxisValues: [154042, 151668, 127340, 74308, 90202],
         xAxisLabel: "Year",
         xAxisValues: [1999, 2008, 2018, 2021, 2022],
         markerColour: "purple",
       },
     },
   },
-  Wrexham:{
+  Wrexham: {
     name: "Wrexham",
-    massAttendance:{
-         lineGraphData: {
+    massAttendance: {
+      lineGraphData: {
         yAxisLabel: "Number attending Mass",
-        yAxisValues: [8638,7500,5142,2602,3702],
+        yAxisValues: [8638, 7500, 5142, 2602, 3702],
         xAxisLabel: "Year",
         xAxisValues: [1999, 2008, 2018, 2021, 2022],
         markerColour: "pink",
       },
-    }
-  }
+    },
+  },
 };
 
 export const SimpleDioceseDb = {
-  dioceseMassAttendances: dioceseMassAttendances,
+  diocesesData: diocesesData,
 };
 
-export function getDioceseData(keyName: briefCleanedDioceseName) {
-  return SimpleDioceseDb.dioceseMassAttendances[keyName];
+//TODO: This may be able to be deleted as we can access the json directly 
+export function getPlotLineData(diocese: CleanedDioceseName) {
+  return Object.values(
+    SimpleDioceseDb.diocesesData[diocese].massAttendance
+  ).map((dioceseLineProps) => {
+    return dioceseLineProps;
+  })[0];
 }
