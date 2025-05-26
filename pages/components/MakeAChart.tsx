@@ -1,11 +1,8 @@
-import PlotALineGraph from "./PlotALineGraph";
 import { LineGraphProps } from "./PlotALineGraph";
 
 import styles from "../../styles/MakeAChart.module.scss";
 
 import dynamic from "next/dynamic";
-import { SimpleDioceseDb } from "@/data/dioceseStats";
-import { Data } from "plotly.js";
 
 const DynamicPlotALineGraph = dynamic(
   () => import("@/pages/components/PlotALineGraph"),
@@ -64,10 +61,6 @@ export default function MakeAChart({
           />
         </div>
       </div>
-      {/* <div>
-        <p>Test graph:</p>
-        <DynamicPlotMultipleLinesGraph yAxisLabel="Number attending Mass" xAxisLabel="Year" data={SimpleDioceseDb.diocesesData}  />
-      </div> */}
     </div>
   );
 }

@@ -39,7 +39,6 @@ export default function PlotMultipleLinesGraph({
   data,
 }: MutliDioceseChartProps) {
   const plotLineData: Data[] = convertToPlotLineData(data);
-  console.log(plotLineData);
 
   return (
     <div data-testid="plottedLineGraph">
