@@ -11,13 +11,6 @@ const DynamicHoverMap = dynamic(
   }
 );
 
-const DynamicDiocesesMap = dynamic(
-  () => import("@/pages/components/maps/DiocesesMap"),
-  {
-    ssr: false,
-  }
-);
-
 export default function Home() {
   console.log("Ora pro nobis, Carlo");
   return (
@@ -52,13 +45,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.marginalisedBody}>
+      {/* <div className={styles.marginalisedBody}>
         <DynamicHoverMap />
-      </div>
-
-      <div data-testid={"mapDiv"} className={styles.marginalisedBody}>
-        <DynamicDiocesesMap />
-      </div>
+      </div> */}
       <DashboardFooter />
     </div>
   );
