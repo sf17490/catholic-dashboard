@@ -17,11 +17,8 @@ function HomePageHeader() {
           <Link
             data-testid="aboutLink"
             href="about"
-            className={
-              "govuk-footer__link pt-2.5 text-[var(--colour-offwhite)]"
-            }
           >
-            What is the Data Dashboard?
+            <u className="pt-2.5 text-[var(--colour-offwhite)]">What is the Catholic Data Dashboard?</u>
           </Link>
 
           <p
