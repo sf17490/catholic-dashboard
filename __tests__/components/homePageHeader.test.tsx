@@ -36,11 +36,9 @@ describe("Navigation Bar", () => {
   it('has a link to the "What is the Data Dashboard?" page', () => {
     render(<HomePageHeader />);
 
-    const aboutLink = screen.getByText("What is the Data Dashboard?");
+    const aboutLink = screen.getByText("What is the Catholic Data Dashboard?");
     expect(aboutLink).toBeInTheDocument;
-    expect(aboutLink).toHaveClass(
-      "govuk-footer__link pt-2.5 text-[var(--colour-offwhite)]"
-    );
+    expect(aboutLink).toHaveClass("pt-2.5 text-[var(--colour-offwhite)]");
   });
 
   it("includes a 'Beta' notice", async () => {

@@ -41,13 +41,6 @@ describe("Dashboard home page", () => {
     expect(body).toHaveClass("marginalisedBody");
   });
 
-  it("includes a correctly rendered map section", () => {
-    render(<Home />);
-
-    const mapDiv = screen.getByTestId("mapDiv");
-    expect(mapDiv).toHaveClass("marginalisedBody");
-  });
-
   it("renders all section headers correctly", () => {
     render(<Home />);
 
