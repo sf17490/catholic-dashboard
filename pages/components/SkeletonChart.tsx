@@ -8,6 +8,14 @@ export type SkeletonProps = {
   href: string;
 };
 
+function setImage(rootTestId:String){
+  if(rootTestId=="conversions"){
+    return "images/minimalist_National_Conversions.png"
+  }else{
+    return "images/minimalist_National_Mass_Attendance.png"
+  }
+}
+
 export default function SkeletonChart({
   rootTestId,
   heading,
@@ -31,8 +39,8 @@ export default function SkeletonChart({
           <p role={"skeletonSubheader"}>{subheader}</p>
         </div>
         <img
-          data-testid={"skeletonGraph"}
-          src="/images/minimalist_National_Mass_Attendance.png"
+          data-testid={`${rootTestId}SkeletonGraph`}
+          src={setImage(rootTestId)}
           className={styles.chartContainer}
         />
       </Link>
