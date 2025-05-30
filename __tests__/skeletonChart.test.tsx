@@ -30,22 +30,29 @@ describe("Skeleton Chart", () => {
     expect(screen.getByTestId("someTestIdLink")).toBeInTheDocument;
   });
 
-  it("has a skeleton graph outline", () => {
-    render(<SkeletonChart {...dummySkeletonProps} />);
-    const skeletonSection = screen.getByTestId("skeletonGraph");
+  it("sets the correct outline image for the massAttendance skeleton", ()=>{
 
-    expect(skeletonSection).toBeInTheDocument();
-  });
+        render(<SkeletonChart {...{...dummySkeletonProps, rootTestId:"massAttendance"}} />);
 
-  it("uses the national Mass Attendance outline (for now)", () => {
-    render(<SkeletonChart {...dummySkeletonProps} />);
-
-    const outline = screen.getByTestId("skeletonGraph");
+        const outline = screen.getByTestId("massAttendanceSkeletonGraph");
     expect(outline).toHaveAttribute(
       "src",
-      "/images/minimalist_National_Mass_Attendance.png"
+      "images/minimalist_National_Mass_Attendance.png"
     );
-  });
+
+  })
+
+  it("sets the correct outline image for the conversions skeleton", ()=>{
+
+        render(<SkeletonChart {...{...dummySkeletonProps, rootTestId:"conversions"}} />);
+
+        const outline = screen.getByTestId("conversionsSkeletonGraph");
+    expect(outline).toHaveAttribute(
+      "src",
+      "images/minimalist_National_Conversions.png"
+    );
+
+  })
 
   test.todo(
     "correct the above test to not give every skeleton the same outline"
