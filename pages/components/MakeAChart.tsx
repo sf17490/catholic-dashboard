@@ -11,7 +11,6 @@ const DynamicPlotALineGraph = dynamic(
     ssr: false,
     loading: () => (
       <img data-testid="placeholderChartImage"
-      //src="https://www.whatspaper.com/wp-content/uploads/2022/01/shrek-wallpaper-whatspaper-2.jpg"
       src="images/minimalist_National_Mass_Attendance.png" 
       //TODO: pass placeholder image based on topic of page and test accordingly! 
       width="50%"/>
