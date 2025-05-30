@@ -24,7 +24,7 @@ export default function Home() {
           >
             Headlines
           </h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div data-testid="skeletonContainer" className="mb-3 grid gap-4 sm:mb-6 md:grid-cols-[1fr_1fr]">
             <div>
               <SkeletonChart
                 rootTestId="massAttendance"

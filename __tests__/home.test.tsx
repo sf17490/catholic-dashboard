@@ -35,6 +35,12 @@ describe("Dashboard home page", () => {
     });
   });
 
+  it("gives the skeleton container the correct class", ()=>{
+    render(<Home />)
+    const skeletonContainer = screen.getByTestId("skeletonContainer")
+    expect(skeletonContainer).toHaveClass(" mb-3 grid gap-4 sm:mb-6 md:grid-cols-[1fr_1fr]")
+  })
+
   it("gives the body the correct class", () => {
     render(<Home />);
     const body = screen.getByRole("body");
