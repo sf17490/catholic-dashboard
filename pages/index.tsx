@@ -17,7 +17,7 @@ export default function Home() {
     <div>
       <HomePageHeader />
       <div role={"body"} className={styles.marginalisedBody}>
-        <div data-testid={"massAttendanceSection"}>
+        <div>
           <h2
             role={"sectionHeader"}
             className={"govuk-heading-l govuk-!-margin-bottom-4"}
