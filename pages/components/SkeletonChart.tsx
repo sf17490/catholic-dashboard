@@ -1,5 +1,4 @@
 import Link from "next/link";
-import styles from "../../styles/Skeleton.module.scss";
 
 export type SkeletonProps = {
   rootTestId: string;
