@@ -8,11 +8,11 @@ export type SkeletonProps = {
   href: string;
 };
 
-function setImage(rootTestId:String){
-  if(rootTestId=="conversions"){
-    return "images/minimalist_National_Conversions.png"
-  }else{
-    return "images/minimalist_National_Mass_Attendance.png"
+function setImage(rootTestId: String) {
+  if (rootTestId == "conversions") {
+    return "images/minimalist_National_Conversions.png";
+  } else {
+    return "images/minimalist_National_Mass_Attendance.png";
   }
 }
 
@@ -20,14 +20,14 @@ export default function SkeletonChart({
   rootTestId,
   heading,
   subheader,
-  href
+  href,
 }: SkeletonProps) {
   return (
     <div data-testid={`${rootTestId}Skeleton`} className="w-full">
       <Link
         data-testid={`${rootTestId}Link`}
         href={href}
-        className="govuk-!-padding-4 ukhsa-chart-card relative flex flex-col bg-[var(--colour-chart-background)] no-underline transition-colors duration-200 ukhsa-focus hover:bg-[var(--colour-chart-background-hover)] focus:bg-[var(--colour-chart-background-hover)]"
+        className="govuk-!-padding-4 relative flex flex-col bg-[var(--colour-chart-background)] hover:bg-[var(--colour-chart-background-hover)] transition-colors duration-200 focus:bg-[var(--colour-chart-background-hover)] "
       >
         <div data-testid={"context"}>
           <h2
@@ -41,7 +41,6 @@ export default function SkeletonChart({
         <img
           data-testid={`${rootTestId}SkeletonGraph`}
           src={setImage(rootTestId)}
-          className={styles.chartContainer}
         />
       </Link>
     </div>
