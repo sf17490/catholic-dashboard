@@ -54,16 +54,6 @@ describe("Skeleton Chart", () => {
 
   })
 
-  // it("uses the national Mass Attendance outline (for now)", () => {
-  //   render(<SkeletonChart {...dummySkeletonProps} />);
-
-  //   const outline = screen.getByTestId("skeletonGraph");
-  //   expect(outline).toHaveAttribute(
-  //     "src",
-  //     "/images/minimalist_National_Mass_Attendance.png"
-  //   );
-  // });
-
   test.todo(
     "correct the above test to not give every skeleton the same outline"
   );
