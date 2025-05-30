@@ -75,7 +75,7 @@ export default function PlotALineGraph({yAxisLabel, yAxisValues, xAxisLabel, xAx
 //         ]}
 //         layout={{
 //           autosize: true,
-//           margin: { t: 50, b: 30, l: 50, r: 30 },
+//           margin: { t: 50, b: 30, l: 50, r: 30 }, //adjust the l margin to suit the width of the label
 //           xaxis: {
 //             title: {
 //               //text: xAxisLabel,
