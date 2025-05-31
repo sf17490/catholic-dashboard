@@ -21,7 +21,6 @@ describe("Home page footer", () => {
     const UKHSAlink = screen.getByTestId("UKHSAlink");
     expect(UKHSAlink).toBeInTheDocument();
     expect(UKHSAlink).toHaveClass("govuk-footer__link");
-    //TODO: Make a more interesting test where the user clicks on the link and checks that we don't get a 404
   });
 
   it("gives the correct margin to the info in the footer", () => {
@@ -39,5 +38,4 @@ describe("Home page footer", () => {
     expect(licenceLink).toHaveAttribute("href", "https://github.com/sf17490/catholic-dashboard")
   });
 
- 
 });
