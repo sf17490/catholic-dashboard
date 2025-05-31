@@ -7,12 +7,17 @@ import { DbKey } from "@/data/enums";
 
 export type DataPageProps = {
   heading: string;
-  rootTestId: string,
+  rootTestId: string;
   accuracyComment: string;
   dataKey: DbKey;
 };
 
-function DataPage({ heading, rootTestId, accuracyComment, dataKey }: DataPageProps) {
+function DataPage({
+  heading,
+  rootTestId,
+  accuracyComment,
+  dataKey,
+}: DataPageProps) {
   const nationalData = getNationalData(dataKey);
   return (
     <div>
@@ -21,27 +26,30 @@ function DataPage({ heading, rootTestId, accuracyComment, dataKey }: DataPagePro
         <h1 data-testid={`${rootTestId}PageTitle`} className="govuk-heading-xl">
           {heading}
         </h1>
-         <div data-testid="citation">
+        <div data-testid="citation">
           <b>Citation</b>
           <p data-testid="citationText">
             The data on this page comes from{" "}
             <i>
-              <a data-testid="citationLink" className="govuk-link" href="https://www.crs.org.uk/catholicism-in-numbers">
+              <a
+                data-testid="citationLink"
+                className="govuk-link"
+                href="https://www.crs.org.uk/catholicism-in-numbers"
+              >
                 Catholicism in Numbers
               </a>
             </i>
             , a project by the Catholic Record Society.
-            {
-              // Move this to bibliography in About section
-              /* Source:{" "}
-          <i>"Catholicism in Numbers." </i>
-          Catholic Record Society,
-          https://www.crs.org.uk/catholicism-in-numbers. Accessed 31 May 2025.{" "} */
-            }
           </p>
         </div>
-        <b>Note on Accuracy of Data</b>
-        <p>{accuracyComment}</p>
+        {accuracyComment.length > 0 ? (
+          <div data-testid={`${rootTestId}Accuracy`}>
+            <b>Note on Accuracy of Data</b>
+            <p>{accuracyComment}</p>
+          </div>
+        ) : (
+          ""
+        )}
         <div data-testid={`${rootTestId}Chart`}>
           <MakeAChart
             heading={nationalData.chartData.heading}
@@ -50,7 +58,6 @@ function DataPage({ heading, rootTestId, accuracyComment, dataKey }: DataPagePro
           />
         </div>
       </div>
-
       <DashboardFooter />
     </div>
   );

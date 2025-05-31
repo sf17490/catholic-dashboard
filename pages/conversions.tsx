@@ -1,7 +1,7 @@
 import React from "react";
 import DataPage from "./components/dataPage";
 
-const conversionsAccuracyComment = "A comment about conversions accuracy."
+const conversionsAccuracyComment = ""
 
 function Conversions() {
   return (
