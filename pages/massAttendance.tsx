@@ -8,6 +8,7 @@ function MassAttendance() {
   return (
     <DataPage
       heading="Mass Attendance"
+      rootTestId="massAttendance"
       accuracyComment={massAttendanceAccuracyComment}
       dataKey="nationalMassAttendance"
     />
