@@ -11,6 +11,20 @@ export default function DashboardFooter() {
           >
             UKHSA Dashboard.
           </a>
+          {" "}  Styling reproduced under the  <a
+            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            data-testid="govLicenceLink"
+            className="govuk-footer__link"
+          >
+             Open Government Licence v3.0
+          </a>. 
+          {" "} All our code is <a
+            href="https://github.com/sf17490/catholic-dashboard"
+            data-testid="catholicDashboardGithub"
+            className="govuk-footer__link"
+          >
+             open-source
+          </a>.  
         </p>
       </div>
     </div>
