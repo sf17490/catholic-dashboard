@@ -2,46 +2,61 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
 import MassAttendance from "@/pages/massAttendance";
+import { JSX } from "react";
 
-describe("Mass Attendance page", () => {
-  it("includes a header", () => {
-    render(<MassAttendance />);
-    expect(screen.getByTestId("headerSection")).toBeInTheDocument;
-  });
+type TopicPage = [
+  pageName: string,
+  prettyPageName: string,
+  pageRenderer: JSX.Element
+];
+const topicPages: TopicPage[] = [
+  ["massAttendance", "Mass Attendance", <MassAttendance />],
+];
 
-  it("includes a footer", () => {
-    render(<MassAttendance />);
-    expect(screen.getByTestId("footing")).toBeInTheDocument;
-  });
+topicPages.forEach((page) => {
+  const [pageName, prettyPageName, pageRenderer] = page;
 
-  it("has the correct title", () => {
-    render(<MassAttendance />);
-    expect(screen.getByTestId("massAttendancePageTitle")).toHaveTextContent(
-      "Mass Attendance"
-    );
-  });
+  describe(`The ${prettyPageName} page`, () => {
+    it("includes a header", () => {
+      render(pageRenderer);
+      expect(screen.getByTestId("headerSection")).toBeInTheDocument();
+    });
 
-  it('includes a "Mass Attendance" component', async () => {
-    render(<MassAttendance />);
+    it("includes a footer", () => {
+      render(pageRenderer);
+      expect(screen.getByTestId("footing")).toBeInTheDocument();
+    });
 
-    const massAttendanceSection = await screen.findByTestId(
-      "massAttendanceChart"
-    );
+    it("has the correct title", () => {
+      render(pageRenderer);
+      expect(screen.getByTestId(`${pageName}PageTitle`)).toHaveTextContent(
+        prettyPageName
+      );
+    });
 
-    await expect(massAttendanceSection).toBeInTheDocument();
-  });
+    it("includes the correct chart for this topic", async () => {
+      render(pageRenderer);
 
-  it("cites the Catholic Record Society", async () => {
-    render(<MassAttendance />);
+      const massAttendanceSection = await screen.findByTestId(
+        `${pageName}Chart`
+      );
 
-    expect(screen.getByTestId("citation")).toBeInTheDocument();
-    expect(screen.getByTestId("citationText")).toHaveTextContent(
-      "The data on this page comes from Catholicism in Numbers, a project by the Catholic Record Society."
-    );
-    expect(screen.getByTestId("citationLink")).toHaveAttribute(
-      "href",
-      "https://www.crs.org.uk/catholicism-in-numbers"
-    );
-    expect(screen.getByTestId("citationLink")).toHaveClass("govuk-link");
+      expect(massAttendanceSection).toBeInTheDocument();
+    });
+
+    it("cites the Catholic Record Society", async () => {
+      render(pageRenderer);
+
+      expect(screen.getByTestId("citation")).toBeInTheDocument();
+      expect(screen.getByTestId("citationText")).toHaveTextContent(
+        "The data on this page comes from Catholicism in Numbers, a project by the Catholic Record Society."
+      );
+      const citationLink = screen.getByTestId("citationLink");
+      expect(citationLink).toHaveAttribute(
+        "href",
+        "https://www.crs.org.uk/catholicism-in-numbers"
+      );
+      expect(citationLink).toHaveClass("govuk-link");
+    });
   });
 });
