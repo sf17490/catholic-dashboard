@@ -20,7 +20,7 @@ const nationalConversionsData: NationalData = {
   chartData: {
     heading: "Conversions to Catholicism in England & Wales",
     contextParagraph:
-      "Receptions into the Catholic Church in England & Wales (Is this adults only?)",
+      "Receptions into the Catholic Church in England & Wales", //Is this adults only? 
     lineGraphData: nationalConversions,
   },
 };

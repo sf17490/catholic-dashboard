@@ -21,7 +21,7 @@ function DataPage({ heading, rootTestId, accuracyComment, dataKey }: DataPagePro
         <h1 data-testid={`${rootTestId}PageTitle`} className="govuk-heading-xl">
           {heading}
         </h1>
-         <div data-testId="citation">
+         <div data-testid="citation">
           <b>Citation</b>
           <p data-testid="citationText">
             The data on this page comes from{" "}
