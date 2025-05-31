@@ -5,19 +5,13 @@ import styles from "../../styles/MakeAChart.module.scss";
 
 import dynamic from "next/dynamic";
 
-const DynamicPlotALineGraph = dynamic(
-  () => import("@/pages/components/PlotALineGraph"),
-  {
-    ssr: false,
-    loading: () => (
-      <img data-testid="placeholderChartImage"
-      src="images/minimalist_National_Mass_Attendance.png" 
-      //TODO: pass placeholder image based on topic of page and test accordingly! 
-      width="50%"/>
-    
-    )
-  },
-);
+function setPlaceholderImage(pageName:string){
+  if(pageName.match(/Mass Attendance/)){
+    return "images/minimalist_National_Mass_Attendance.png" 
+  }else{
+    return "images/minimalist_National_Conversions.png"
+  }
+}
 
 export type ChartProps = {
   heading: string;
@@ -30,6 +24,20 @@ export default function MakeAChart({
   contextParagraph,
   lineGraphData,
 }: ChartProps) {
+
+const DynamicPlotALineGraph = dynamic(
+  () => import("@/pages/components/PlotALineGraph"),
+  {
+    ssr: false,
+    loading: () => (
+      <img data-testid="placeholderChartImage"
+      src={setPlaceholderImage(heading)}
+      width="50%"/>
+    
+    )
+  },
+);
+
   return (
     <div className={styles.chartContainer}>
       <div className={styles.chartContents}>
