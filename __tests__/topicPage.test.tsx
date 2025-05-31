@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import MassAttendance from "@/pages/massAttendance";
 import { JSX } from "react";
+import Conversions from "@/pages/conversions";
 
 type TopicPage = [
   pageName: string,
@@ -11,6 +12,7 @@ type TopicPage = [
 ];
 const topicPages: TopicPage[] = [
   ["massAttendance", "Mass Attendance", <MassAttendance />],
+  ["conversions", "Conversions", <Conversions />],
 ];
 
 topicPages.forEach((page) => {
@@ -37,11 +39,11 @@ topicPages.forEach((page) => {
     it("includes the correct chart for this topic", async () => {
       render(pageRenderer);
 
-      const massAttendanceSection = await screen.findByTestId(
+      const chartSection = await screen.findByTestId(
         `${pageName}Chart`
       );
 
-      expect(massAttendanceSection).toBeInTheDocument();
+      expect(chartSection).toBeInTheDocument();
     });
 
     it("cites the Catholic Record Society", async () => {

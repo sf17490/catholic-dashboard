@@ -7,17 +7,18 @@ import { DbKey } from "@/data/enums";
 
 export type DataPageProps = {
   heading: string;
+  rootTestId: string,
   accuracyComment: string;
   dataKey: DbKey;
 };
 
-function DataPage({ heading, accuracyComment, dataKey }: DataPageProps) {
+function DataPage({ heading, rootTestId, accuracyComment, dataKey }: DataPageProps) {
   const nationalData = getNationalData(dataKey);
   return (
     <div>
       <NavBar />
       <div className="m-10">
-        <h1 data-testid="massAttendancePageTitle" className="govuk-heading-xl">
+        <h1 data-testid={`${rootTestId}PageTitle`} className="govuk-heading-xl">
           {heading}
         </h1>
          <div data-testId="citation">
@@ -41,7 +42,7 @@ function DataPage({ heading, accuracyComment, dataKey }: DataPageProps) {
         </div>
         <b>Note on Accuracy of Data</b>
         <p>{accuracyComment}</p>
-        <div data-testid="massAttendanceChart">
+        <div data-testid={`${rootTestId}Chart`}>
           <MakeAChart
             heading={nationalData.chartData.heading}
             contextParagraph={nationalData.chartData.contextParagraph}

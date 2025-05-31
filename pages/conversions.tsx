@@ -7,6 +7,7 @@ function Conversions() {
   return (
     <DataPage
       heading="Conversions"
+      rootTestId="conversions"
       accuracyComment={conversionsAccuracyComment}
       dataKey="nationalConversions"
     />
