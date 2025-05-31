@@ -3,17 +3,16 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
 describe("Home page footer", () => {
-  it("has the correct class for the footer section", () => {
+  beforeEach(() => {
     render(<DashboardFooter />);
+  });
 
+  it("has the correct class for the footer section", () => {
     const footer = screen.getByTestId("footing");
-
     expect(footer).toHaveClass("govuk-footer");
   });
 
   it("credits the UKHSA Dashboard", () => {
-    render(<DashboardFooter />);
-
     const credit = screen.getByTestId("credit");
 
     expect(credit).toBeInTheDocument();
@@ -26,10 +25,7 @@ describe("Home page footer", () => {
   });
 
   it("gives the correct margin to the info in the footer", () => {
-    render(<DashboardFooter />);
-
     const footer = screen.getByTestId("footingInfoContainer");
-
     expect(footer).toHaveClass("ml-10");
   });
 });

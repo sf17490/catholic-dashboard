@@ -30,7 +30,15 @@ dataPages.forEach((dataPage) => {
     await pageLink.click();
 
     await expect(page).toHaveURL(`http://localhost:3000/${dataPage}`);
-    const aboutHeading = page.getByText("About the Catholic Data Dashboard");
-    expect(aboutHeading).toBeInViewport;
   });
+});
+
+  test("takes me to the UKHSA Dashboard when I click on its link in the footer", async ({ page }) => {
+  await page.goto("http://localhost:3000/");
+
+  const aboutLink = page.getByTestId("UKHSAlink");
+
+  await aboutLink.click();
+  
+  await expect(page).toHaveURL("https://ukhsa-dashboard.data.gov.uk/")
 });
