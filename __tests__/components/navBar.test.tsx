@@ -26,4 +26,9 @@ describe("Navigation Bar", () => {
       "Catholic Data Dashboard"
     );
   });
+
+  it("gives the title a margin of 10", () => {
+    render(<NavBar />);
+    expect(screen.getByTestId("homePageLinkContainer")).toHaveClass("ml-10");
+  });
 });
