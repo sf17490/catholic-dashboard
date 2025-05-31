@@ -22,6 +22,7 @@ const mockedChart = mocked(MakeAChart, { shallow: false });
 interface TopicPage {
   name: string;
   prettyName: string;
+  expectedAccuracyStatement: string;
   expectedChartTitle: string;
   expectedChartSubheading: string;
   expectedLineGraphData: LineGraphProps;
@@ -31,6 +32,8 @@ const topicPages: TopicPage[] = [
   {
     name: "massAttendance",
     prettyName: "Mass Attendance",
+    expectedAccuracyStatement:
+      "The accuracy with which attendance is counted may vary. A person may accidentally be counted twice and figures may overstate or understate where an estimate is required, such as at very large services or if mechanical means of counting fail. Additionally, approaches to counting may vary across churches in a diocese or nation.",
     expectedChartTitle: "Typical Sunday Mass Attendance",
     expectedChartSubheading:
       "Typical number of people attending Sunday Mass in England & Wales",
@@ -40,6 +43,7 @@ const topicPages: TopicPage[] = [
   {
     name: "conversions",
     prettyName: "Conversions",
+    expectedAccuracyStatement: "",
     expectedChartTitle: "Conversions to Catholicism in England & Wales",
     expectedChartSubheading:
       "Receptions into the Catholic Church in England & Wales",
@@ -119,5 +123,21 @@ topicPages.forEach((page) => {
       );
       expect(citationLink).toHaveClass("govuk-link");
     });
+  });
+});
+
+describe(`Unique stuff about the Mass attendance page`, () => {
+  it("advises the viewer about the accuracy of the data", () => {
+      render(<MassAttendance />);
+    expect(screen.getByTestId("massAttendanceAccuracy")).toHaveTextContent(
+      "The accuracy with which attendance is counted may vary. A person may accidentally be counted twice and figures may overstate or understate where an estimate is required, such as at very large services or if mechanical means of counting fail. Additionally, approaches to counting may vary across churches in a diocese or nation."
+    );
+  });
+});
+
+describe(`Unique stuff about the Conversions page`, () => {
+  it("should not include an accuracy statement", () => {
+    render(<Conversions />);
+    expect(screen.queryByTestId("conversionsAccuracy")).not.toBeInTheDocument();
   });
 });
