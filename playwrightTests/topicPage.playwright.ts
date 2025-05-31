@@ -28,5 +28,18 @@ pageAndImgUrls.forEach((pageAndImgUrl) => {
       await expect(plottedLineGraph).toBeVisible();
       await expect(placeHolderImage).not.toBeVisible();
     });
+
+    test("it provides a valid link to the Catholic Record Society", async ({
+      page,
+    }) => {
+      await page.goto(`http://localhost:3000/${pageTopic}`);
+      const citationLink = page.getByTestId("citationLink");
+      await citationLink.click();
+      await page.waitForURL("https://www.crs.org.uk/catholicism-in-numbers");
+      const expectedRecordSocietyPage = page.getByText(
+        "Towards Catholicism in Numbers by Timothea Kinnear"
+      );
+      await expect(expectedRecordSocietyPage).toBeVisible();
+    });
   });
 });
