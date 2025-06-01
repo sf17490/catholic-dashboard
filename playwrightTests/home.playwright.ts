@@ -30,7 +30,43 @@ dataPages.forEach((dataPage) => {
     await pageLink.click();
 
     await expect(page).toHaveURL(`http://localhost:3000/${dataPage}`);
-    const aboutHeading = page.getByText("About the Catholic Data Dashboard");
-    expect(aboutHeading).toBeInViewport;
   });
+});
+
+test("takes me to the UKHSA Dashboard when I click on its link in the footer", async ({
+  page,
+}) => {
+  await page.goto("http://localhost:3000/");
+
+  const aboutLink = page.getByTestId("UKHSAlink");
+
+  await aboutLink.click();
+
+  await expect(page).toHaveURL("https://ukhsa-dashboard.data.gov.uk/");
+});
+
+test("takes me to the Open Government Licence v3 when I click on its link in the footer", async ({
+  page,
+}) => {
+  await page.goto("http://localhost:3000/");
+
+  const aboutLink = page.getByTestId("govLicenceLink");
+
+  await aboutLink.click();
+
+  await expect(page).toHaveURL(
+    "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+  );
+});
+
+test("takes me to the Github repository when I click on its link in the footer", async ({
+  page,
+}) => {
+  await page.goto("http://localhost:3000/");
+
+  const aboutLink = page.getByTestId("dashboardGithubLink");
+
+  await aboutLink.click();
+
+  await expect(page).toHaveURL("https://github.com/sf17490/catholic-dashboard");
 });
