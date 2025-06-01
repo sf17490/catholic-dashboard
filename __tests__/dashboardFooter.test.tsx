@@ -30,12 +30,17 @@ describe("Home page footer", () => {
 
   it("links to the OpenGovernmentLicence v3", () => {
     const licenceLink = screen.getByTestId("govLicenceLink");
-    expect(licenceLink).toHaveAttribute("href", "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/")
+    expect(licenceLink).toHaveAttribute(
+      "href",
+      "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+    );
   });
 
-   it("links to the github repository", () => {
-    const licenceLink = screen.getByTestId("catholicDashboardGithub");
-    expect(licenceLink).toHaveAttribute("href", "https://github.com/sf17490/catholic-dashboard")
+  it("links to the github repository", () => {
+    const licenceLink = screen.getByTestId("dashboardGithubLink");
+    expect(licenceLink).toHaveAttribute(
+      "href",
+      "https://github.com/sf17490/catholic-dashboard"
+    );
   });
-
 });
