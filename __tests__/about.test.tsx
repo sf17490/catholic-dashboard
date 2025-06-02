@@ -20,4 +20,10 @@ describe("About page", () => {
         expect(screen.getByTestId("aboutPageTitle")).toHaveTextContent("About")
     })
 
+    //TODO: Combine this with specific assertions on the expected questions. 
+    it("has the expected text and formatting", ()=>{
+        const {asFragment} = render(<About />)
+        expect(asFragment()).toMatchSnapshot();
+    })
+
 });

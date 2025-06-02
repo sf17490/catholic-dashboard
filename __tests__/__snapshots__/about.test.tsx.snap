@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About page has the expected text and formatting 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <header
+        class="govuk-header"
+        data-testid="headerSection"
+      >
+        <div
+          class="ml-10"
+          data-testid="homePageLinkContainer"
+        >
+          <a
+            class="govuk-header__link govuk-header__service-name"
+            data-testid="homePageLink"
+            href="/"
+          >
+            Catholic Data Dashboard
+          </a>
+        </div>
+      </header>
+    </div>
+    <div
+      class="m-10"
+    >
+      <h1
+        class="govuk-heading-xl"
+        data-testid="aboutPageTitle"
+      >
+        About
+      </h1>
+      <p>
+        Last updated 1 June 2025
+      </p>
+      <div>
+        <h2
+          class="govuk-heading-l font-sans"
+        >
+           What is the Catholic Data Dashboard?
+        </h2>
+        <p
+          class="govuk-body"
+        >
+          The Catholic Data Dashboard is a dashboard measuring the Catholic Church's impact on England & Wales.
+        </p>
+        <p
+          class="govuk-body"
+        >
+          In particular, it displays data and trends concerning the church's success in ministering the sacraments. 
+        </p>
+        <p
+          class="govuk-body"
+        >
+          It helps answer questions such as:
+        </p>
+        <ul
+          class="govuk-list govuk-list--bullet"
+        >
+          <li>
+            How many people are attending Mass?
+          </li>
+          <li>
+            How many people is the church converting each year?
+          </li>
+          <li>
+            Is the Catholic Church growing or shrinking in England & Wales? 
+          </li>
+        </ul>
+        <p
+          class="govuk-body"
+        >
+          It seeks to answer questions like these in an easy-to-understand way.
+        </p>
+      </div>
+      <div>
+        <h2
+          class="govuk-heading-l"
+        >
+           Who is the dashboard for?
+        </h2>
+        <p
+          class="govuk-body"
+        >
+          As a Catholic interested in the health of the Catholic Church, I want to know if the church is growing or shrinking, so that I can plan accordingly. 
+        </p>
+        <p
+          class="govuk-body"
+        >
+          As a reader of newspaper reports about the Catholic Church, I want a comprehensive source of reliable statistics, so that I can put cherry-picked statistics into context.
+        </p>
+      </div>
+      <div>
+        <h2
+          class="govuk-heading-l"
+        >
+           Where does the data come from?
+        </h2>
+        <p
+          class="govuk-body"
+        >
+          All of the data used on this website is taken from 
+          <a
+            class="govuk-link"
+            href="https://www.crs.org.uk/catholicism-in-numbers"
+          >
+            <i>
+              Catholicism in Numbers
+            </i>
+          </a>
+          , a project by the Catholic Record Society, and in particular by Timothea Kinnear and Dr Alana Harris. 
+        </p>
+      </div>
+    </div>
+    <div
+      class="govuk-footer"
+      data-testid="footing"
+    >
+      <div
+        class="ml-10"
+        data-testid="footingInfoContainer"
+      >
+        <p
+          data-testid="credit"
+        >
+          Inspired by the 
+          <a
+            class="govuk-footer__link"
+            data-testid="UKHSAlink"
+            href="https://ukhsa-dashboard.data.gov.uk/"
+          >
+            UKHSA Dashboard.
+          </a>
+           Styling reproduced under the 
+          <a
+            class="govuk-footer__link"
+            data-testid="govLicenceLink"
+            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          >
+            Open Government Licence v3.0
+          </a>
+          . All our code is 
+          <a
+            class="govuk-footer__link"
+            data-testid="dashboardGithubLink"
+            href="https://github.com/sf17490/catholic-dashboard"
+          >
+            open-source
+          </a>
+          .
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
