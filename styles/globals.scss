@@ -59,8 +59,8 @@ h2{
   font-weight: 900;
 }
 
-p, i, h1, h2, h3{
-  font-family: "Arial"
+.no-gds-typeface * {
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 
