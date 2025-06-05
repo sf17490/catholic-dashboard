@@ -1,7 +1,7 @@
 import React from "react";
-import DataPage from "./components/dataPage";
+import DataPage from "../components/dataPage";
 
-const conversionsAccuracyComment = ""
+const conversionsAccuracyComment = "";
 
 function Conversions() {
   return (

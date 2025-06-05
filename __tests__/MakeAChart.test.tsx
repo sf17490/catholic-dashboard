@@ -1,5 +1,5 @@
 jest.mock("@/components/PlotALineGraph", () => ({
-   __esModule: true,
+  __esModule: true,
   default: jest.fn(() => <div data-testid="mocked-plot" />),
 }));
 
@@ -9,7 +9,7 @@ const mockedPlot = mocked(PlotALineGraph, { shallow: false });
 
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import MakeAChart, { ChartProps } from "@/pages/components/MakeAChart";
+import MakeAChart, { ChartProps } from "@/components/MakeAChart";
 
 beforeAll(() => {
   global.URL.createObjectURL = jest.fn(() => "mock-url");

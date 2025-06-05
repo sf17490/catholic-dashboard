@@ -1,7 +1,7 @@
 import styles from "../styles/Home.module.scss";
-import DashboardFooter from "./components/DashboardFooter";
-import SkeletonChart from "./components/SkeletonChart";
-import HomePageHeader from "./components/HomePageHeader";
+import DashboardFooter from "../components/DashboardFooter";
+import SkeletonChart from "../components/SkeletonChart";
+import HomePageHeader from "../components/HomePageHeader";
 
 export default function Home() {
   console.log("Ora pro nobis, Carlo");
@@ -16,7 +16,10 @@ export default function Home() {
           >
             Headlines
           </h2>
-          <div data-testid="skeletonContainer" className="mb-3 grid gap-4 sm:mb-6 md:grid-cols-[1fr_1fr]">
+          <div
+            data-testid="skeletonContainer"
+            className="mb-3 grid gap-4 sm:mb-6 md:grid-cols-[1fr_1fr]"
+          >
             <div>
               <SkeletonChart
                 rootTestId="massAttendance"

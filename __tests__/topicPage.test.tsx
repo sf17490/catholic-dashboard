@@ -1,4 +1,4 @@
-jest.mock("@/pages/components/MakeAChart", () => ({
+jest.mock("@/components/MakeAChart", () => ({
   __esModule: true,
   default: jest.fn(() => <div data-testid="mocked-chart" />),
 }));
@@ -11,7 +11,7 @@ import { JSX } from "react";
 import Conversions from "@/pages/conversions";
 
 import { mocked } from "jest-mock";
-import MakeAChart from "@/pages/components/MakeAChart";
+import MakeAChart from "@/components/MakeAChart";
 import { LineGraphProps } from "@/components/PlotALineGraph";
 import {
   expectedNationalConversionsLineGraphProps,

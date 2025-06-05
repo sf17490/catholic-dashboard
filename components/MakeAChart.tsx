@@ -1,6 +1,6 @@
-import { LineGraphProps } from "../../components/PlotALineGraph";
+import { LineGraphProps } from "./PlotALineGraph";
 
-import styles from "../../styles/MakeAChart.module.scss";
+import styles from "styles/MakeAChart.module.scss";
 
 import dynamic from "next/dynamic";
 
