@@ -111,6 +111,11 @@ exports[`About page has the expected text and formatting 1`] = `
           </a>
           , a project by the Catholic Record Society, and in particular by Timothea Kinnear and Dr Alana Harris. 
         </p>
+        <p
+          class="govuk-body"
+        >
+          The Catholic Data Dashboard is not affiliated with the Catholicism in Numbers project in any form. 
+        </p>
       </div>
     </div>
     <div
