@@ -1,7 +1,7 @@
 import React from "react";
 import DashboardFooter from "./DashboardFooter";
 import NavBar from "./NavBar";
-import MakeAChart from "@/pages/components/MakeAChart";
+import MakeAChart from "@/components/MakeAChart";
 import { getNationalData } from "@/data/nationalStats";
 import { DbKey } from "@/data/enums";
 

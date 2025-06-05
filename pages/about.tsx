@@ -1,6 +1,6 @@
 import React from "react";
-import DashboardFooter from "./components/DashboardFooter";
-import NavBar from "./components/NavBar";
+import DashboardFooter from "../components/DashboardFooter";
+import NavBar from "../components/NavBar";
 
 function About() {
   return (
@@ -66,9 +66,13 @@ function About() {
             >
               <i>Catholicism in Numbers</i>
             </a>
-            , a project by the Catholic Record Society, and in particular by Timothea Kinnear and Dr Alana Harris.{" "}
+            , a project by the Catholic Record Society, and in particular by
+            Timothea Kinnear and Dr Alana Harris.{" "}
           </p>
-          <p className="govuk-body">The Catholic Data Dashboard is not affiliated with the Catholicism in Numbers project in any form. </p>
+          <p className="govuk-body">
+            The Catholic Data Dashboard is not affiliated with the Catholicism
+            in Numbers project in any form.{" "}
+          </p>
         </div>
       </div>
 

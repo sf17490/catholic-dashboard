@@ -1,4 +1,4 @@
-import DashboardFooter from "@/pages/components/DashboardFooter";
+import DashboardFooter from "@/components/DashboardFooter";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
