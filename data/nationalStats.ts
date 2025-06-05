@@ -1,5 +1,5 @@
 import { DbKey } from "./enums";
-import { LineGraphProps } from "@/pages/components/PlotALineGraph";
+import { LineGraphProps } from "@/components/PlotALineGraph";
 
 interface NationalData {
   chartData: {
@@ -19,8 +19,7 @@ const nationalConversions: LineGraphProps = {
 const nationalConversionsData: NationalData = {
   chartData: {
     heading: "Conversions to Catholicism in England & Wales",
-    contextParagraph:
-      "Receptions into the Catholic Church in England & Wales", //Is this adults only? 
+    contextParagraph: "Receptions into the Catholic Church in England & Wales", //Is this adults only?
     lineGraphData: nationalConversions,
   },
 };

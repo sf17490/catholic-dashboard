@@ -1,4 +1,4 @@
-import { LineGraphProps } from "@/pages/components/PlotALineGraph";
+import { LineGraphProps } from "@/components/PlotALineGraph";
 
 export const expectedNationalConversionsLineGraphProps: LineGraphProps = {
   yAxisLabel: "Converts to Catholicism",

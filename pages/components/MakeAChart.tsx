@@ -1,14 +1,14 @@
-import { LineGraphProps } from "./PlotALineGraph";
+import { LineGraphProps } from "../../components/PlotALineGraph";
 
 import styles from "../../styles/MakeAChart.module.scss";
 
 import dynamic from "next/dynamic";
 
-function setPlaceholderImage(pageName:string){
-  if(pageName.match(/Mass Attendance/)){
-    return "images/minimalist_National_Mass_Attendance.png" 
-  }else{
-    return "images/minimalist_National_Conversions.png"
+function setPlaceholderImage(pageName: string) {
+  if (pageName.match(/Mass Attendance/)) {
+    return "images/minimalist_National_Mass_Attendance.png";
+  } else {
+    return "images/minimalist_National_Conversions.png";
   }
 }
 
@@ -23,24 +23,26 @@ export default function MakeAChart({
   contextParagraph,
   lineGraphData,
 }: ChartProps) {
-
-const DynamicPlotALineGraph = dynamic(
-  () => import("@/pages/components/PlotALineGraph"),
-  {
-    ssr: false,
-    loading: () => (
-      <img data-testid="placeholderChartImage"
-      src={setPlaceholderImage(heading)}
-      width="50%"/>
-    
-    )
-  },
-);
+  const DynamicPlotALineGraph = dynamic(
+    () => import("@/components/PlotALineGraph"),
+    {
+      ssr: false,
+      loading: () => (
+        <img
+          data-testid="placeholderChartImage"
+          src={setPlaceholderImage(heading)}
+          width="50%"
+        />
+      ),
+    }
+  );
 
   return (
     <div className={styles.chartContainer}>
       <div className={styles.chartContents}>
-        <h3 role={"contextHeader"} className={"govuk-heading-m mb-1"}>{heading}</h3>
+        <h3 role={"contextHeader"} className={"govuk-heading-m mb-1"}>
+          {heading}
+        </h3>
         <i role={"contextParagraph"}>{contextParagraph}</i>
         <div role={"graph"}>
           <DynamicPlotALineGraph
