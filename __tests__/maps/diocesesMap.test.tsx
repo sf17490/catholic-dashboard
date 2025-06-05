@@ -15,6 +15,12 @@
 
 // import DiocesesMap from "@/pages/components/maps/DiocesesMap";
 
+describe("placeholder test", () => {
+  it("this test file should compile", () => {
+    expect(1 + 1).toEqual(2);
+  });
+});
+
 // describe("Map section", () => {
 //   it("should render a map section", () => {
 //     render(<DiocesesMap />);

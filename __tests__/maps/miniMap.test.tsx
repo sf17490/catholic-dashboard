@@ -18,6 +18,12 @@
 // import { diocesesData } from "@/data/dioceseMapData";
 // import { validDioceseNames } from "@/data/enums";
 
+describe("placeholder test", () => {
+  it("this test file should compile", () => {
+    expect(1 + 1).toEqual(2);
+  });
+});
+
 // describe("Mini Map", () => {
 //   it("should render a map section", () => {
 //     render(<MiniMap />);
