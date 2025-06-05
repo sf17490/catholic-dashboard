@@ -1,15 +1,7 @@
 import styles from "../styles/Home.module.scss";
-import dynamic from "next/dynamic";
 import DashboardFooter from "./components/DashboardFooter";
 import SkeletonChart from "./components/SkeletonChart";
 import HomePageHeader from "./components/HomePageHeader";
-
-const DynamicHoverMap = dynamic(
-  () => import("@/pages/components/maps/MiniMap"),
-  {
-    ssr: false,
-  }
-);
 
 export default function Home() {
   console.log("Ora pro nobis, Carlo");
@@ -44,10 +36,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* <div className={styles.marginalisedBody}>
-        <DynamicHoverMap />
-      </div> */}
       <DashboardFooter />
     </div>
   );

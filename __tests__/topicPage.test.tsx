@@ -12,7 +12,7 @@ import Conversions from "@/pages/conversions";
 
 import { mocked } from "jest-mock";
 import MakeAChart from "@/pages/components/MakeAChart";
-import { LineGraphProps } from "@/pages/components/PlotALineGraph";
+import { LineGraphProps } from "@/components/PlotALineGraph";
 import {
   expectedNationalConversionsLineGraphProps,
   expectedNationalMassAttendanceLineGraphProps,
@@ -128,7 +128,7 @@ topicPages.forEach((page) => {
 
 describe(`Unique stuff about the Mass attendance page`, () => {
   it("advises the viewer about the accuracy of the data", () => {
-      render(<MassAttendance />);
+    render(<MassAttendance />);
     expect(screen.getByTestId("massAttendanceAccuracy")).toHaveTextContent(
       "The accuracy with which attendance is counted may vary. A person may accidentally be counted twice and figures may overstate or understate where an estimate is required, such as at very large services or if mechanical means of counting fail. Additionally, approaches to counting may vary across churches in a diocese or nation."
     );
