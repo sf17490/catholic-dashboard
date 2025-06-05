@@ -1,4 +1,3 @@
-import PlotALineGraph from "./PlotALineGraph";
 import { LineGraphProps } from "./PlotALineGraph";
 
 import styles from "../../styles/MakeAChart.module.scss";
