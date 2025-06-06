@@ -4,7 +4,6 @@ import NavBar from "./NavBar";
 import MakeAChart from "@/components/MakeAChart";
 import { getNationalData } from "@/data/nationalStats";
 import { DbKey } from "@/data/enums";
-import Table, { TableProps } from "./Table";
 
 export type DataPageProps = {
   heading: string;
