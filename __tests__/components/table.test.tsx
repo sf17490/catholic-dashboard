@@ -67,7 +67,7 @@ describe("Table rows - structure & styling", () => {
     expect(row1).toBeInTheDocument();
     expect(row1).toHaveClass("govuk-table__row");
   });
-  it("fills in the row of data correctly", () => {
+  it("fills in the row of data with the correct styling", () => {
     render(<Table {...dummyTableData} />);
     const row1Key = screen.getByTestId("row1key");
     expect(row1Key).toBeInTheDocument();
