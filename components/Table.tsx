@@ -1,4 +1,4 @@
-type TableRow = {
+export type TableRow = {
   year: number;
   value: number;
 };
