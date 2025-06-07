@@ -2,6 +2,10 @@ jest.mock("@/components/MakeAChart", () => ({
   __esModule: true,
   default: jest.fn(() => <div data-testid="mocked-chart" />),
 }));
+jest.mock("@/components/Table", () => ({
+  __esModule: true,
+  default: jest.fn(() => <div data-testid="mocked-table" />),
+}));
 
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
@@ -18,6 +22,9 @@ import {
   expectedNationalMassAttendanceLineGraphProps,
 } from "@/templates/dataTemplates";
 const mockedChart = mocked(MakeAChart, { shallow: false });
+
+import Table from "@/components/Table";
+const mockedTable = mocked(Table);
 
 interface TopicPage {
   name: string;
@@ -107,6 +114,51 @@ topicPages.forEach((page) => {
             JSON.stringify(page.expectedLineGraphData)
         );
 
+        expect(match).toBeTruthy();
+      });
+    });
+
+    describe(`The ${page.prettyName} table`, () => {
+      it("inlcudes a section for the table", () => {
+        const tableSection = screen.getByTestId("tableSection");
+        expect(tableSection).toBeInTheDocument();
+      });
+
+      const calls = mockedTable.mock.calls;
+
+      it(`gives the table's keyColumn the correct heading`, () => {
+        const match = calls.find(
+          ([props]) =>
+            JSON.stringify(props.columns.keyColumn) ===
+            JSON.stringify(page.expectedLineGraphData.xAxisLabel)
+        );
+        expect(match).toBeTruthy();
+      });
+
+      it(`gives the table's valueColumn the correct heading`, () => {
+        const match = calls.find(
+          ([props]) =>
+            JSON.stringify(props.columns.valueColumn) ===
+            JSON.stringify(page.expectedLineGraphData.yAxisLabel)
+        );
+        expect(match).toBeTruthy();
+      });
+
+      it(`gives the table's rows the correct keys`, () => {
+        const match = calls.find(
+          ([props]) =>
+            JSON.stringify(props.rows.map((row) => row.year)) ===
+            JSON.stringify(page.expectedLineGraphData.xAxisValues)
+        );
+        expect(match).toBeTruthy();
+      });
+
+      it(`gives the table's rows the correct values`, () => {
+        const match = calls.find(
+          ([props]) =>
+            JSON.stringify(props.rows.map((row) => row.value)) ===
+            JSON.stringify(page.expectedLineGraphData.yAxisValues)
+        );
         expect(match).toBeTruthy();
       });
     });

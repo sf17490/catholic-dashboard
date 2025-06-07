@@ -2,8 +2,26 @@ import React from "react";
 import DashboardFooter from "./DashboardFooter";
 import NavBar from "./NavBar";
 import MakeAChart from "@/components/MakeAChart";
-import { getNationalData } from "@/data/nationalStats";
+import {  getNationalData2 } from "@/data/nationalStats";
 import { DbKey } from "@/data/enums";
+import Table, { TableColumns, TableProps } from "./Table";
+import { LineGraphProps } from "./PlotALineGraph";
+
+const dummyTableColumnData: TableColumns = {
+  keyColumn: "Year",
+  valueColumn: "Converts to Catholicism in England & Wales",
+};
+
+const dummyTableRowData = [
+  { year: 2022, value: 1976 },
+  { year: 2021, value: 1537 },
+  { year: 2019, value: 2674 },
+];
+
+const dummyTableData: TableProps = {
+  columns: dummyTableColumnData,
+  rows: dummyTableRowData,
+};
 
 export type DataPageProps = {
   heading: string;
@@ -12,13 +30,27 @@ export type DataPageProps = {
   dataKey: DbKey;
 };
 
+//TODO:
+//The chart and the table display identical data. So we should call the data in one go
+//Having called the data in one go, we then pass it into the chart and into the table.
+//Lets have the chart read a table and then draw the line based on that table data
+
 function DataPage({
   heading,
   rootTestId,
   accuracyComment,
   dataKey,
 }: DataPageProps) {
-  const nationalData = getNationalData(dataKey);
+  const _ = dataKey
+  const nationalDataTable = getNationalData2(dataKey);
+
+  const conversionsLineGraphData: LineGraphProps = {
+    xAxisLabel: nationalDataTable.data.columnHeadings.keyColumn,
+    yAxisLabel: nationalDataTable.data.columnHeadings.valueColumn,
+    xAxisValues: nationalDataTable.data.rowData.map((row) => row.year),
+    yAxisValues: nationalDataTable.data.rowData.map((row) => row.value),
+  };
+
   return (
     <div>
       <NavBar />
@@ -52,9 +84,15 @@ function DataPage({
         )}
         <div data-testid={`${rootTestId}Chart`}>
           <MakeAChart
-            heading={nationalData.chartData.heading}
-            contextParagraph={nationalData.chartData.contextParagraph}
-            lineGraphData={nationalData.chartData.lineGraphData}
+            heading={nationalDataTable.context.heading}
+            contextParagraph={nationalDataTable.context.contextParagraph}
+            lineGraphData={conversionsLineGraphData}
+          />
+        </div>
+        <div data-testid={"tableSection"}>
+          <Table
+            columns={nationalDataTable.data.columnHeadings}
+            rows={nationalDataTable.data.rowData}
           />
         </div>
       </div>
