@@ -24,6 +24,7 @@ function HomePageHeader() {
           <p
             role={"betaNotice"}
             className={"pt-2.5 text-[var(--colour-offwhite)]"}
+            style={{color: "#c1d7eb"}}
           >
             {" "}
             <strong className={"govuk-tag govuk-phase-banner__content__tag "}>

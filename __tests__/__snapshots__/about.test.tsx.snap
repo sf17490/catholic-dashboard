@@ -40,19 +40,13 @@ exports[`About page has the expected text and formatting 1`] = `
         >
            What is the Catholic Data Dashboard?
         </h2>
-        <p
-          class="govuk-body"
-        >
+        <p>
           The Catholic Data Dashboard is a dashboard measuring the Catholic Church's impact on England & Wales.
         </p>
-        <p
-          class="govuk-body"
-        >
+        <p>
           In particular, it displays data and trends concerning the church's success in ministering the sacraments. 
         </p>
-        <p
-          class="govuk-body"
-        >
+        <p>
           It helps answer questions such as:
         </p>
         <ul
@@ -68,9 +62,7 @@ exports[`About page has the expected text and formatting 1`] = `
             Is the Catholic Church growing or shrinking in England & Wales? 
           </li>
         </ul>
-        <p
-          class="govuk-body"
-        >
+        <p>
           It seeks to answer questions like these in an easy-to-understand way.
         </p>
       </div>
@@ -80,14 +72,10 @@ exports[`About page has the expected text and formatting 1`] = `
         >
            Who is the dashboard for?
         </h2>
-        <p
-          class="govuk-body"
-        >
+        <p>
           As a Catholic interested in the health of the Catholic Church, I want to know if the church is growing or shrinking, so that I can plan accordingly. 
         </p>
-        <p
-          class="govuk-body"
-        >
+        <p>
           As a reader of newspaper reports about the Catholic Church, I want a comprehensive source of reliable statistics, so that I can put cherry-picked statistics into context.
         </p>
       </div>
@@ -97,9 +85,7 @@ exports[`About page has the expected text and formatting 1`] = `
         >
            Where does the data come from?
         </h2>
-        <p
-          class="govuk-body"
-        >
+        <p>
           All of the data used on this website is taken from 
           <a
             class="govuk-link"
@@ -111,9 +97,7 @@ exports[`About page has the expected text and formatting 1`] = `
           </a>
           , a project by the Catholic Record Society, and in particular by Timothea Kinnear and Dr Alana Harris. 
         </p>
-        <p
-          class="govuk-body"
-        >
+        <p>
           The Catholic Data Dashboard is not affiliated with the Catholicism in Numbers project in any form. 
         </p>
       </div>

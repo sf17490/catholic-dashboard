@@ -46,5 +46,6 @@ describe("Navigation Bar", () => {
 
     const betaNotice = screen.getByRole("betaNotice");
     expect(betaNotice).toBeInTheDocument();
+    expect(betaNotice).toHaveStyle({ "color": "#c1d7eb" });
   });
 });

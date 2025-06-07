@@ -16,15 +16,15 @@ function About() {
             {" "}
             What is the Catholic Data Dashboard?
           </h2>
-          <p className="govuk-body">
+          <p>
             The Catholic Data Dashboard is a dashboard measuring the Catholic
             Church's impact on England & Wales.
           </p>
-          <p className="govuk-body">
+          <p>
             In particular, it displays data and trends concerning the church's
             success in ministering the sacraments.{" "}
           </p>
-          <p className="govuk-body">It helps answer questions such as:</p>
+          <p>It helps answer questions such as:</p>
           <ul className="govuk-list govuk-list--bullet">
             <li>How many people are attending Mass?</li>
             <li>How many people is the church converting each year?</li>
@@ -32,14 +32,14 @@ function About() {
               Is the Catholic Church growing or shrinking in England & Wales?{" "}
             </li>
           </ul>
-          <p className="govuk-body">
+          <p>
             It seeks to answer questions like these in an easy-to-understand
             way.
           </p>
         </div>
         <div>
           <h2 className="govuk-heading-l"> Who is the dashboard for?</h2>
-          <p className="govuk-body">
+          <p>
             As a Catholic interested in the health of the Catholic Church, I
             want to know if the church is growing or shrinking, so that I can
             plan accordingly.{" "}
@@ -50,7 +50,7 @@ function About() {
             which dioceses are better at converting people, so that I can learn
             from their approach.{" "}
           </p> */}
-          <p className="govuk-body">
+          <p>
             As a reader of newspaper reports about the Catholic Church, I want a
             comprehensive source of reliable statistics, so that I can put
             cherry-picked statistics into context.
@@ -58,7 +58,7 @@ function About() {
         </div>
         <div>
           <h2 className="govuk-heading-l"> Where does the data come from?</h2>
-          <p className="govuk-body">
+          <p>
             All of the data used on this website is taken from{" "}
             <a
               className="govuk-link"
@@ -69,7 +69,7 @@ function About() {
             , a project by the Catholic Record Society, and in particular by
             Timothea Kinnear and Dr Alana Harris.{" "}
           </p>
-          <p className="govuk-body">
+          <p>
             The Catholic Data Dashboard is not affiliated with the Catholicism
             in Numbers project in any form.{" "}
           </p>
