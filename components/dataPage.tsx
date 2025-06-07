@@ -30,11 +30,6 @@ export type DataPageProps = {
   dataKey: DbKey;
 };
 
-//TODO:
-//The chart and the table display identical data. So we should call the data in one go
-//Having called the data in one go, we then pass it into the chart and into the table.
-//Lets have the chart read a table and then draw the line based on that table data
-
 function DataPage({
   heading,
   rootTestId,
