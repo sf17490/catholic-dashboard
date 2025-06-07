@@ -79,6 +79,22 @@ topicPages.forEach((page) => {
       );
     });
 
+    it("has a dataDisplayBox for the chart + table", () => {
+      const dataDisplayBox = screen.getByTestId("dataDisplayBox");
+      expect(dataDisplayBox).toBeInTheDocument();
+
+      expect(dataDisplayBox).toHaveClass("bg-[var(--colour-grey-3)]");
+    });
+
+    it("gives the correct padding to the contents of the dataDisplayBox", () => {
+      const dataDisplayBoxContents = screen.getByTestId(
+        "dataDisplayBoxContents"
+      );
+      expect(dataDisplayBoxContents).toBeInTheDocument();
+
+      expect(dataDisplayBoxContents).toHaveClass("m-6 pt-2 pb-0.25");
+    });
+
     describe(`The ${page.prettyName} chart`, () => {
       it("includes a section for the chart", async () => {
         const chartSection = await screen.findByTestId(`${page.name}Chart`);

@@ -1,7 +1,5 @@
 import { LineGraphProps } from "./PlotALineGraph";
 
-import styles from "styles/MakeAChart.module.scss";
-
 import dynamic from "next/dynamic";
 
 function setPlaceholderImage(pageName: string) {
@@ -41,20 +39,18 @@ export default function MakeAChart({
   );
 
   return (
-    <div className={styles.chartContainer}>
-      <div className={styles.chartContents}>
-        <h3 role={"contextHeader"} className={"govuk-heading-m mb-1"}>
-          {heading}
-        </h3>
-        <i role={"contextParagraph"}>{contextParagraph}</i>
-        <div role={"graph"}>
-          <DynamicPlotALineGraph
-            yAxisLabel={lineGraphData.yAxisLabel}
-            yAxisValues={lineGraphData.yAxisValues}
-            xAxisLabel={lineGraphData.xAxisLabel}
-            xAxisValues={lineGraphData.xAxisValues}
-          />
-        </div>
+    <div>
+      <h3 role={"contextHeader"} className={"govuk-heading-m mb-1"}>
+        {heading}
+      </h3>
+      <i role={"contextParagraph"}>{contextParagraph}</i>
+      <div role={"graph"}>
+        <DynamicPlotALineGraph
+          yAxisLabel={lineGraphData.yAxisLabel}
+          yAxisValues={lineGraphData.yAxisValues}
+          xAxisLabel={lineGraphData.xAxisLabel}
+          xAxisValues={lineGraphData.xAxisValues}
+        />
       </div>
     </div>
   );

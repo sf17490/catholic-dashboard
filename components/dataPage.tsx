@@ -20,7 +20,6 @@ function DataPage({
   accuracyComment,
   dataKey,
 }: DataPageProps) {
-  const _ = dataKey;
   const nationalDataTable = getNationalData(dataKey);
 
   const conversionsLineGraphData: LineGraphProps = {
@@ -61,18 +60,27 @@ function DataPage({
         ) : (
           ""
         )}
-        <div data-testid={`${rootTestId}Chart`}>
-          <MakeAChart
-            heading={nationalDataTable.context.heading}
-            contextParagraph={nationalDataTable.context.contextParagraph}
-            lineGraphData={conversionsLineGraphData}
-          />
-        </div>
-        <div data-testid={"tableSection"}>
-          <Table
-            columns={nationalDataTable.data.columnHeadings}
-            rows={nationalDataTable.data.rowData}
-          />
+        <div data-testid="dataDisplayBox" className="bg-[var(--colour-grey-3)]">
+          <div
+            data-testid="dataDisplayBoxContents"
+            className="m-6 pt-2 pb-0.25"
+          >
+            <div data-testid={`${rootTestId}Chart`}>
+              <MakeAChart
+                heading={nationalDataTable.context.heading}
+                contextParagraph={nationalDataTable.context.contextParagraph}
+                lineGraphData={conversionsLineGraphData}
+              />
+            </div>
+            <div>
+              <div data-testid={"tableSection"} className="">
+                <Table
+                  columns={nationalDataTable.data.columnHeadings}
+                  rows={nationalDataTable.data.rowData}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <DashboardFooter />
