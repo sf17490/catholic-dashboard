@@ -17,6 +17,10 @@ const nationalConversionsTable: TableData = {
     { year: 2019, value: 2674 },
     { year: 2010, value: 4615 },
     { year: 2000, value: 4402 },
+    // { year: 1990, value: 5075 },
+    // { year: 1980, value: 5783 },
+    // { year: 1971, value: 5747 }, //Warning: Includes some figures for 1970. See CTS notes
+    // { year: 1960, value: 14483 }, //Yes, really. Not a typo.
   ],
 };
 
@@ -39,6 +43,7 @@ const nationalMassAttendanceTable: TableData = {
     { year: 2018, value: 712909 },
     { year: 2008, value: 885169 },
     { year: 1999, value: 1005522 },
+    // { year: 1989, value: 1337299 },
   ],
 };
 
