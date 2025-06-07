@@ -28,11 +28,14 @@ export default function MakeAChart({
     {
       ssr: false,
       loading: () => (
-        <img
-          data-testid="placeholderChartImage"
-          src={setPlaceholderImage(heading)}
-          width="50%"
-        />
+        <div>
+          <img
+            data-testid="placeholderChartImage"
+            src={setPlaceholderImage(heading)}
+            width="50%"
+          />
+          <p data-testid="placeholderText">Loading graph...</p>
+        </div>
       ),
     }
   );

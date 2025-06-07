@@ -15,7 +15,7 @@ pageAndImgUrls.forEach((pageAndImgUrl) => {
       await expect(page).toHaveTitle(/UK Catholic Dashboard/);
     });
 
-    test(`displays the correct placeholder image whilst the lineGraph is being plotted`, async ({
+    test(`displays the correct placeholder whilst the lineGraph is being plotted`, async ({
       page,
     }) => {
       await page.goto(`http://localhost:3000/${pageTopic}`);
@@ -24,9 +24,15 @@ pageAndImgUrls.forEach((pageAndImgUrl) => {
       await expect(placeHolderImage).toBeVisible();
       await expect(placeHolderImage).toHaveAttribute("src", imgUrl);
 
+      const placeholderText = page.getByTestId("placeholderText")
+      await expect(placeholderText).toBeVisible()
+      await expect(placeholderText).toHaveText("Loading graph...")
+
       const plottedLineGraph = page.getByTestId("plottedLineGraph");
       await expect(plottedLineGraph).toBeVisible();
       await expect(placeHolderImage).not.toBeVisible();
+
+
     });
 
     test("it provides a valid link to the Catholic Record Society", async ({
