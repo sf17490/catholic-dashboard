@@ -2,7 +2,7 @@ import React from "react";
 import DashboardFooter from "./DashboardFooter";
 import NavBar from "./NavBar";
 import MakeAChart from "@/components/MakeAChart";
-import {  getNationalData2 } from "@/data/nationalStats";
+import { getNationalData } from "@/data/nationalStats";
 import { DbKey } from "@/data/enums";
 import Table, { TableColumns, TableProps } from "./Table";
 import { LineGraphProps } from "./PlotALineGraph";
@@ -36,8 +36,8 @@ function DataPage({
   accuracyComment,
   dataKey,
 }: DataPageProps) {
-  const _ = dataKey
-  const nationalDataTable = getNationalData2(dataKey);
+  const _ = dataKey;
+  const nationalDataTable = getNationalData(dataKey);
 
   const conversionsLineGraphData: LineGraphProps = {
     xAxisLabel: nationalDataTable.data.columnHeadings.keyColumn,

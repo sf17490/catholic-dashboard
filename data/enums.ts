@@ -1,5 +1,4 @@
 import { SimpleDb } from "./nationalStats";
-
 export const validDioceseNames = [
   "Arundel & Brighton",
   "Birmingham",
