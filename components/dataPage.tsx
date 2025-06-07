@@ -4,24 +4,8 @@ import NavBar from "./NavBar";
 import MakeAChart from "@/components/MakeAChart";
 import { getNationalData } from "@/data/nationalStats";
 import { DbKey } from "@/data/enums";
-import Table, { TableColumns, TableProps } from "./Table";
+import Table from "./Table";
 import { LineGraphProps } from "./PlotALineGraph";
-
-const dummyTableColumnData: TableColumns = {
-  keyColumn: "Year",
-  valueColumn: "Converts to Catholicism in England & Wales",
-};
-
-const dummyTableRowData = [
-  { year: 2022, value: 1976 },
-  { year: 2021, value: 1537 },
-  { year: 2019, value: 2674 },
-];
-
-const dummyTableData: TableProps = {
-  columns: dummyTableColumnData,
-  rows: dummyTableRowData,
-};
 
 export type DataPageProps = {
   heading: string;
