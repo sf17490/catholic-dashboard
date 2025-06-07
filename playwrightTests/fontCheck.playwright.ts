@@ -15,7 +15,7 @@ sitePages.forEach((sitePage) => {
     await page.goto(`http://localhost:3000/${sitePage}`);
 
     const textElements = await page.$$(
-      "h1, h2, h3, p, span, div, li, a, td, th"
+      "h1, h2, h3, p, i, span, div, li, a, td, th"
     );
 
     for (const element of textElements) {
@@ -27,3 +27,20 @@ sitePages.forEach((sitePage) => {
     }
   });
 });
+
+test("p and i elements globally behave like the govuk-body class", async ({page})=>{
+      await page.goto(`http://localhost:3000/massAttendance`);
+
+      const parasAndItalics = await page.$$(
+        "p, i"
+      )
+
+      for (const element of parasAndItalics){
+        const fontSize = await element.evaluate(
+          (el) => getComputedStyle(el).fontSize
+        )
+        expect(fontSize).toContain("19px") //16px on small screens
+      }
+
+
+})
