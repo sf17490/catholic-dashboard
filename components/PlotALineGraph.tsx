@@ -6,17 +6,23 @@ export type LineGraphProps = {
   yAxisValues: Datum[];
   xAxisLabel: string;
   xAxisValues: Datum[];
+};
+
+type LineGraphPropsWithStyling = {
+  yAxisLabel: string;
+  yAxisValues: Datum[];
+  xAxisLabel: string;
+  xAxisValues: Datum[];
   widthHeightStyle: Object;
 };
 
-//TODO: Snapshot test this. Atm the only real "test" is looking at the rendered webpage myself
 export default function PlotALineGraph({
   yAxisLabel,
   yAxisValues,
   xAxisLabel,
   xAxisValues,
   widthHeightStyle,
-}: LineGraphProps) {
+}: LineGraphPropsWithStyling) {
   return (
     <div data-testid="plottedLineGraph">
       <Plot

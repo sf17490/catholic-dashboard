@@ -22,7 +22,7 @@ function DataPage({
 }: DataPageProps) {
   const nationalDataTable = getNationalData(dataKey);
 
-  const conversionsLineGraphData: LineGraphProps = {
+  const lineGraphDataforTopic: LineGraphProps = {
     xAxisLabel: nationalDataTable.data.columnHeadings.keyColumn,
     yAxisLabel: nationalDataTable.data.columnHeadings.valueColumn,
     xAxisValues: nationalDataTable.data.rowData.map((row) => row.year),
@@ -69,7 +69,7 @@ function DataPage({
               <MakeAChart
                 heading={nationalDataTable.context.heading}
                 contextParagraph={nationalDataTable.context.contextParagraph}
-                lineGraphData={conversionsLineGraphData}
+                lineGraphData={lineGraphDataforTopic}
               />
             </div>
             <div>
