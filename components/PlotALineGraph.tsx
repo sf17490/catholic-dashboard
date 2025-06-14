@@ -9,49 +9,57 @@ export type LineGraphProps = {
 };
 
 //TODO: Snapshot test this. Atm the only real "test" is looking at the rendered webpage myself
-export default function PlotALineGraph({yAxisLabel, yAxisValues, xAxisLabel, xAxisValues}: LineGraphProps) {
+export default function PlotALineGraph({
+  yAxisLabel,
+  yAxisValues,
+  xAxisLabel,
+  xAxisValues,
+}: LineGraphProps) {
   return (
     <div data-testid="plottedLineGraph">
-    <Plot
-      data={[
-        {
-          x: xAxisValues,
-          y: yAxisValues,
-          type: "scatter",
-          mode: "lines+markers",
-          marker: { color: "#000066" },
-        },
-      ]}
-      layout={{
-        autosize: true,
-        margin: { t: 50, b: 60, l: 60, r: 30 },
-        xaxis: {
-          title: {
-            text: xAxisLabel,
-            font: {
-              size: 18,
+      <Plot
+        data={[
+          {
+            x: xAxisValues,
+            y: yAxisValues,
+            type: "scatter",
+            mode: "lines+markers",
+            marker: { color: "#000066" },
+          },
+        ]}
+        layout={{
+          autosize: true,
+          margin: { t: 50, b: 60, l: 60, r: 30 },
+          xaxis: {
+            title: {
+              text: xAxisLabel,
+              font: {
+                size: 18,
+              },
             },
           },
-        },
-        yaxis: {
-          title: {
-            text: yAxisLabel,
-            font: {
-              size: 18,
+          yaxis: {
+            title: {
+              text: yAxisLabel,
+              font: {
+                size: 18,
+              },
             },
           },
-        },
-      }}
-      style={{ width: "90%", height: "100%", minHeight:175, padding: "1.5em", margin: 0 }} //TODO: Move this style to a real class please. And test for minHeight. Or save for when we do snapshot testing
-      useResizeHandler={true}
-      config={{
-        displayModeBar: false //TODO: Consider switching this on
-      }}
-    />
+        }}
+        style={{
+          width: "100%",
+          height: 270, //we set an exact height here to fix bug where graph gets longer and longer as you scroll on mobile
+          margin: 0,
+        }} //TODO: Move this style to a real class please. And test for minHeight. Or save for when we do snapshot testing
+        useResizeHandler={true}
+        config={{
+          displayModeBar: false,
+        }}
+      />
     </div>
   );
 }
-
 
 //FYI: Use the PlotALineGraph function below if you want to make a skeleton outline graph for the homepage
 
