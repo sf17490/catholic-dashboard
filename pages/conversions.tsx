@@ -1,8 +1,8 @@
 import React from "react";
 import DataPage from "../components/dataPage";
 
-const conversionsAccuracyComment = "";
-
+const conversionsAccuracyComment =
+  "The data below records receptions into the church. It does not include figures for adult baptisms.";
 function Conversions() {
   return (
     <DataPage

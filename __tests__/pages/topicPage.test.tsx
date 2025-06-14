@@ -204,8 +204,10 @@ describe(`Unique stuff about the Mass attendance page`, () => {
 });
 
 describe(`Unique stuff about the Conversions page`, () => {
-  it("should not include an accuracy statement", () => {
+  it("advieses the viewer that adult baptisms are not included in the data on this page", () => {
     render(<Conversions />);
-    expect(screen.queryByTestId("conversionsAccuracy")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("conversionsAccuracy")).toHaveTextContent(
+      "The data below records receptions into the church. It does not include figures for adult baptisms."
+    );
   });
 });
