@@ -6,6 +6,7 @@ export type LineGraphProps = {
   yAxisValues: Datum[];
   xAxisLabel: string;
   xAxisValues: Datum[];
+  widthHeightStyle: Object;
 };
 
 //TODO: Snapshot test this. Atm the only real "test" is looking at the rendered webpage myself
@@ -14,6 +15,7 @@ export default function PlotALineGraph({
   yAxisValues,
   xAxisLabel,
   xAxisValues,
+  widthHeightStyle,
 }: LineGraphProps) {
   return (
     <div data-testid="plottedLineGraph">
@@ -47,11 +49,7 @@ export default function PlotALineGraph({
             },
           },
         }}
-        style={{
-          width: "100%",
-          height: 270, //we set an exact height here to fix bug where graph gets longer and longer as you scroll on mobile
-          margin: 0,
-        }} //TODO: Move this style to a real class please. And test for minHeight. Or save for when we do snapshot testing
+        style={widthHeightStyle}
         useResizeHandler={true}
         config={{
           displayModeBar: false,
