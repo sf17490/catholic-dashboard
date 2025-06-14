@@ -24,6 +24,7 @@ const dummyLineGraphProps = {
   xAxisValues: [
     2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
   ],
+  widthHeightStyle: "blah de blah",
 };
 
 const dummyChartProps: ChartProps = {
@@ -63,6 +64,25 @@ describe("Make a chart", () => {
     const graph = await screen.findByRole("graph");
 
     expect(graph).toBeInTheDocument();
+  });
+
+  it("gives the graph the correct height and width", () => {
+    render(dummyChart);
+
+    const expectedStyling = {
+      width: "100%",
+      height: 270, //we set an exact height here to fix bug where graph gets longer and longer as you scroll on mobile
+      margin: 0,
+    };
+
+    const calls = mockedPlot.mock.calls;
+    const match = calls.find(
+      (props) =>
+        JSON.stringify(props[0].widthHeightStyle) ==
+        JSON.stringify(expectedStyling)
+    );
+
+    expect(match).toBeTruthy();
   });
 
   type GraphVariable = {

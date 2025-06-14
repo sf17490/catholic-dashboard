@@ -50,6 +50,11 @@ export default function MakeAChart({
           yAxisValues={lineGraphData.yAxisValues}
           xAxisLabel={lineGraphData.xAxisLabel}
           xAxisValues={lineGraphData.xAxisValues}
+          widthHeightStyle={{
+            width: "100%",
+            height: 270,
+            margin: 0,
+          }}
         />
       </div>
     </div>
