@@ -1,7 +1,7 @@
-import { TopicData } from "@/data/dioceseStats";
 import { LineGraphProps } from "./PlotALineGraph";
 import MakeAChart from "./MakeAChart";
 import Table from "./Table";
+import { TopicData } from "@/data/dataTypes";
 
 export type DisplayBoxProps = {
   rootTestId: string;
@@ -28,7 +28,7 @@ function DataDisplayBox({ rootTestId, topic }: DisplayBoxProps) {
         <div data-testid={`${rootTestId}ChartSection`}>
           <MakeAChart
             heading={topic.context.heading}
-            contextParagraph={topic.context.contextParagraph}
+            contextParagraph={topic.context.subheading}
             lineGraphData={lineGraphDataforConverts}
           />
         </div>

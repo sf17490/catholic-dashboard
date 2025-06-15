@@ -1,3 +1,4 @@
+import { TableColumns, TableRow } from "@/components/Table";
 import { DioceseSimpleDb } from "./dioceseStats";
 import { SimpleDb } from "./nationalStats";
 export const validDioceseNames = [
@@ -52,3 +53,27 @@ export type CleanedDioceseName = (typeof cleanedDioceseNames)[number];
 
 export type DbKey = keyof typeof SimpleDb;
 export type DioceseDbKey = keyof typeof DioceseSimpleDb;
+
+export type TableData = {
+  columnHeadings: TableColumns;
+  rowData: TableRow[];
+};
+
+export type TopicData = {
+  context: {
+    heading: string;
+    subheading: string;
+  };
+  tableData: TableData;
+  accuracy: string;
+};
+
+export type DioceseData = {
+  massAttendance: TopicData;
+  conversions: TopicData;
+};
+
+export type DioceseDb = {
+  westminster: DioceseData;
+  //  [key in CleanedDioceseName]: DioceseData; //TODO: Implement for every diocese
+};

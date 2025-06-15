@@ -1,5 +1,5 @@
 import { diocesesData } from "@/data/dioceseMapData";
-import { validDioceseNames } from "@/data/enums";
+import { validDioceseNames } from "@/data/dataTypes";
 import "@testing-library/jest-dom";
 
 describe("Dioceses Data Collection", () => {
@@ -22,7 +22,7 @@ describe("Dioceses Data Collection", () => {
   const diocesesWithCleanedNames: [string, string][] = [
     ["Arundel & Brighton", "Arundel_and_Brighton"],
     ["East Anglia", "East_Anglia"],
-    ["Hexham & Newcastle", "Hexham_and_Newcastle"]
+    ["Hexham & Newcastle", "Hexham_and_Newcastle"],
   ];
 
   diocesesWithCleanedNames.forEach(([name, cleanName]) => {
