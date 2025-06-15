@@ -1,5 +1,4 @@
-import { DioceseDbKey } from "./enums";
-import { TableData } from "./nationalStats"; //TODO: Organise typing
+import { DioceseDb, DioceseDbKey, TableData, TopicData } from "./dataTypes";
 
 const MA_ACCURACY_STATEMENT =
   "The accuracy with which attendance is counted may vary. A person may accidentally be counted twice and figures may overstate or understate where an estimate is required, such as at very large services or if mechanical means of counting fail. Additionally, approaches to counting may vary across churches in a diocese or nation.";
@@ -20,10 +19,10 @@ const westminsterConversionsTable: TableData = {
   ],
 };
 
-const westminsterConversionsData = {
+const westminsterConversionsData: TopicData = {
   context: {
     heading: "Conversions to Catholicism in the Diocese of Westminster",
-    contextParagraph:
+    subheading:
       "Receptions into the Catholic Church in the Diocese of Westminster",
   },
   tableData: westminsterConversionsTable,
@@ -44,32 +43,14 @@ const westminsterMassAttendanceTable: TableData = {
   ],
 };
 
-export const westminsterMassAttendanceData = {
+export const westminsterMassAttendanceData: TopicData = {
   context: {
     heading: "Typical Sunday Mass Attendance",
-    contextParagraph:
+    subheading:
       "Typical number of people attending Sunday Mass in the Diocese of Westminster",
   },
   tableData: westminsterMassAttendanceTable,
   accuracy: MA_ACCURACY_STATEMENT,
-};
-
-export type TopicData = {
-  context: {
-    heading: string;
-    contextParagraph: string;
-  };
-  tableData: TableData;
-  accuracy: string;
-};
-
-type DioceseData = {
-  massAttendance: TopicData;
-  conversions: TopicData;
-};
-
-type DioceseDb = {
-  westminster: DioceseData;
 };
 
 export const DioceseSimpleDb: DioceseDb = {

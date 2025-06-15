@@ -1,4 +1,4 @@
-import { TopicData } from "@/data/dioceseStats";
+import { TopicData } from "@/data/dataTypes";
 import DataDisplayBox from "./DataDisplayBox";
 
 export type TopicSectionProps = {

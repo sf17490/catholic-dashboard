@@ -1,10 +1,4 @@
-import { TableColumns, TableRow } from "@/components/Table";
-import { DbKey } from "./enums";
-
-export type TableData = {
-  columnHeadings: TableColumns;
-  rowData: TableRow[];
-};
+import { DbKey, TableData } from "./dataTypes";
 
 const nationalConversionsTable: TableData = {
   columnHeadings: {

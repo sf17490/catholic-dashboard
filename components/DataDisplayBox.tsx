@@ -1,7 +1,7 @@
-import { TopicData } from "@/data/dioceseStats";
 import { LineGraphProps } from "./PlotALineGraph";
 import MakeAChart from "./MakeAChart";
 import Table from "./Table";
+import { TopicData } from "@/data/dataTypes";
 
 export type DisplayBoxProps = {
   rootTestId: string;
@@ -9,7 +9,7 @@ export type DisplayBoxProps = {
 };
 
 function DataDisplayBox({ rootTestId, topic }: DisplayBoxProps) {
-  const lineGraphDataforConverts: LineGraphProps = {
+  const lineGraphDataForTopic: LineGraphProps = {
     xAxisLabel: topic.tableData.columnHeadings.keyColumn,
     yAxisLabel: topic.tableData.columnHeadings.valueColumn,
     xAxisValues: topic.tableData.rowData.map((row) => row.year),
@@ -28,8 +28,8 @@ function DataDisplayBox({ rootTestId, topic }: DisplayBoxProps) {
         <div data-testid={`${rootTestId}ChartSection`}>
           <MakeAChart
             heading={topic.context.heading}
-            contextParagraph={topic.context.contextParagraph}
-            lineGraphData={lineGraphDataforConverts}
+            contextParagraph={topic.context.subheading}
+            lineGraphData={lineGraphDataForTopic}
           />
         </div>
         <div>

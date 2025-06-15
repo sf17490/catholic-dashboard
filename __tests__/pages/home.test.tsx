@@ -17,7 +17,7 @@ describe("Dashboard home page", () => {
     logSpy.mockRestore();
   });
 
-  it("includes a the homePage header", async () => {
+  it("includes a homePage header", async () => {
     render(<Home />)
     const homeHeader = await screen.findByTestId("homePageHeader")
     expect(homeHeader).toBeInTheDocument()

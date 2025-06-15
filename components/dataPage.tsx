@@ -3,7 +3,7 @@ import DashboardFooter from "./DashboardFooter";
 import NavBar from "./NavBar";
 import MakeAChart from "@/components/MakeAChart";
 import { getNationalData } from "@/data/nationalStats";
-import { DbKey } from "@/data/enums";
+import { DbKey } from "@/data/dataTypes";
 import Table from "./Table";
 import { LineGraphProps } from "./PlotALineGraph";
 
