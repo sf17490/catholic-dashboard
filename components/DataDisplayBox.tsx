@@ -9,7 +9,7 @@ export type DisplayBoxProps = {
 };
 
 function DataDisplayBox({ rootTestId, topic }: DisplayBoxProps) {
-  const lineGraphDataforConverts: LineGraphProps = {
+  const lineGraphDataForTopic: LineGraphProps = {
     xAxisLabel: topic.tableData.columnHeadings.keyColumn,
     yAxisLabel: topic.tableData.columnHeadings.valueColumn,
     xAxisValues: topic.tableData.rowData.map((row) => row.year),
@@ -29,7 +29,7 @@ function DataDisplayBox({ rootTestId, topic }: DisplayBoxProps) {
           <MakeAChart
             heading={topic.context.heading}
             contextParagraph={topic.context.subheading}
-            lineGraphData={lineGraphDataforConverts}
+            lineGraphData={lineGraphDataForTopic}
           />
         </div>
         <div>

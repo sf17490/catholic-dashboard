@@ -1,4 +1,3 @@
-console.log('✅ Using mocked mapbox-gl')
 module.exports = {
     Map: function () {
       return {
