@@ -1,7 +1,7 @@
 import { TableColumns, TableRow } from "@/components/Table";
 import { DbKey } from "./enums";
 
-type TableData = {
+export type TableData = {
   columnHeadings: TableColumns;
   rowData: TableRow[];
 };

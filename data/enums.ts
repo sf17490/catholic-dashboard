@@ -1,3 +1,4 @@
+import { DioceseSimpleDb } from "./dioceseStats";
 import { SimpleDb } from "./nationalStats";
 export const validDioceseNames = [
   "Arundel & Brighton",
@@ -50,3 +51,4 @@ export const cleanedDioceseNames = [
 export type CleanedDioceseName = (typeof cleanedDioceseNames)[number];
 
 export type DbKey = keyof typeof SimpleDb;
+export type DioceseDbKey = keyof typeof DioceseSimpleDb
