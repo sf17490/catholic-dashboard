@@ -14,11 +14,12 @@ import { mocked } from "jest-mock";
 import MakeAChart from "@/components/MakeAChart";
 const mockedChart = mocked(MakeAChart, { shallow: false });
 import Table from "@/components/Table";
+import { westminsterMassAttendanceData } from "@/data/dioceseStats";
 const mockedTable = mocked(Table);
 
 const dummyProps: DisplayBoxProps = {
   rootTestId: "blah",
-  dioceseDataKey: "westminsterMassAttendance",
+  topic: westminsterMassAttendanceData
 };
 
 describe("Data display box", () => {

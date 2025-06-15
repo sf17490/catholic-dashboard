@@ -2,12 +2,14 @@ import React from "react";
 import DashboardFooter from "../components/DashboardFooter";
 import NavBar from "../components/NavBar";
 import TopicSection from "@/components/TopicSection";
+import { getDioceseData } from "@/data/dioceseStats";
 
 export type DiocesePageProps = {
   rootTestId: string;
 };
 
 function WestminsterPage({ rootTestId }: DiocesePageProps) {
+  const dioceseData = getDioceseData("westminster");
   return (
     <div>
       <NavBar />
@@ -33,13 +35,13 @@ function WestminsterPage({ rootTestId }: DiocesePageProps) {
         </div>
         <TopicSection
           rootTestId="westminsterConversions"
-          dioceseDataKey="westminsterConversions"
           topicName="Conversions"
+          topicData={dioceseData.conversions}
         />
-        <TopicSection
+         <TopicSection
           rootTestId="westminsterMassAttendance"
-          dioceseDataKey="westminsterMassAttendance"
           topicName="Mass Attendance"
+          topicData={dioceseData.massAttendance}
         />
       </div>
       <DashboardFooter />

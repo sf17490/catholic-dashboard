@@ -3,7 +3,8 @@ import { TableData } from "./nationalStats"; //TODO: Organise typing
 
 const MA_ACCURACY_STATEMENT =
   "The accuracy with which attendance is counted may vary. A person may accidentally be counted twice and figures may overstate or understate where an estimate is required, such as at very large services or if mechanical means of counting fail. Additionally, approaches to counting may vary across churches in a diocese or nation.";
-  const CONVERSIONS_ACCURACY_STATEMENT = "The data below records receptions into the Catholic Church. It does not include figures for adult baptisms.";
+const CONVERSIONS_ACCURACY_STATEMENT =
+  "The data below records receptions into the Catholic Church. It does not include figures for adult baptisms.";
 
 const westminsterConversionsTable: TableData = {
   columnHeadings: {
@@ -25,8 +26,8 @@ const westminsterConversionsData = {
     contextParagraph:
       "Receptions into the Catholic Church in the Diocese of Westminster",
   },
-  data: westminsterConversionsTable,
-  accuracy: CONVERSIONS_ACCURACY_STATEMENT
+  tableData: westminsterConversionsTable,
+  accuracy: CONVERSIONS_ACCURACY_STATEMENT,
 };
 
 const westminsterMassAttendanceTable: TableData = {
@@ -43,19 +44,39 @@ const westminsterMassAttendanceTable: TableData = {
   ],
 };
 
-const westminsterMassAttendanceData = {
+export const westminsterMassAttendanceData = {
   context: {
     heading: "Typical Sunday Mass Attendance",
     contextParagraph:
       "Typical number of people attending Sunday Mass in the Diocese of Westminster",
   },
-  data: westminsterMassAttendanceTable,
-  accuracy: MA_ACCURACY_STATEMENT
+  tableData: westminsterMassAttendanceTable,
+  accuracy: MA_ACCURACY_STATEMENT,
 };
 
-export const DioceseSimpleDb = {
-  westminsterMassAttendance: westminsterMassAttendanceData,
-  westminsterConversions: westminsterConversionsData,
+export type TopicData = {
+  context: {
+    heading: string;
+    contextParagraph: string;
+  };
+  tableData: TableData;
+  accuracy: string;
+};
+
+type DioceseData = {
+  massAttendance: TopicData;
+  conversions: TopicData;
+};
+
+type DioceseDb = {
+  westminster: DioceseData;
+};
+
+export const DioceseSimpleDb: DioceseDb = {
+  westminster: {
+    massAttendance: westminsterMassAttendanceData,
+    conversions: westminsterConversionsData,
+  },
 };
 
 export function getDioceseData(keyName: DioceseDbKey) {
