@@ -1,22 +1,19 @@
-import { getDioceseData } from "@/data/dioceseStats";
-import { DioceseDbKey } from "@/data/enums";
+import { TopicData } from "@/data/dioceseStats";
 import { LineGraphProps } from "./PlotALineGraph";
 import MakeAChart from "./MakeAChart";
 import Table from "./Table";
 
 export type DisplayBoxProps = {
   rootTestId: string;
-  dioceseDataKey: DioceseDbKey;
+  topic: TopicData;
 };
 
-function DataDisplayBox({ rootTestId, dioceseDataKey }: DisplayBoxProps) {
-  const dioceseDataTable = getDioceseData(dioceseDataKey);
-
+function DataDisplayBox({ rootTestId, topic }: DisplayBoxProps) {
   const lineGraphDataforConverts: LineGraphProps = {
-    xAxisLabel: dioceseDataTable.data.columnHeadings.keyColumn,
-    yAxisLabel: dioceseDataTable.data.columnHeadings.valueColumn,
-    xAxisValues: dioceseDataTable.data.rowData.map((row) => row.year),
-    yAxisValues: dioceseDataTable.data.rowData.map((row) => row.value),
+    xAxisLabel: topic.tableData.columnHeadings.keyColumn,
+    yAxisLabel: topic.tableData.columnHeadings.valueColumn,
+    xAxisValues: topic.tableData.rowData.map((row) => row.year),
+    yAxisValues: topic.tableData.rowData.map((row) => row.value),
   };
 
   return (
@@ -30,16 +27,16 @@ function DataDisplayBox({ rootTestId, dioceseDataKey }: DisplayBoxProps) {
       >
         <div data-testid={`${rootTestId}ChartSection`}>
           <MakeAChart
-            heading={dioceseDataTable.context.heading}
-            contextParagraph={dioceseDataTable.context.contextParagraph}
+            heading={topic.context.heading}
+            contextParagraph={topic.context.contextParagraph}
             lineGraphData={lineGraphDataforConverts}
           />
         </div>
         <div>
           <div data-testid={`${rootTestId}TableSection`}>
             <Table
-              columns={dioceseDataTable.data.columnHeadings}
-              rows={dioceseDataTable.data.rowData}
+              columns={topic.tableData.columnHeadings}
+              rows={topic.tableData.rowData}
             />
           </div>
         </div>

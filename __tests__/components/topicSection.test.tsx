@@ -3,17 +3,18 @@ jest.mock("@/components/DataDisplayBox", () => ({
   default: jest.fn(() => <div data-testid="mocked-data-display-box" />),
 }));
 
-import DataDisplayBox, { DisplayBoxProps } from "@/components/DataDisplayBox";
+import DataDisplayBox from "@/components/DataDisplayBox";
 const mockedDataDisplayBox = mocked(DataDisplayBox);
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { mocked } from "jest-mock";
 import TopicSection, { TopicSectionProps } from "@/components/TopicSection";
+import { westminsterMassAttendanceData } from "@/data/dioceseStats";
 
 const dummyProps: TopicSectionProps = {
   topicName: "An important topic",
+  topicData: westminsterMassAttendanceData,
   rootTestId: "blah",
-  dioceseDataKey: "westminsterMassAttendance",
 };
 
 describe("Topic Section", () => {
@@ -46,7 +47,7 @@ describe("Topic Section", () => {
 
     const expectedDisplayBoxProps = {
       rootTestId: "blah",
-      dioceseDataKey: "westminsterMassAttendance",
+      topic: westminsterMassAttendanceData,
     };
 
     const calls = mockedDataDisplayBox.mock.calls;
