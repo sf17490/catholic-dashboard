@@ -37,7 +37,7 @@ describe("Navigation Bar", () => {
     render(<HomePageHeader />);
 
     const aboutLink = screen.getByText("What is the Catholic Data Dashboard?");
-    expect(aboutLink).toBeInTheDocument;
+    expect(aboutLink).toBeInTheDocument();
     expect(aboutLink).toHaveClass("pt-2.5 text-[var(--colour-offwhite)]");
   });
 
@@ -46,6 +46,15 @@ describe("Navigation Bar", () => {
 
     const betaNotice = screen.getByRole("betaNotice");
     expect(betaNotice).toBeInTheDocument();
-    expect(betaNotice).toHaveStyle({ "color": "#c1d7eb" });
+    expect(betaNotice).toHaveStyle({ color: "#c1d7eb" });
+  });
+
+  it("includes a link to a feedback form", async () => {
+    render(<HomePageHeader />);
+
+    const feedbackLink = screen.getByTestId("feedbackLink");
+    expect(feedbackLink).toBeInTheDocument();
+    const feedbackWord = screen.getByText("feedback");
+    expect(feedbackWord).toHaveClass("pt-2.5 text-[var(--colour-offwhite)]");
   });
 });
