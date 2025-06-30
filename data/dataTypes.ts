@@ -82,6 +82,7 @@ export type DioceseDb = {
   "East Anglia": DioceseData;
   Hallam: DioceseData;
   "Hexham & Newcastle": DioceseData;
+  Lancaster: DioceseData;
   Southwark: DioceseData;
   Westminster: DioceseData;
   //  [key in DioceseName]: DioceseData; //TODO: Implement for every diocese

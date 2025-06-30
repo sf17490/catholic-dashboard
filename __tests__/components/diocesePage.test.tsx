@@ -27,6 +27,7 @@ describe("Diocese page", () => {
     "East Anglia",
     "Hallam",
     "Hexham & Newcastle",
+    "Lancaster",
     "Southwark",
     "Westminster",
   ];
