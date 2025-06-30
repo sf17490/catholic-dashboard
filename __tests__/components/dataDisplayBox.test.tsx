@@ -13,8 +13,9 @@ import { render, screen } from "@testing-library/react";
 import { mocked } from "jest-mock";
 import MakeAChart from "@/components/MakeAChart";
 const mockedChart = mocked(MakeAChart, { shallow: false });
+import { westminsterMassAttendanceData } from "@/data/dioceses/westminster";
+
 import Table from "@/components/Table";
-import { westminsterMassAttendanceData } from "@/data/dioceseStats";
 const mockedTable = mocked(Table);
 
 const dummyProps: DisplayBoxProps = {
