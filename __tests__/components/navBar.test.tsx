@@ -5,7 +5,7 @@ import { render, screen } from "@testing-library/react";
 describe("Navigation Bar", () => {
   it("includes a header", () => {
     render(<NavBar />);
-    expect(screen.getByTestId("headerSection")).toBeInTheDocument;
+    expect(screen.getByTestId("headerSection")).toBeInTheDocument();
   });
 
   it("correctly titles the tab", () => {
