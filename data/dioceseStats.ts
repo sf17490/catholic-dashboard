@@ -8,6 +8,7 @@ import { eastAngliaData } from "./dioceses/east_anglia";
 import { hallamData } from "./dioceses/hallam";
 import { hexhamAndNewcastleData } from "./dioceses/hexham_and_newcastle";
 import { lancasterData } from "./dioceses/lancaster";
+import { leedsData } from "./dioceses/leeds";
 import { southwarkData } from "./dioceses/southwark";
 import { westminsterData } from "./dioceses/westminster";
 
@@ -21,6 +22,7 @@ export const DioceseSimpleDb: DioceseDb = {
   Hallam: hallamData,
   "Hexham & Newcastle": hexhamAndNewcastleData,
   Lancaster: lancasterData,
+  Leeds: leedsData,
   Southwark: southwarkData,
   Westminster: westminsterData,
 };

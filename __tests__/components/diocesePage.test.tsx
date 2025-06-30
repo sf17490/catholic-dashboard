@@ -28,6 +28,7 @@ describe("Diocese page", () => {
     "Hallam",
     "Hexham & Newcastle",
     "Lancaster",
+    "Leeds",
     "Southwark",
     "Westminster",
   ];
