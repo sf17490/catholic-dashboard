@@ -85,7 +85,8 @@ export type DioceseDb = {
   Lancaster: DioceseData;
   Leeds: DioceseData;
   Liverpool: DioceseData;
-  Middlesbrough: DioceseData
+  Middlesbrough: DioceseData;
+  Northampton: DioceseData;
   Southwark: DioceseData;
   Westminster: DioceseData;
   //  [key in DioceseName]: DioceseData; //TODO: Implement for every diocese

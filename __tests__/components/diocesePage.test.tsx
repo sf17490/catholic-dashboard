@@ -31,6 +31,7 @@ describe("Diocese page", () => {
     "Leeds",
     "Liverpool",
     "Middlesbrough",
+    "Northampton",
     "Southwark",
     "Westminster",
   ];
