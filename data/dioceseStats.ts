@@ -4,6 +4,7 @@ import { birminghamData } from "./dioceses/birmingham";
 import { brentwoodData } from "./dioceses/brentwood";
 import { cliftonData } from "./dioceses/clifton";
 import { eastAngliaData } from "./dioceses/east_anglia";
+import { hallamData } from "./dioceses/hallam";
 import { southwarkData } from "./dioceses/southwark";
 import { westminsterData } from "./dioceses/westminster";
 
@@ -13,6 +14,7 @@ export const DioceseSimpleDb: DioceseDb = {
   Brentwood: brentwoodData,
   Clifton: cliftonData,
   "East Anglia": eastAngliaData,
+  Hallam: hallamData,
   Southwark: southwarkData,
   Westminster: westminsterData,
 };
