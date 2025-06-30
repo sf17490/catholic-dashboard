@@ -14,6 +14,23 @@ function DiocesePage({ diocese }: DiocesePageProps) {
       <h1 data-testid={`${diocese}PageTitle`} className="govuk-heading-xl">
         Diocese of {diocese}
       </h1>
+      <div data-testId="maybeDioceseNote">
+      {diocese == "Cardiff-Menevia" ? (
+        <div>
+          <b data-testId="dioceseNoteHeader">Note on Diocese Data</b>
+          <p data-testId="dioceseNote">
+            The Diocese of Cardiff-Menevia was formed on 12 September 2024 when
+            Pope Francis merged the Archdiocese of Cardiff with the Diocese of
+            Menevia. Data prior to this date has been calculated by adding the
+            statistics from Cardiff to the statistics from Menevia. Separate
+            data for each diocese can be found in the Catholicism In Numbers
+            project by the Catholic Record Society.
+          </p>
+        </div>
+      ) : (
+        ""
+      )}
+      </div>
       <div data-testid="citation">
         <b>Citation</b>
         <p data-testid="citationText">

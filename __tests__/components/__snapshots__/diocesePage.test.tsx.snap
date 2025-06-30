@@ -12,6 +12,9 @@ exports[`Diocese page has the correct data & formatting for the diocese of Arund
       Diocese of Arundel & Brighton
     </h1>
     <div
+      data-testid="maybeDioceseNote"
+    />
+    <div
       data-testid="citation"
     >
       <b>
@@ -432,6 +435,9 @@ exports[`Diocese page has the correct data & formatting for the diocese of Birmi
     >
       Diocese of Birmingham
     </h1>
+    <div
+      data-testid="maybeDioceseNote"
+    />
     <div
       data-testid="citation"
     >
@@ -854,6 +860,9 @@ exports[`Diocese page has the correct data & formatting for the diocese of Brent
       Diocese of Brentwood
     </h1>
     <div
+      data-testid="maybeDioceseNote"
+    />
+    <div
       data-testid="citation"
     >
       <b>
@@ -1274,6 +1283,9 @@ exports[`Diocese page has the correct data & formatting for the diocese of Clift
     >
       Diocese of Clifton
     </h1>
+    <div
+      data-testid="maybeDioceseNote"
+    />
     <div
       data-testid="citation"
     >
@@ -1696,6 +1708,9 @@ exports[`Diocese page has the correct data & formatting for the diocese of South
       Diocese of Southwark
     </h1>
     <div
+      data-testid="maybeDioceseNote"
+    />
+    <div
       data-testid="citation"
     >
       <b>
@@ -2116,6 +2131,9 @@ exports[`Diocese page has the correct data & formatting for the diocese of Westm
     >
       Diocese of Westminster
     </h1>
+    <div
+      data-testid="maybeDioceseNote"
+    />
     <div
       data-testid="citation"
     >
