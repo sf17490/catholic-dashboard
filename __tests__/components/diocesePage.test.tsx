@@ -17,7 +17,7 @@ describe("Diocese page", () => {
     expect(citation).toBeInTheDocument();
   });
 
-  const dioceses:DioceseDbKey[] = ["Southwark", "Westminster"]
+  const dioceses:DioceseDbKey[] = ["Arundel & Brighton","Birmingham","Southwark", "Westminster"]
 
   dioceses.forEach(diocese => {
     it(`has the correct data & formatting for the diocese of ${diocese}`, ()=>{

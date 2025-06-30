@@ -75,6 +75,7 @@ export type DioceseData = {
 
 export type DioceseDb = {
   "Arundel & Brighton": DioceseData;
+  Birmingham: DioceseData;
   Southwark: DioceseData;
   Westminster: DioceseData;
   //  [key in CleanedDioceseName]: DioceseData; //TODO: Implement for every diocese
