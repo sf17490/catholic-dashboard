@@ -10,6 +10,7 @@ import { hexhamAndNewcastleData } from "./dioceses/hexham_and_newcastle";
 import { lancasterData } from "./dioceses/lancaster";
 import { leedsData } from "./dioceses/leeds";
 import { liverpoolData } from "./dioceses/liverpool";
+import { middlesbroughData } from "./dioceses/middlesborough";
 import { southwarkData } from "./dioceses/southwark";
 import { westminsterData } from "./dioceses/westminster";
 
@@ -25,6 +26,7 @@ export const DioceseSimpleDb: DioceseDb = {
   Lancaster: lancasterData,
   Leeds: leedsData,
   Liverpool: liverpoolData,
+  Middlesbrough: middlesbroughData,
   Southwark: southwarkData,
   Westminster: westminsterData,
 };
