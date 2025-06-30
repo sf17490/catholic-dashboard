@@ -77,6 +77,7 @@ export type DioceseDb = {
   "Arundel & Brighton": DioceseData;
   Birmingham: DioceseData;
   Brentwood: DioceseData;
+  "Cardiff-Menevia": DioceseData;
   Clifton: DioceseData;
   "East Anglia": DioceseData;
   Hallam: DioceseData;
