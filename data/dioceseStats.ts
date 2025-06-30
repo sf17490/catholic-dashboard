@@ -15,6 +15,7 @@ import { northamptonData } from "./dioceses/northampton";
 import { nottinghamData } from "./dioceses/nottingham";
 import { plymouthData } from "./dioceses/plymouth";
 import { portsmouthData } from "./dioceses/portsmouth";
+import { salfordData } from "./dioceses/salford";
 import { southwarkData } from "./dioceses/southwark";
 import { westminsterData } from "./dioceses/westminster";
 
@@ -35,6 +36,7 @@ export const DioceseSimpleDb: DioceseDb = {
   Nottingham: nottinghamData,
   Plymouth: plymouthData,
   Portsmouth: portsmouthData,
+  Salford: salfordData,
   Southwark: southwarkData,
   Westminster: westminsterData,
 };
