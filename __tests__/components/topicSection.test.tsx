@@ -9,7 +9,7 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { mocked } from "jest-mock";
 import TopicSection, { TopicSectionProps } from "@/components/TopicSection";
-import { westminsterMassAttendanceData } from "@/data/dioceseStats";
+import { westminsterMassAttendanceData } from "@/data/dioceses/westminster";
 
 const dummyProps: TopicSectionProps = {
   topicName: "An important topic",

@@ -7,12 +7,12 @@ describe("About page", () => {
 
     it("includes a header", ()=>{
         render(<About />)
-        expect(screen.getByTestId("headerSection")).toBeInTheDocument
+        expect(screen.getByTestId("headerSection")).toBeInTheDocument()
     })
 
     it("includes a footer", ()=>{
         render(<About />)
-        expect(screen.getByTestId("footing")).toBeInTheDocument
+        expect(screen.getByTestId("footing")).toBeInTheDocument()
     })
 
     it("has the correct title", ()=>{
