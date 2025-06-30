@@ -78,7 +78,8 @@ export type DioceseDb = {
   Birmingham: DioceseData;
   Brentwood: DioceseData;
   Clifton: DioceseData;
+  "East Anglia": DioceseData;
   Southwark: DioceseData;
   Westminster: DioceseData;
-  //  [key in CleanedDioceseName]: DioceseData; //TODO: Implement for every diocese
+  //  [key in DioceseName]: DioceseData; //TODO: Implement for every diocese
 };

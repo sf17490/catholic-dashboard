@@ -2,7 +2,6 @@ import styles from "../styles/Home.module.scss";
 import DashboardFooter from "../components/DashboardFooter";
 import SkeletonChart from "../components/SkeletonChart";
 import HomePageHeader from "../components/HomePageHeader";
-import Link from "next/link";
 import DioceseList from "@/components/DioceseList";
 
 export default function Home() {
@@ -39,12 +38,12 @@ export default function Home() {
               />
             </div>
           </div>
-          {/* <div>
+          <div>
             <h2 className="govuk-heading-l govuk-!-margin-bottom-4">
               Data by Diocese
             </h2>
             <DioceseList />
-          </div> */}
+          </div>
         </div>
       </div>
       <DashboardFooter />
