@@ -20,7 +20,7 @@ const conversionsTable: TableData = {
 
 const conversionsData: TopicData = {
   context: {
-    heading: "Conversions to Catholicism in the Diocese of Middlesborough",
+    heading: "Conversions to Catholicism in the Diocese of Middlesbrough",
     subheading:
       "Receptions into the Catholic Church in the Diocese of Middlesbrough",
   },

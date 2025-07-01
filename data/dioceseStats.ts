@@ -10,7 +10,7 @@ import { hexhamAndNewcastleData } from "./dioceses/hexham_and_newcastle";
 import { lancasterData } from "./dioceses/lancaster";
 import { leedsData } from "./dioceses/leeds";
 import { liverpoolData } from "./dioceses/liverpool";
-import { middlesbroughData } from "./dioceses/middlesborough";
+import { middlesbroughData } from "./dioceses/middlesbrough";
 import { northamptonData } from "./dioceses/northampton";
 import { nottinghamData } from "./dioceses/nottingham";
 import { plymouthData } from "./dioceses/plymouth";

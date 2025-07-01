@@ -20,9 +20,9 @@ describe("Dioceses Data Collection", () => {
   });
 
   const diocesesWithCleanedNames: [string, string][] = [
-    ["Arundel & Brighton", "Arundel_and_Brighton"],
-    ["East Anglia", "East_Anglia"],
-    ["Hexham & Newcastle", "Hexham_and_Newcastle"],
+    ["Arundel & Brighton", "arundel_and_brighton"],
+    ["East Anglia", "east_anglia"],
+    ["Hexham & Newcastle", "hexham_and_newcastle"],
   ];
 
   diocesesWithCleanedNames.forEach(([name, cleanName]) => {
