@@ -94,5 +94,6 @@ export type DioceseDb = {
   Shrewsbury: DioceseData;
   Southwark: DioceseData;
   Westminster: DioceseData;
-  //  [key in DioceseName]: DioceseData; //TODO: Implement for every diocese
+  Wrexham: DioceseData;
+   // [key in DioceseName]: DioceseData; //TODO: Implement for every diocese
 };

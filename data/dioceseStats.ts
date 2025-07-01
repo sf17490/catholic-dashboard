@@ -19,6 +19,7 @@ import { salfordData } from "./dioceses/salford";
 import { shrewsburyData } from "./dioceses/shrewsbury";
 import { southwarkData } from "./dioceses/southwark";
 import { westminsterData } from "./dioceses/westminster";
+import { wrexhamData } from "./dioceses/wrexham";
 
 export const DioceseSimpleDb: DioceseDb = {
   "Arundel & Brighton": arundelAndBrightonData,
@@ -41,6 +42,7 @@ export const DioceseSimpleDb: DioceseDb = {
   Shrewsbury: shrewsburyData,
   Southwark: southwarkData,
   Westminster: westminsterData,
+  Wrexham: wrexhamData
 };
 
 export function getDioceseData(keyName: DioceseDbKey) {

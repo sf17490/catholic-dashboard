@@ -39,6 +39,7 @@ describe("Diocese page", () => {
     "Shrewsbury",
     "Southwark",
     "Westminster",
+    "Wrexham"
   ];
   
   dioceses.forEach((diocese) => {
