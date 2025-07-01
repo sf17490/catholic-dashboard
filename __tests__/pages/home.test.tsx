@@ -18,10 +18,10 @@ describe("Dashboard home page", () => {
   });
 
   it("includes a homePage header", async () => {
-    render(<Home />)
-    const homeHeader = await screen.findByTestId("homePageHeader")
-    expect(homeHeader).toBeInTheDocument()
-  })
+    render(<Home />);
+    const homeHeader = await screen.findByTestId("homePageHeader");
+    expect(homeHeader).toBeInTheDocument();
+  });
 
   const expectedSkeletons = ["massAttendance", "conversions"];
 
@@ -35,11 +35,13 @@ describe("Dashboard home page", () => {
     });
   });
 
-  it("gives the skeleton container the correct class", ()=>{
-    render(<Home />)
-    const skeletonContainer = screen.getByTestId("skeletonContainer")
-    expect(skeletonContainer).toHaveClass(" mb-3 grid gap-4 sm:mb-6 md:grid-cols-[1fr_1fr]")
-  })
+  it("gives the skeleton container the correct class", () => {
+    render(<Home />);
+    const skeletonContainer = screen.getByTestId("skeletonContainer");
+    expect(skeletonContainer).toHaveClass(
+      " mb-3 grid gap-4 sm:mb-6 md:grid-cols-[1fr_1fr]"
+    );
+  });
 
   it("gives the body the correct class", () => {
     render(<Home />);
@@ -55,6 +57,15 @@ describe("Dashboard home page", () => {
     sectionHeaders.forEach((header) => {
       expect(header).toHaveClass("govuk-heading-l govuk-!-margin-bottom-4");
     });
+  });
+
+  it("includes a data by diocese section", () => {
+    render(<Home />);
+
+    expect(screen.getByTestId("dataByDioceseSection")).toBeInTheDocument();
+    const sectionHeader = screen.getByTestId("dataByDioceseHeader");
+    expect(sectionHeader).toBeInTheDocument();
+    expect(sectionHeader).toHaveTextContent("Data by Diocese");
   });
 
   it("includes a footer", () => {

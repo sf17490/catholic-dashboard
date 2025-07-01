@@ -38,12 +38,12 @@ export default function Home() {
               />
             </div>
           </div>
-          {/* <div>
-            <h2 className="govuk-heading-l govuk-!-margin-bottom-4">
+          <div data-testid="dataByDioceseSection">
+            <h2 className="govuk-heading-l govuk-!-margin-bottom-4" data-testid="dataByDioceseHeader">
               Data by Diocese
             </h2>
             <DioceseList />
-          </div> */}
+          </div>
         </div>
       </div>
       <DashboardFooter />

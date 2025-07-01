@@ -1,8 +1,5 @@
 import DioceseList from "@/components/DioceseList";
-import {
-  CleanedDioceseName,
-  DioceseName,
-} from "@/data/dataTypes";
+import { diocesesPlusRobotNames } from "@/data/strings";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
@@ -14,31 +11,7 @@ describe("Diocese List", () => {
     expect(dioceseList).toHaveClass("govuk-list govuk-list--bullet");
   });
 
-  const dioceses: [DioceseName, CleanedDioceseName][] = [
-    ["Arundel & Brighton", "arundel_and_brighton"],
-    ["Birmingham", "birmingham"],
-    ["Brentwood", "brentwood"],
-    ["Cardiff-Menevia", "cardiff-menevia"],
-    ["Clifton", "clifton"],
-    ["East Anglia", "east_anglia"],
-    ["Hallam", "hallam"],
-    ["Hexham & Newcastle", "hexham_and_newcastle"],
-    ["Lancaster", "lancaster"],
-    ["Leeds", "leeds"],
-    ["Liverpool", "liverpool"],
-    ["Middlesbrough", "middlesbrough"],
-    ["Northampton", "northampton"],
-    ["Nottingham", "nottingham"],
-    ["Plymouth", "plymouth"],
-    ["Portsmouth", "portsmouth"],
-    ["Salford", "salford"],
-    ["Shrewsbury", "shrewsbury"],
-    ["Southwark", "southwark"],
-    ["Westminster", "westminster"],
-    ["Wrexham", "wrexham"],
-  ];
-
-  dioceses.forEach((data) => {
+  diocesesPlusRobotNames.forEach((data) => {
     const dioceseName = data[0];
     const cleanedDioceseName = data[1];
     it(`includes ${dioceseName} in the list`, () => {

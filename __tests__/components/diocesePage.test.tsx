@@ -1,6 +1,5 @@
 import DiocesePage from "@/components/DiocesePage";
-import { DioceseDbKey, validDioceseNames } from "@/data/dataTypes";
-import { DioceseSimpleDb } from "@/data/dioceseStats";
+import { DioceseDbKey } from "@/data/dataTypes";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 

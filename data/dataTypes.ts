@@ -74,26 +74,5 @@ export type DioceseData = {
 };
 
 export type DioceseDb = {
-  "Arundel & Brighton": DioceseData;
-  Birmingham: DioceseData;
-  Brentwood: DioceseData;
-  "Cardiff-Menevia": DioceseData;
-  Clifton: DioceseData;
-  "East Anglia": DioceseData;
-  Hallam: DioceseData;
-  "Hexham & Newcastle": DioceseData;
-  Lancaster: DioceseData;
-  Leeds: DioceseData;
-  Liverpool: DioceseData;
-  Middlesbrough: DioceseData;
-  Northampton: DioceseData;
-  Nottingham: DioceseData;
-  Plymouth: DioceseData;
-  Portsmouth: DioceseData;
-  Salford: DioceseData;
-  Shrewsbury: DioceseData;
-  Southwark: DioceseData;
-  Westminster: DioceseData;
-  Wrexham: DioceseData;
-   // [key in DioceseName]: DioceseData; //TODO: Implement for every diocese
+  [key in DioceseName]: DioceseData;
 };
