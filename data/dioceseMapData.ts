@@ -29,7 +29,7 @@ export const diocesesData: DioceseDataCollection = {
   features: [
     {
       type: "Feature",
-      properties: { id: 1, name: "Plymouth", cleanedName: "Plymouth" },
+      properties: { id: 1, name: "Plymouth", cleanedName: "plymouth" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -199,7 +199,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 2, name: "Clifton", cleanedName: "Clifton" },
+      properties: { id: 2, name: "Clifton", cleanedName: "clifton" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -311,7 +311,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 3, name: "Portsmouth", cleanedName: "Portsmouth" },
+      properties: { id: 3, name: "Portsmouth", cleanedName: "portsmouth" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -418,7 +418,7 @@ export const diocesesData: DioceseDataCollection = {
       properties: {
         id: 4,
         name: "Arundel & Brighton",
-        cleanedName: "Arundel_and_Brighton",
+        cleanedName: "arundel_and_brighton",
       },
       geometry: {
         type: "MultiPolygon",
@@ -498,7 +498,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 5, name: "Southwark", cleanedName: "Southwark" },
+      properties: { id: 5, name: "Southwark", cleanedName: "southwark" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -597,7 +597,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 6, name: "Westminster", cleanedName: "Westminster" },
+      properties: { id: 6, name: "Westminster", cleanedName: "westminster" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -673,7 +673,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 7, name: "Brentwood", cleanedName: "Brentwood" },
+      properties: { id: 7, name: "Brentwood", cleanedName: "brentwood" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -769,7 +769,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 8, name: "Northampton", cleanedName: "Northampton" },
+      properties: { id: 8, name: "Northampton", cleanedName: "northampton" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -878,7 +878,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 9, name: "East Anglia", cleanedName: "East_Anglia" },
+      properties: { id: 9, name: "East Anglia", cleanedName: "east_anglia" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -997,7 +997,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 10, name: "Nottingham", cleanedName: "Nottingham" },
+      properties: { id: 10, name: "Nottingham", cleanedName: "nottingham" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1115,7 +1115,7 @@ export const diocesesData: DioceseDataCollection = {
       properties: {
         id: 11,
         name: "Cardiff-Menevia",
-        cleanedName: "Cardiff-Menevia",
+        cleanedName: "cardiff-menevia",
       },
       geometry: {
         type: "MultiPolygon",
@@ -1274,7 +1274,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 12, name: "Birmingham", cleanedName: "Birmingham" },
+      properties: { id: 12, name: "Birmingham", cleanedName: "birmingham" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1386,7 +1386,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 13, name: "Wrexham", cleanedName: "Wrexham" },
+      properties: { id: 13, name: "Wrexham", cleanedName: "wrexham" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1506,7 +1506,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 14, name: "Shrewsbury", cleanedName: "Shrewsbury" },
+      properties: { id: 14, name: "Shrewsbury", cleanedName: "shrewsbury" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1611,7 +1611,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 15, name: "Hallam", cleanedName: "Hallam" },
+      properties: { id: 15, name: "Hallam", cleanedName: "hallam" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1686,7 +1686,7 @@ export const diocesesData: DioceseDataCollection = {
       properties: {
         id: 16,
         name: "Middlesbrough",
-        cleanedName: "Middlesbrough",
+        cleanedName: "middlesbrough",
       },
       geometry: {
         type: "MultiPolygon",
@@ -1781,7 +1781,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 17, name: "Leeds", cleanedName: "Leeds" },
+      properties: { id: 17, name: "Leeds", cleanedName: "leeds" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1859,7 +1859,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 18, name: "Salford", cleanedName: "Salford" },
+      properties: { id: 18, name: "Salford", cleanedName: "salford" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -1904,7 +1904,7 @@ export const diocesesData: DioceseDataCollection = {
       properties: {
         id: 19,
         name: "Hexham & Newcastle",
-        cleanedName: "Hexham_and_Newcastle",
+        cleanedName: "hexham_and_newcastle",
       },
       geometry: {
         type: "MultiPolygon",
@@ -1987,7 +1987,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 20, name: "Lancaster", cleanedName: "Lancaster" },
+      properties: { id: 20, name: "Lancaster", cleanedName: "lancaster" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
@@ -2110,7 +2110,7 @@ export const diocesesData: DioceseDataCollection = {
     },
     {
       type: "Feature",
-      properties: { id: 21, name: "Liverpool", cleanedName: "Liverpool" },
+      properties: { id: 21, name: "Liverpool", cleanedName: "liverpool" },
       geometry: {
         type: "MultiPolygon",
         coordinates: [
