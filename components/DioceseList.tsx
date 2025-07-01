@@ -15,7 +15,7 @@ function DioceseList() {
           const dioceseName = pair[0];
           const cleanedDioceseName = pair[1];
           return (
-            <li data-testId={`${cleanedDioceseName}Bullet`}>
+            <li data-testid={`${cleanedDioceseName}Bullet`} key={dioceses.indexOf(pair)}>
               <Link
                 data-testid={`${cleanedDioceseName}Link`}
                 href={`/diocese/${cleanedDioceseName}`}
