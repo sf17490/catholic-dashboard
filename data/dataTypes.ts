@@ -91,6 +91,7 @@ export type DioceseDb = {
   Plymouth: DioceseData;
   Portsmouth: DioceseData;
   Salford: DioceseData;
+  Shrewsbury: DioceseData;
   Southwark: DioceseData;
   Westminster: DioceseData;
   //  [key in DioceseName]: DioceseData; //TODO: Implement for every diocese
