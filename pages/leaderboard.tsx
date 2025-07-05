@@ -24,18 +24,28 @@ function Leaderboard() {
             , a project by the Catholic Record Society.
           </p>
         </div>
+        <div data-testid="dataDisplayBox" className="bg-[var(--colour-grey-3)]">
+          <div
+            data-testid="dataDisplayBoxContents"
+            className="m-6 pt-2 pb-0.25"
+          >
+            <div>
+              <div>{LeaderboardTable()}</div>
+            </div>
+          </div>
+        </div>
         <div>
           <b>Understanding this table</b>
           <p>
             You can think of this table as measuring "Converts per capita".{" "}
           </p>
           <p>
-            For the purposes of this leaderboard, "practising Catholic" is defined as a person who fulfils their
-            Sunday Mass obligation.{" "}
+            For the purposes of this leaderboard, "practising Catholic" is
+            defined as a person who fulfils their Sunday Mass obligation.{" "}
           </p>
           <p>
-            Each diocese is then ranked by the number of converts they are
-            making per "practising" Catholic.
+            Each diocese is then ranked by the number of converts they make per
+            "practising" Catholic.
           </p>
           <b>Methodology</b>
           <p>
@@ -50,16 +60,7 @@ function Leaderboard() {
             practising their faith to convert one person.
           </p>
         </div>
-        <div data-testid="dataDisplayBox" className="bg-[var(--colour-grey-3)]">
-          <div
-            data-testid="dataDisplayBoxContents"
-            className="m-6 pt-2 pb-0.25"
-          >
-            <div>
-              <div>{LeaderboardTable()}</div>
-            </div>
-          </div>
-        </div>
+
         <div>
           <b>Limitations of this data</b>
           <p>
