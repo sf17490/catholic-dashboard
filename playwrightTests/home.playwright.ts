@@ -28,7 +28,7 @@ test("takes me to the feedback form when I click on the feedbackLink", async ({ 
   await expect(feedbackFormHeading).toBeInViewport();
 });
 
-const dataPages = ["massAttendance", "conversions"];
+const dataPages = ["massAttendance", "conversions", "leaderboard"];
 
 dataPages.forEach((dataPage) => {
   test(`takes me to the ${dataPage} page when I click on the ${dataPage} skeleton`, async ({
