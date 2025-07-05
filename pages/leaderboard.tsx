@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "@/components/NavBar";
 import DashboardFooter from "@/components/DashboardFooter";
+import Link from "next/link";
 
 function Leaderboard() {
   return (
@@ -49,15 +50,30 @@ function Leaderboard() {
           </p>
           <b>Methodology</b>
           <p>
-            For example, in 2022 in the Diocese of Hexham & Newcastle, 17,991
-            people attended Mass on a typical Sunday, and 146 people were
-            received into the church that year. 17,991 divided by 146 is 123. It
-            therefore "takes" 123 Catholics practising their faith in order to
-            convert one person.
+            For example, in 2022 in the{" "}
+            <Link
+              data-testid="hexhamAndNewcastleLink"
+              href="diocese/hexham_and_newcastle"
+              className="govuk-link--no-visited-state"
+            >
+              Diocese of Hexham & Newcastle
+            </Link>
+            , 17,991 people attended Mass on a typical Sunday, and 146 people
+            were received into the church that year. 17,991 divided by 146 is
+            123. It therefore "takes" 123 Catholics practising their faith in
+            order to convert one person.
           </p>
           <p>
-            In contrast, in the Diocese of Northampton, it takes 548 Catholics
-            practising their faith to convert one person.
+            In contrast, in the{" "}
+            <Link
+              data-testid="northamptonLink"
+              href="diocese/northampton"
+              className="govuk-link--no-visited-state"
+            >
+              Diocese of Northampton
+            </Link>
+            , it takes 548 Catholics practising their faith to convert one
+            person.
           </p>
         </div>
 

@@ -3,7 +3,6 @@ import DashboardFooter from "../components/DashboardFooter";
 import SkeletonChart from "../components/SkeletonChart";
 import HomePageHeader from "../components/HomePageHeader";
 import DioceseList from "@/components/DioceseList";
-import Link from "next/link";
 import LeaderboardSkeleton from "@/components/LeaderboardSkeleton";
 
 export default function Home() {
