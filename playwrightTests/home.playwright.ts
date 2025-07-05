@@ -6,29 +6,37 @@ test("has the correct title", async ({ page }) => {
   await expect(page).toHaveTitle(/UK Catholic Dashboard/);
 });
 
-test("takes me to the about page when I click on the aboutLink'", async ({ page }) => {
+test("takes me to the about page when I click on the aboutLink'", async ({
+  page,
+}) => {
   await page.goto("http://localhost:3000/");
 
   const aboutLink = page.getByTestId("aboutLink");
 
   await aboutLink.click();
 
-  const answerToFirstQuestion = page.getByText("The Catholic Data Dashboard is a dashboard measuring the Catholic Church's impact on England & Wales.");
+  const answerToFirstQuestion = page.getByText(
+    "The Catholic Data Dashboard is a dashboard measuring the Catholic Church's impact on England & Wales."
+  );
   await expect(answerToFirstQuestion).toBeInViewport();
 });
 
-test("takes me to the feedback form when I click on the feedbackLink", async ({ page }) => {
+test("takes me to the feedback form when I click on the feedbackLink", async ({
+  page,
+}) => {
   await page.goto("http://localhost:3000/");
 
   const feedbackLink = page.getByTestId("feedbackLink");
 
   await feedbackLink.click();
 
-  const feedbackFormHeading = page.getByText("Catholic Data Dashboard Feedback")
+  const feedbackFormHeading = page.getByText(
+    "Catholic Data Dashboard Feedback"
+  );
   await expect(feedbackFormHeading).toBeInViewport();
 });
 
-const dataPages = ["massAttendance", "conversions"];
+const dataPages = ["massAttendance", "conversions", "leaderboard"];
 
 dataPages.forEach((dataPage) => {
   test(`takes me to the ${dataPage} page when I click on the ${dataPage} skeleton`, async ({

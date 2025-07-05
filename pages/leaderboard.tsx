@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "@/components/NavBar";
 import DashboardFooter from "@/components/DashboardFooter";
+import Link from "next/link";
 
 function Leaderboard() {
   return (
@@ -24,32 +25,6 @@ function Leaderboard() {
             , a project by the Catholic Record Society.
           </p>
         </div>
-        <div>
-          <b>Understanding this table</b>
-          <p>
-            You can think of this table as measuring "Converts per capita".{" "}
-          </p>
-          <p>
-            For the purposes of this leaderboard, "practising Catholic" is defined as a person who fulfils their
-            Sunday Mass obligation.{" "}
-          </p>
-          <p>
-            Each diocese is then ranked by the number of converts they are
-            making per "practising" Catholic.
-          </p>
-          <b>Methodology</b>
-          <p>
-            For example, in 2022 in the Diocese of Hexham & Newcastle, 17,991
-            people attended Mass on a typical Sunday, and 146 people were
-            received into the church that year. 17,991 divided by 146 is 123. It
-            therefore "takes" 123 Catholics practising their faith in order to
-            convert one person.
-          </p>
-          <p>
-            In contrast, in the Diocese of Northampton, it takes 548 Catholics
-            practising their faith to convert one person.
-          </p>
-        </div>
         <div data-testid="dataDisplayBox" className="bg-[var(--colour-grey-3)]">
           <div
             data-testid="dataDisplayBoxContents"
@@ -60,6 +35,48 @@ function Leaderboard() {
             </div>
           </div>
         </div>
+        <div>
+          <b>Understanding this table</b>
+          <p>
+            You can think of this table as measuring "Converts per capita".{" "}
+          </p>
+          <p>
+            For the purposes of this leaderboard, "practising Catholic" is
+            defined as a person who fulfils their Sunday Mass obligation.{" "}
+          </p>
+          <p>
+            Each diocese is then ranked by the number of converts they make per
+            "practising" Catholic.
+          </p>
+          <b>Methodology</b>
+          <p>
+            For example, in 2022 in the{" "}
+            <Link
+              data-testid="hexhamAndNewcastleLink"
+              href="diocese/hexham_and_newcastle"
+              className="govuk-link--no-visited-state"
+            >
+              Diocese of Hexham & Newcastle
+            </Link>
+            , 17,991 people attended Mass on a typical Sunday, and 146 people
+            were received into the church that year. 17,991 divided by 146 is
+            123. It therefore "takes" 123 Catholics practising their faith in
+            order to convert one person.
+          </p>
+          <p>
+            In contrast, in the{" "}
+            <Link
+              data-testid="northamptonLink"
+              href="diocese/northampton"
+              className="govuk-link--no-visited-state"
+            >
+              Diocese of Northampton
+            </Link>
+            , it takes 548 Catholics practising their faith to convert one
+            person.
+          </p>
+        </div>
+
         <div>
           <b>Limitations of this data</b>
           <p>

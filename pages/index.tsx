@@ -3,6 +3,7 @@ import DashboardFooter from "../components/DashboardFooter";
 import SkeletonChart from "../components/SkeletonChart";
 import HomePageHeader from "../components/HomePageHeader";
 import DioceseList from "@/components/DioceseList";
+import LeaderboardSkeleton from "@/components/LeaderboardSkeleton";
 
 export default function Home() {
   console.log("Ora pro nobis, Carlo");
@@ -38,10 +39,15 @@ export default function Home() {
               />
             </div>
           </div>
+          <LeaderboardSkeleton />
           <div data-testid="dataByDioceseSection">
-            <h2 className="govuk-heading-l govuk-!-margin-bottom-4" data-testid="dataByDioceseHeader">
+            <h2
+              className="govuk-heading-l govuk-!-margin-bottom-4"
+              data-testid="dataByDioceseHeader"
+            >
               Data by Diocese
             </h2>
+
             <DioceseList />
           </div>
         </div>
