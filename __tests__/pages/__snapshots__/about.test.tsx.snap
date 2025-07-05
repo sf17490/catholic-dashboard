@@ -32,7 +32,7 @@ exports[`About page has the expected text and formatting 1`] = `
         About
       </h1>
       <p>
-        Last updated 1 June 2025
+        Last updated 5 July 2025
       </p>
       <div>
         <h2
@@ -72,11 +72,16 @@ exports[`About page has the expected text and formatting 1`] = `
         >
            Who is the dashboard for?
         </h2>
-        <p>
-          As a Catholic interested in the health of the Catholic Church, I want to know if the church is growing or shrinking, so that I can plan accordingly. 
+        <p
+          class="govuk-body"
+        >
+          As a Catholic interested in spreading the Good News, I want to know which dioceses are better at converting people, so that I can learn from their approach. 
         </p>
         <p>
           As a reader of newspaper reports about the Catholic Church, I want a comprehensive source of reliable statistics, so that I can put cherry-picked statistics into context.
+        </p>
+        <p>
+          As a Catholic interested in the health of the Catholic Church, I want to know if the church is growing or shrinking, so that I can plan accordingly. 
         </p>
       </div>
       <div>
