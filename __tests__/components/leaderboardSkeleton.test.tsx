@@ -6,9 +6,7 @@ describe("Leaderboard skeleton", () => {
   it("links to the leaderboard page", async () => {
     render(<LeaderboardSkeleton />);
 
-    const leaderboardLink = await screen.findByTestId(
-      "leaderboardLink"
-    );
+    const leaderboardLink = await screen.findByTestId("leaderboardLink");
 
     expect(leaderboardLink).toBeInTheDocument();
     expect(leaderboardLink).toHaveClass(
