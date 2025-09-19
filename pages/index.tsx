@@ -45,7 +45,7 @@ export default function Home() {
               className="govuk-heading-l govuk-!-margin-bottom-4"
               data-testid="dataByDioceseHeader"
             >
-              Data by Diocese
+              Statistics by Diocese
             </h2>
 
             <DioceseList />

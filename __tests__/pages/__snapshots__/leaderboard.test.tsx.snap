@@ -17,7 +17,7 @@ exports[`Leaderboard page matches the snapshot 1`] = `
             data-testid="homePageLink"
             href="/"
           >
-            Catholic Data Dashboard
+            Catholic Statistics Dashboard
           </a>
         </div>
       </header>

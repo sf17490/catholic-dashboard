@@ -23,7 +23,7 @@ describe("Navigation Bar", () => {
   it("correctly titles the header", () => {
     render(<NavBar />);
     expect(screen.getByTestId("homePageLink")).toHaveTextContent(
-      "Catholic Data Dashboard"
+      "Catholic Statistics Dashboard"
     );
   });
 

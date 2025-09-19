@@ -12,7 +12,7 @@ function NavBar() {
             href="/"
             className="govuk-header__link govuk-header__service-name"
           >
-            Catholic Data Dashboard
+            Catholic Statistics Dashboard
           </Link>
         </div>
       </header>

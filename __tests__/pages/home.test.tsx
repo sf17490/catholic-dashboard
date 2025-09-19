@@ -59,13 +59,13 @@ describe("Dashboard home page", () => {
     });
   });
 
-  it("includes a data by diocese section", () => {
+  it("includes a statistics by diocese section", () => {
     render(<Home />);
 
     expect(screen.getByTestId("dataByDioceseSection")).toBeInTheDocument();
     const sectionHeader = screen.getByTestId("dataByDioceseHeader");
     expect(sectionHeader).toBeInTheDocument();
-    expect(sectionHeader).toHaveTextContent("Data by Diocese");
+    expect(sectionHeader).toHaveTextContent("Statistics by Diocese");
   });
 
   it("includes a footer", () => {
