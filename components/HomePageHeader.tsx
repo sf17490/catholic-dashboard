@@ -4,7 +4,7 @@ import React from "react";
 function HomePageHeader() {
   return (
     <div data-testid="homePageHeader">
-      <title>UK Catholic Dashboard</title>
+      <title>UK Catholic Statistics Dashboard</title>
       <div
         data-testid={"headerDiv"}
         className={"bg-[var(--colour-blue)] p-2.5"}

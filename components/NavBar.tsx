@@ -4,7 +4,7 @@ import React from "react";
 function NavBar() {
   return (
     <div>
-      <title>UK Catholic Dashboard</title>
+      <title>UK Catholic Statistics</title>
       <header className="govuk-header" data-testid="headerSection">
         <div data-testid="homePageLinkContainer" className="ml-10">
           <Link
