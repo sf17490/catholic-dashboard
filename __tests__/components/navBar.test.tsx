@@ -11,7 +11,7 @@ describe("Navigation Bar", () => {
   it("correctly titles the tab", () => {
     render(<NavBar />);
 
-    expect(document.title).toBe("UK Catholic Dashboard");
+    expect(document.title).toBe("UK Catholic Statistics");
   });
 
   it("includes a link to the homepage", () => {

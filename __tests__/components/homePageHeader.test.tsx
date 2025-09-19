@@ -6,7 +6,7 @@ describe("Navigation Bar", () => {
   it("correctly titles the tab", () => {
     render(<HomePageHeader />);
 
-    expect(document.title).toBe("UK Catholic Dashboard");
+    expect(document.title).toBe("UK Catholic Statistics Dashboard");
   });
   it("renders a heading", async () => {
     render(<HomePageHeader />);
