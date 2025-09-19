@@ -14,7 +14,7 @@ describe("Navigation Bar", () => {
     const heading = await screen.findByRole("mainTitle");
 
     expect(heading).toBeInTheDocument();
-    expect(heading).toHaveTextContent("UK Catholic Data Dashboard");
+    expect(heading).toHaveTextContent("UK Catholic Statistics Dashboard");
   });
   it("has the correct class for the header section", () => {
     render(<HomePageHeader />);
@@ -30,13 +30,15 @@ describe("Navigation Bar", () => {
 
     expect(subheading).toBeInTheDocument();
     expect(subheading).toHaveTextContent(
-      "Showing Catholic data across England & Wales"
+      "Showing Catholic statistics across England & Wales"
     );
   });
-  it('has a link to the "What is the Data Dashboard?" page', () => {
+  it('has a link to the "What is the Statistics Dashboard?" page', () => {
     render(<HomePageHeader />);
 
-    const aboutLink = screen.getByText("What is the Catholic Data Dashboard?");
+    const aboutLink = screen.getByText(
+      "What is the Catholic Statistics Dashboard?"
+    );
     expect(aboutLink).toBeInTheDocument();
     expect(aboutLink).toHaveClass("pt-2.5 text-[var(--colour-offwhite)]");
   });

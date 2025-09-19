@@ -10,13 +10,13 @@ function HomePageHeader() {
         className={"bg-[var(--colour-blue)] p-2.5"}
       >
         <div className="pl-1.5">
-          <h1 role={"mainTitle"}>UK Catholic Data Dashboard</h1>
+          <h1 role={"mainTitle"}>UK Catholic Statistics Dashboard</h1>
           <h2 role={"subheading"}>
-            Showing Catholic data across England & Wales
+            Showing Catholic statistics across England & Wales
           </h2>
           <Link data-testid="aboutLink" href="about">
             <u className="pt-2.5 text-[var(--colour-offwhite)]">
-              What is the Catholic Data Dashboard?
+              What is the Catholic Statistics Dashboard?
             </u>
           </Link>
 

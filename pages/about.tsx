@@ -15,11 +15,11 @@ function About() {
         <div>
           <h2 className="govuk-heading-l font-sans">
             {" "}
-            What is the Catholic Data Dashboard?
+            What is the Catholic Statistics Dashboard?
           </h2>
           <p>
-            The Catholic Data Dashboard is a dashboard measuring the Catholic
-            Church's impact on England & Wales.
+            The Catholic Statistics Dashboard is a dashboard measuring the
+            Catholic Church's impact on England & Wales.
           </p>
           <p>
             In particular, it displays data and trends concerning the church's
