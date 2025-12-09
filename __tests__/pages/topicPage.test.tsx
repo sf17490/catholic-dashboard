@@ -179,10 +179,10 @@ topicPages.forEach((page) => {
       });
     });
 
-    it("cites the Catholic Record Society", async () => {
+    it("cites the Catholic Record Society & CBCEW website", async () => {
       expect(screen.getByTestId("citation")).toBeInTheDocument();
       expect(screen.getByTestId("citationText")).toHaveTextContent(
-        "The data on this page comes from Catholicism in Numbers, a project by the Catholic Record Society."
+        "Data up to & including 2022 comes from Catholicism in Numbers, a project by the Catholic Record Society. Data after 2022 (if any) comes from the CBCEW website. Read more about our sources here."
       );
       const citationLink = screen.getByTestId("citationLink");
       expect(citationLink).toHaveAttribute(
@@ -190,6 +190,10 @@ topicPages.forEach((page) => {
         "https://www.crs.org.uk/catholicism-in-numbers"
       );
       expect(citationLink).toHaveClass("govuk-link");
+
+      const sourcesLink = screen.getByTestId("sourcesLink");
+      expect(sourcesLink).toHaveAttribute("href", "/about");
+      expect(sourcesLink).toHaveClass("govuk-link");
     });
   });
 });

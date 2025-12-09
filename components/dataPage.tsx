@@ -39,7 +39,7 @@ function DataPage({
         <div data-testid="citation">
           <b>Citation</b>
           <p data-testid="citationText">
-            The data on this page comes from{" "}
+            Data up to & including 2022 comes from{" "}
             <i>
               <a
                 data-testid="citationLink"
@@ -49,7 +49,11 @@ function DataPage({
                 Catholicism in Numbers
               </a>
             </i>
-            , a project by the Catholic Record Society.
+            , a project by the Catholic Record Society. Data after 2022 (if any)
+            comes from the CBCEW website. Read more about our sources{" "}
+            <a data-testid="sourcesLink" className="govuk-link" href="/about">
+              here.
+            </a>
           </p>
         </div>
         {accuracyComment.length > 0 ? (
