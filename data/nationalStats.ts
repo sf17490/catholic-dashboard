@@ -6,6 +6,8 @@ const nationalConversionsTable: TableData = {
     valueColumn: "Converts to Catholicism",
   },
   rowData: [
+    { year: 2024, value: 3024 }, //CBCEW Statistic
+    { year: 2023, value: 2334 }, //CBCEW Statistic
     { year: 2022, value: 1976 },
     { year: 2021, value: 1537 },
     { year: 2019, value: 2674 },
