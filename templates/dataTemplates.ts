@@ -3,8 +3,8 @@ import { LineGraphProps } from "@/components/PlotALineGraph";
 export const expectedNationalConversionsLineGraphProps: LineGraphProps = {
   xAxisLabel: "Year",
   yAxisLabel: "Converts to Catholicism",
-  xAxisValues: [2022, 2021, 2019, 2010, 2000],
-  yAxisValues: [1976, 1537, 2674, 4615, 4402],
+  xAxisValues: [2024, 2023, 2022, 2021, 2019, 2010, 2000],
+  yAxisValues: [3024, 2334, 1976, 1537, 2674, 4615, 4402],
 };
 
 export const expectedNationalMassAttendanceLineGraphProps: LineGraphProps = {
