@@ -66,6 +66,7 @@ export default function PlotALineGraph({
 }
 
 //FYI: Use the PlotALineGraph function below if you want to make a skeleton outline graph for the homepage
+//View the graph with a iPhone 14 Pro Max view
 
 // export default function PlotALineGraph({
 //   yAxisLabel,
