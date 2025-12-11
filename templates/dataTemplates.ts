@@ -10,6 +10,6 @@ export const expectedNationalConversionsLineGraphProps: LineGraphProps = {
 export const expectedNationalMassAttendanceLineGraphProps: LineGraphProps = {
   xAxisLabel: "Year",
   yAxisLabel: "Number attending Mass",
-  xAxisValues: [2022, 2021, 2018, 2008, 1999],
-  yAxisValues: [503008, 390236, 712909, 885169, 1005522],
+  xAxisValues: [2024, 2023, 2022, 2021, 2018, 2008, 1999],
+  yAxisValues: [575453, 552631, 503008, 390236, 712909, 885169, 1005522],
 };

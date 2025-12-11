@@ -11,7 +11,7 @@ function About() {
         <h1 data-testid="aboutPageTitle" className="govuk-heading-xl">
           About
         </h1>
-        <p>Last updated 5 July 2025</p>
+        <p>Last updated 9 December 2025</p>
         <div>
           <h2 className="govuk-heading-l font-sans">
             {" "}
@@ -59,7 +59,7 @@ function About() {
         <div>
           <h2 className="govuk-heading-l"> Where does the data come from?</h2>
           <p>
-            All of the data used on this website is taken from{" "}
+            All data on this website up to 2022 is taken from{" "}
             <Link
               href="https://www.crs.org.uk/catholicism-in-numbers"
               className="govuk-link"
@@ -70,8 +70,23 @@ function About() {
             Timothea Kinnear and Dr Alana Harris.{" "}
           </p>
           <p>
-            The Catholic Data Dashboard is not affiliated with the Catholicism
-            in Numbers project in any form.{" "}
+            Post-2022 data is taken from the statistics published on the
+            Catholic Bishops' Conference of England & Wales website:
+          </p>
+          <ul className="govuk-list govuk-list--bullet">
+            <li>
+              <i>Statistics - 2023. </i> Retrieved 9 December 2025 from
+              https://www.cbcew.org.uk/statistics-2023/{" "}
+            </li>
+            <li>
+              <i>Statistics - 2024. </i> Retrieved 9 December 2025 from
+              https://www.cbcew.org.uk/statistics-2024/{" "}
+            </li>
+          </ul>
+
+          <p>
+            The Catholic Data Dashboard is not affiliated with the Catholic
+            Record Society nor the CBCEW in any form.{" "}
           </p>
         </div>
       </div>

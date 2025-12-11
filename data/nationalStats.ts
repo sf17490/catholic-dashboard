@@ -32,6 +32,8 @@ const nationalMassAttendanceTable: TableData = {
     valueColumn: "Number attending Mass",
   },
   rowData: [
+    { year: 2024, value: 575453 }, //Cbcew statistic
+    { year: 2023, value: 552631 }, //Cbcew statistic
     { year: 2022, value: 503008 },
     { year: 2021, value: 390236 },
     { year: 2018, value: 712909 },
